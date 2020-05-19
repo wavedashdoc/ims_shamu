@@ -29,6 +29,8 @@
 
 .field protected mRadioStateChangedRegistrants:Landroid/os/RegistrantList;
 
+.field protected mRefreshViceInfoRegistrants:Landroid/os/RegistrantList;
+
 .field protected mRingRegistrant:Landroid/os/Registrant;
 
 .field protected mRingbackToneRegistrants:Landroid/os/RegistrantList;
@@ -49,103 +51,109 @@
     .locals 1
     .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 62
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
+    .line 42
     sget-object v0, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->RADIO_UNAVAILABLE:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
 
-    .line 41
+    .line 43
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
 
-    .line 43
+    .line 45
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mRadioStateChangedRegistrants:Landroid/os/RegistrantList;
 
-    .line 44
+    .line 46
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mOnRegistrants:Landroid/os/RegistrantList;
 
-    .line 45
+    .line 47
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mAvailRegistrants:Landroid/os/RegistrantList;
 
-    .line 46
+    .line 48
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mOffOrNotAvailRegistrants:Landroid/os/RegistrantList;
 
-    .line 47
+    .line 49
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mNotAvailRegistrants:Landroid/os/RegistrantList;
 
-    .line 48
+    .line 50
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mCallStateRegistrants:Landroid/os/RegistrantList;
 
-    .line 49
+    .line 51
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mImsNetworkStateChangedRegistrants:Landroid/os/RegistrantList;
 
-    .line 50
+    .line 52
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mVoicePrivacyOnRegistrants:Landroid/os/RegistrantList;
 
-    .line 51
+    .line 53
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mVoicePrivacyOffRegistrants:Landroid/os/RegistrantList;
 
-    .line 52
+    .line 54
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mRingbackToneRegistrants:Landroid/os/RegistrantList;
 
-    .line 53
+    .line 55
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mExitEmergencyCallbackModeRegistrants:Landroid/os/RegistrantList;
 
-    .line 63
+    .line 56
+    new-instance v0, Landroid/os/RegistrantList;
+
+    invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
+
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mRefreshViceInfoRegistrants:Landroid/os/RegistrantList;
+
+    .line 66
     iput-object p1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mContext:Landroid/content/Context;
 
-    .line 62
+    .line 67
     return-void
 .end method
 
@@ -154,8 +162,7 @@
 .method public getRadioState()Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
     .locals 1
 
-    .prologue
-    .line 70
+    .line 73
     iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
 
     return-object v0
@@ -164,72 +171,67 @@
 .method protected onRadioAvailable()V
     .locals 0
 
-    .prologue
-    .line 305
+    .line 309
     return-void
 .end method
 
 .method public registerForAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
-    .locals 6
+    .locals 4
     .param p1, "h"    # Landroid/os/Handler;
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 121
+    .line 124
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 123
-    .local v0, "r":Landroid/os/Registrant;
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    .line 124
-    :try_start_0
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mAvailRegistrants:Landroid/os/RegistrantList;
-
-    invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
-
     .line 126
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+    .local v0, "r":Landroid/os/Registrant;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
 
-    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
+    monitor-enter v1
 
     .line 127
-    new-instance v1, Landroid/os/AsyncResult;
+    :try_start_0
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mAvailRegistrants:Landroid/os/RegistrantList;
+
+    invoke-virtual {v2, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
+
+    .line 129
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+
+    invoke-virtual {v2}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 130
+    new-instance v2, Landroid/os/AsyncResult;
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    invoke-direct {v2, v3, v3, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    const/4 v5, 0x0
+    invoke-virtual {v0, v2}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
 
-    invoke-direct {v1, v3, v4, v5}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+    .line 132
+    :cond_0
+    monitor-exit v1
 
-    invoke-virtual {v0, v1}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
+    .line 133
+    return-void
+
+    .line 132
+    :catchall_0
+    move-exception v2
+
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_0
-    monitor-exit v2
-
-    .line 120
-    return-void
-
-    .line 123
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v2
-
-    throw v1
+    throw v2
 .end method
 
 .method public registerForCallStateChanged(Landroid/os/Handler;ILjava/lang/Object;)V
@@ -238,19 +240,18 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 180
+    .line 183
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 182
+    .line 185
     .local v0, "r":Landroid/os/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mCallStateRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 179
+    .line 186
     return-void
 .end method
 
@@ -260,19 +261,18 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 250
+    .line 253
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 251
+    .line 254
     .local v0, "r":Landroid/os/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mExitEmergencyCallbackModeRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 249
+    .line 255
     return-void
 .end method
 
@@ -282,19 +282,18 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 91
+    .line 94
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 92
+    .line 95
     .local v0, "r":Landroid/os/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mImsNetworkStateChangedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 90
+    .line 96
     return-void
 .end method
 
@@ -304,19 +303,18 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 228
+    .line 231
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 229
+    .line 232
     .local v0, "r":Landroid/os/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mVoicePrivacyOffRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 227
+    .line 233
     return-void
 .end method
 
@@ -326,221 +324,203 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 217
+    .line 220
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 218
+    .line 221
     .local v0, "r":Landroid/os/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mVoicePrivacyOnRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 216
+    .line 222
     return-void
 .end method
 
 .method public registerForNotAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
-    .locals 6
+    .locals 4
     .param p1, "h"    # Landroid/os/Handler;
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 141
+    .line 144
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 143
-    .local v0, "r":Landroid/os/Registrant;
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    .line 144
-    :try_start_0
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mNotAvailRegistrants:Landroid/os/RegistrantList;
-
-    invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
-
     .line 146
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+    .local v0, "r":Landroid/os/Registrant;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
 
-    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
+    monitor-enter v1
 
     .line 147
-    new-instance v1, Landroid/os/AsyncResult;
+    :try_start_0
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mNotAvailRegistrants:Landroid/os/RegistrantList;
+
+    invoke-virtual {v2, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
+
+    .line 149
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+
+    invoke-virtual {v2}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 150
+    new-instance v2, Landroid/os/AsyncResult;
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    invoke-direct {v2, v3, v3, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    const/4 v5, 0x0
+    invoke-virtual {v0, v2}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
 
-    invoke-direct {v1, v3, v4, v5}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+    .line 152
+    :cond_0
+    monitor-exit v1
 
-    invoke-virtual {v0, v1}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
+    .line 153
+    return-void
+
+    .line 152
+    :catchall_0
+    move-exception v2
+
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_0
-    monitor-exit v2
-
-    .line 140
-    return-void
-
-    .line 143
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v2
-
-    throw v1
+    throw v2
 .end method
 
 .method public registerForOffOrNotAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
-    .locals 6
+    .locals 4
     .param p1, "h"    # Landroid/os/Handler;
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 161
+    .line 164
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 163
-    .local v0, "r":Landroid/os/Registrant;
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    .line 164
-    :try_start_0
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mOffOrNotAvailRegistrants:Landroid/os/RegistrantList;
-
-    invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
-
     .line 166
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+    .local v0, "r":Landroid/os/Registrant;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 167
+    :try_start_0
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mOffOrNotAvailRegistrants:Landroid/os/RegistrantList;
+
+    invoke-virtual {v2, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
+
+    .line 169
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
 
     sget-object v3, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->RADIO_OFF:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
 
-    if-eq v1, v3, :cond_0
+    if-eq v2, v3, :cond_0
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
 
-    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v2}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_0
+    if-nez v2, :cond_1
 
-    :goto_0
-    monitor-exit v2
-
-    .line 160
-    return-void
-
-    .line 167
+    .line 170
     :cond_0
-    :try_start_1
-    new-instance v1, Landroid/os/AsyncResult;
+    new-instance v2, Landroid/os/AsyncResult;
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    invoke-direct {v2, v3, v3, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    const/4 v5, 0x0
+    invoke-virtual {v0, v2}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
 
-    invoke-direct {v1, v3, v4, v5}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+    .line 172
+    :cond_1
+    monitor-exit v1
 
-    invoke-virtual {v0, v1}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .line 173
+    return-void
 
-    goto :goto_0
-
-    .line 163
+    .line 172
     :catchall_0
-    move-exception v1
+    move-exception v2
 
-    monitor-exit v2
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw v2
 .end method
 
 .method public registerForOn(Landroid/os/Handler;ILjava/lang/Object;)V
-    .locals 6
+    .locals 4
     .param p1, "h"    # Landroid/os/Handler;
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 101
+    .line 104
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 103
-    .local v0, "r":Landroid/os/Registrant;
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    .line 104
-    :try_start_0
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mOnRegistrants:Landroid/os/RegistrantList;
-
-    invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
-
     .line 106
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+    .local v0, "r":Landroid/os/Registrant;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
 
-    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isOn()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
+    monitor-enter v1
 
     .line 107
-    new-instance v1, Landroid/os/AsyncResult;
+    :try_start_0
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mOnRegistrants:Landroid/os/RegistrantList;
+
+    invoke-virtual {v2, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
+
+    .line 109
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+
+    invoke-virtual {v2}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isOn()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 110
+    new-instance v2, Landroid/os/AsyncResult;
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    invoke-direct {v2, v3, v3, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    const/4 v5, 0x0
+    invoke-virtual {v0, v2}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
 
-    invoke-direct {v1, v3, v4, v5}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+    .line 112
+    :cond_0
+    monitor-exit v1
 
-    invoke-virtual {v0, v1}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
+    .line 113
+    return-void
+
+    .line 112
+    :catchall_0
+    move-exception v2
+
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_0
-    monitor-exit v2
-
-    .line 100
-    return-void
-
-    .line 103
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v2
-
-    throw v1
+    throw v2
 .end method
 
 .method public registerForRadioStateChanged(Landroid/os/Handler;ILjava/lang/Object;)V
@@ -549,41 +529,41 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 75
+    .line 78
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 77
+    .line 80
     .local v0, "r":Landroid/os/Registrant;
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
 
-    monitor-enter v2
+    monitor-enter v1
 
-    .line 78
+    .line 81
     :try_start_0
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mRadioStateChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mRadioStateChangedRegistrants:Landroid/os/RegistrantList;
 
-    invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
+    invoke-virtual {v2, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 79
+    .line 82
     invoke-virtual {v0}, Landroid/os/Registrant;->notifyRegistrant()V
+
+    .line 83
+    monitor-exit v1
+
+    .line 84
+    return-void
+
+    .line 83
+    :catchall_0
+    move-exception v2
+
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit v2
-
-    .line 74
-    return-void
-
-    .line 77
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v2
-
-    throw v1
+    throw v2
 .end method
 
 .method public registerForRingbackTone(Landroid/os/Handler;ILjava/lang/Object;)V
@@ -592,19 +572,39 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 239
+    .line 242
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 240
+    .line 243
     .local v0, "r":Landroid/os/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mRingbackToneRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 238
+    .line 244
+    return-void
+.end method
+
+.method public registerForViceRefreshInfo(Landroid/os/Handler;ILjava/lang/Object;)V
+    .locals 2
+    .param p1, "h"    # Landroid/os/Handler;
+    .param p2, "what"    # I
+    .param p3, "obj"    # Ljava/lang/Object;
+
+    .line 316
+    new-instance v0, Landroid/os/Registrant;
+
+    invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
+
+    .line 317
+    .local v0, "r":Landroid/os/Registrant;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mRefreshViceInfoRegistrants:Landroid/os/RegistrantList;
+
+    invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
+
+    .line 318
     return-void
 .end method
 
@@ -614,15 +614,14 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 202
+    .line 205
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mEmergencyCallbackModeRegistrant:Landroid/os/Registrant;
 
-    .line 201
+    .line 206
     return-void
 .end method
 
@@ -632,15 +631,14 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 207
+    .line 210
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mRingRegistrant:Landroid/os/Registrant;
 
-    .line 206
+    .line 211
     return-void
 .end method
 
@@ -650,15 +648,14 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .prologue
-    .line 192
+    .line 195
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mSsnRegistrant:Landroid/os/Registrant;
 
-    .line 191
+    .line 196
     return-void
 .end method
 
@@ -666,176 +663,154 @@
     .locals 3
     .param p1, "newState"    # Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
 
-    .prologue
-    .line 273
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
+    .line 276
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
 
-    monitor-enter v2
-
-    .line 274
-    :try_start_0
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
-
-    .line 275
-    .local v0, "oldState":Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
-    iput-object p1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+    monitor-enter v0
 
     .line 277
+    :try_start_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-ne v0, v1, :cond_0
+    .line 278
+    .local v1, "oldState":Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
 
-    monitor-exit v2
+    .line 280
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
 
-    .line 279
-    return-void
+    if-ne v1, v2, :cond_0
 
     .line 282
-    :cond_0
-    :try_start_1
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mRadioStateChangedRegistrants:Landroid/os/RegistrantList;
+    monitor-exit v0
 
-    invoke-virtual {v1}, Landroid/os/RegistrantList;->notifyRegistrants()V
-
-    .line 284
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
-
-    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v0}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    .line 289
-    :cond_1
-    :goto_0
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
-
-    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    invoke-virtual {v0}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    .line 290
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mNotAvailRegistrants:Landroid/os/RegistrantList;
-
-    invoke-virtual {v1}, Landroid/os/RegistrantList;->notifyRegistrants()V
-
-    .line 293
-    :cond_2
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
-
-    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isOn()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    invoke-virtual {v0}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isOn()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6
-
-    .line 297
-    :cond_3
-    :goto_1
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
-
-    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isOn()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_7
-
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
-
-    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    move-result v1
-
-    if-eqz v1, :cond_7
-
-    :cond_4
-    :goto_2
-    monitor-exit v2
-
-    .line 270
     return-void
 
     .line 285
-    :cond_5
-    :try_start_2
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mAvailRegistrants:Landroid/os/RegistrantList;
+    :cond_0
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mRadioStateChangedRegistrants:Landroid/os/RegistrantList;
 
-    invoke-virtual {v1}, Landroid/os/RegistrantList;->notifyRegistrants()V
+    invoke-virtual {v2}, Landroid/os/RegistrantList;->notifyRegistrants()V
 
-    .line 286
+    .line 287
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+
+    invoke-virtual {v2}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    .line 288
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mAvailRegistrants:Landroid/os/RegistrantList;
+
+    invoke-virtual {v2}, Landroid/os/RegistrantList;->notifyRegistrants()V
+
+    .line 289
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->onRadioAvailable()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    goto :goto_0
+    .line 292
+    :cond_1
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
 
-    .line 273
-    .end local v0    # "oldState":Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+    invoke-virtual {v2}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 293
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mNotAvailRegistrants:Landroid/os/RegistrantList;
+
+    invoke-virtual {v2}, Landroid/os/RegistrantList;->notifyRegistrants()V
+
+    .line 296
+    :cond_2
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+
+    invoke-virtual {v2}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isOn()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isOn()Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
+
+    .line 297
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mOnRegistrants:Landroid/os/RegistrantList;
+
+    invoke-virtual {v2}, Landroid/os/RegistrantList;->notifyRegistrants()V
+
+    .line 300
+    :cond_3
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+
+    invoke-virtual {v2}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isOn()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mState:Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
+
+    invoke-virtual {v2}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
+
+    move-result v2
+
+    if-nez v2, :cond_5
+
+    .line 301
+    :cond_4
+    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isOn()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    .line 303
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mOffOrNotAvailRegistrants:Landroid/os/RegistrantList;
+
+    invoke-virtual {v2}, Landroid/os/RegistrantList;->notifyRegistrants()V
+
+    .line 305
+    :cond_5
+    monitor-exit v0
+
+    .line 306
+    return-void
+
+    .line 305
+    .end local v1    # "oldState":Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
     :catchall_0
     move-exception v1
 
-    monitor-exit v2
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
-
-    .line 294
-    .restart local v0    # "oldState":Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;
-    :cond_6
-    :try_start_3
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mOnRegistrants:Landroid/os/RegistrantList;
-
-    invoke-virtual {v1}, Landroid/os/RegistrantList;->notifyRegistrants()V
-
-    goto :goto_1
-
-    .line 298
-    :cond_7
-    invoke-virtual {v0}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isOn()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    invoke-virtual {v0}, Lorg/codeaurora/ims/ImsPhoneCommandsInterface$RadioState;->isAvailable()Z
-
-    move-result v1
-
-    .line 297
-    if-eqz v1, :cond_4
-
-    .line 300
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mOffOrNotAvailRegistrants:Landroid/os/RegistrantList;
-
-    invoke-virtual {v1}, Landroid/os/RegistrantList;->notifyRegistrants()V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    goto :goto_2
 .end method
 
 .method public setUiccSubscription(IIIILandroid/os/Message;)V
@@ -846,8 +821,7 @@
     .param p4, "subStatus"    # I
     .param p5, "response"    # Landroid/os/Message;
 
-    .prologue
-    .line 309
+    .line 313
     return-void
 .end method
 
@@ -855,13 +829,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .prologue
-    .line 212
+    .line 215
     iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mRingRegistrant:Landroid/os/Registrant;
 
     invoke-virtual {v0}, Landroid/os/Registrant;->clear()V
 
-    .line 211
+    .line 216
     return-void
 .end method
 
@@ -869,13 +842,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .prologue
-    .line 197
+    .line 200
     iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mSsnRegistrant:Landroid/os/Registrant;
 
     invoke-virtual {v0}, Landroid/os/Registrant;->clear()V
 
-    .line 196
+    .line 201
     return-void
 .end method
 
@@ -883,45 +855,44 @@
     .locals 2
     .param p1, "h"    # Landroid/os/Handler;
 
-    .prologue
-    .line 134
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
+    .line 137
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
 
-    monitor-enter v1
+    monitor-enter v0
 
-    .line 135
+    .line 138
     :try_start_0
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mAvailRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mAvailRegistrants:Landroid/os/RegistrantList;
 
-    invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
+    invoke-virtual {v1, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
+
+    .line 139
+    monitor-exit v0
+
+    .line 140
+    return-void
+
+    .line 139
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit v1
-
-    .line 133
-    return-void
-
-    .line 134
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
+    throw v1
 .end method
 
 .method public unregisterForCallStateChanged(Landroid/os/Handler;)V
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .prologue
-    .line 187
+    .line 190
     iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mCallStateRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 186
+    .line 191
     return-void
 .end method
 
@@ -929,13 +900,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .prologue
-    .line 256
+    .line 259
     iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mExitEmergencyCallbackModeRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 255
+    .line 260
     return-void
 .end method
 
@@ -943,13 +913,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .prologue
-    .line 96
+    .line 99
     iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mImsNetworkStateChangedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 95
+    .line 100
     return-void
 .end method
 
@@ -957,13 +926,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .prologue
-    .line 234
+    .line 237
     iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mVoicePrivacyOffRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 233
+    .line 238
     return-void
 .end method
 
@@ -971,13 +939,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .prologue
-    .line 223
+    .line 226
     iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mVoicePrivacyOnRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 222
+    .line 227
     return-void
 .end method
 
@@ -985,140 +952,139 @@
     .locals 2
     .param p1, "h"    # Landroid/os/Handler;
 
-    .prologue
-    .line 154
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
+    .line 157
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
 
-    monitor-enter v1
+    monitor-enter v0
 
-    .line 155
+    .line 158
     :try_start_0
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mNotAvailRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mNotAvailRegistrants:Landroid/os/RegistrantList;
 
-    invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
+    invoke-virtual {v1, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
+
+    .line 159
+    monitor-exit v0
+
+    .line 160
+    return-void
+
+    .line 159
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit v1
-
-    .line 153
-    return-void
-
-    .line 154
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
+    throw v1
 .end method
 
 .method public unregisterForOffOrNotAvailable(Landroid/os/Handler;)V
     .locals 2
     .param p1, "h"    # Landroid/os/Handler;
 
-    .prologue
-    .line 173
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
+    .line 176
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
 
-    monitor-enter v1
+    monitor-enter v0
 
-    .line 174
+    .line 177
     :try_start_0
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mOffOrNotAvailRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mOffOrNotAvailRegistrants:Landroid/os/RegistrantList;
 
-    invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
+    invoke-virtual {v1, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
+
+    .line 178
+    monitor-exit v0
+
+    .line 179
+    return-void
+
+    .line 178
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit v1
-
-    .line 172
-    return-void
-
-    .line 173
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
+    throw v1
 .end method
 
 .method public unregisterForOn(Landroid/os/Handler;)V
     .locals 2
     .param p1, "h"    # Landroid/os/Handler;
 
-    .prologue
-    .line 113
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
+    .line 116
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
 
-    monitor-enter v1
+    monitor-enter v0
 
-    .line 114
+    .line 117
     :try_start_0
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mOnRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mOnRegistrants:Landroid/os/RegistrantList;
 
-    invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
+    invoke-virtual {v1, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
+
+    .line 118
+    monitor-exit v0
+
+    .line 119
+    return-void
+
+    .line 118
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit v1
-
-    .line 112
-    return-void
-
-    .line 113
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
+    throw v1
 .end method
 
 .method public unregisterForRadioStateChanged(Landroid/os/Handler;)V
     .locals 2
     .param p1, "h"    # Landroid/os/Handler;
 
-    .prologue
-    .line 85
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
+    .line 88
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mStateMonitor:Ljava/lang/Object;
 
-    monitor-enter v1
+    monitor-enter v0
 
-    .line 86
+    .line 89
     :try_start_0
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mRadioStateChangedRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mRadioStateChangedRegistrants:Landroid/os/RegistrantList;
 
-    invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
+    invoke-virtual {v1, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
+
+    .line 90
+    monitor-exit v0
+
+    .line 91
+    return-void
+
+    .line 90
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit v1
-
-    .line 84
-    return-void
-
-    .line 85
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
+    throw v1
 .end method
 
 .method public unregisterForRingbackTone(Landroid/os/Handler;)V
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .prologue
-    .line 245
+    .line 248
     iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneBaseCommands;->mRingbackToneRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 244
+    .line 249
     return-void
 .end method
