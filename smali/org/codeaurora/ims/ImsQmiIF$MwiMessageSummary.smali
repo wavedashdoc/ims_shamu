@@ -54,33 +54,32 @@
 .method public constructor <init>()V
     .locals 2
 
-    .prologue
-    const/4 v1, -0x1
-
-    const/4 v0, 0x0
-
-    .line 6810
+    .line 7399
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 6815
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->messageType_:I
+    .line 7404
+    const/4 v0, -0x1
 
-    .line 6832
-    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->newMessage_:I
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->messageType_:I
 
-    .line 6849
-    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->oldMessage_:I
+    .line 7421
+    const/4 v1, 0x0
 
-    .line 6866
-    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->newUrgent_:I
+    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->newMessage_:I
 
-    .line 6883
-    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->oldUrgent_:I
+    .line 7438
+    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->oldMessage_:I
 
-    .line 6931
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->cachedSize:I
+    .line 7455
+    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->newUrgent_:I
 
-    .line 6810
+    .line 7472
+    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->oldUrgent_:I
+
+    .line 7520
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->cachedSize:I
+
+    .line 7399
     return-void
 .end method
 
@@ -93,8 +92,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 7015
+    .line 7604
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;-><init>()V
@@ -115,8 +113,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 7009
+    .line 7598
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;-><init>()V
@@ -135,126 +132,119 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
     .locals 1
 
-    .prologue
-    .line 6898
+    .line 7487
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->clearMessageType()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
 
-    .line 6899
+    .line 7488
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->clearNewMessage()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
 
-    .line 6900
+    .line 7489
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->clearOldMessage()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
 
-    .line 6901
+    .line 7490
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->clearNewUrgent()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
 
-    .line 6902
+    .line 7491
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->clearOldUrgent()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
 
-    .line 6903
+    .line 7492
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->cachedSize:I
 
-    .line 6904
+    .line 7493
     return-object p0
 .end method
 
 .method public clearMessageType()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
     .locals 1
 
-    .prologue
-    .line 6824
+    .line 7413
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasMessageType:Z
 
-    .line 6825
+    .line 7414
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->messageType_:I
 
-    .line 6826
+    .line 7415
     return-object p0
 .end method
 
 .method public clearNewMessage()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
     .locals 1
 
-    .prologue
+    .line 7430
     const/4 v0, 0x0
 
-    .line 6841
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasNewMessage:Z
 
-    .line 6842
+    .line 7431
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->newMessage_:I
 
-    .line 6843
+    .line 7432
     return-object p0
 .end method
 
 .method public clearNewUrgent()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
     .locals 1
 
-    .prologue
+    .line 7464
     const/4 v0, 0x0
 
-    .line 6875
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasNewUrgent:Z
 
-    .line 6876
+    .line 7465
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->newUrgent_:I
 
-    .line 6877
+    .line 7466
     return-object p0
 .end method
 
 .method public clearOldMessage()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
     .locals 1
 
-    .prologue
+    .line 7447
     const/4 v0, 0x0
 
-    .line 6858
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasOldMessage:Z
 
-    .line 6859
+    .line 7448
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->oldMessage_:I
 
-    .line 6860
+    .line 7449
     return-object p0
 .end method
 
 .method public clearOldUrgent()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
     .locals 1
 
-    .prologue
+    .line 7481
     const/4 v0, 0x0
 
-    .line 6892
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasOldUrgent:Z
 
-    .line 6893
+    .line 7482
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->oldUrgent_:I
 
-    .line 6894
+    .line 7483
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 6934
+    .line 7523
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 6936
+    .line 7525
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->getSerializedSize()I
 
-    .line 6938
+    .line 7527
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->cachedSize:I
 
@@ -264,8 +254,7 @@
 .method public getMessageType()I
     .locals 1
 
-    .prologue
-    .line 6817
+    .line 7406
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->messageType_:I
 
     return v0
@@ -274,8 +263,7 @@
 .method public getNewMessage()I
     .locals 1
 
-    .prologue
-    .line 6833
+    .line 7422
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->newMessage_:I
 
     return v0
@@ -284,8 +272,7 @@
 .method public getNewUrgent()I
     .locals 1
 
-    .prologue
-    .line 6867
+    .line 7456
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->newUrgent_:I
 
     return v0
@@ -294,8 +281,7 @@
 .method public getOldMessage()I
     .locals 1
 
-    .prologue
-    .line 6850
+    .line 7439
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->oldMessage_:I
 
     return v0
@@ -304,8 +290,7 @@
 .method public getOldUrgent()I
     .locals 1
 
-    .prologue
-    .line 6884
+    .line 7473
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->oldUrgent_:I
 
     return v0
@@ -314,11 +299,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 6943
+    .line 7532
     const/4 v0, 0x0
 
-    .line 6944
+    .line 7533
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasMessageType()Z
 
@@ -326,21 +310,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 6946
+    .line 7534
+    const/4 v1, 0x1
+
+    .line 7535
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->getMessageType()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 6945
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 6948
+    .line 7537
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasNewMessage()Z
 
@@ -348,21 +332,21 @@
 
     if-eqz v1, :cond_1
 
-    .line 6950
+    .line 7538
+    const/4 v1, 0x2
+
+    .line 7539
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->getNewMessage()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x2
-
-    .line 6949
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 6952
+    .line 7541
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasOldMessage()Z
 
@@ -370,21 +354,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 6954
+    .line 7542
+    const/4 v1, 0x3
+
+    .line 7543
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->getOldMessage()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x3
-
-    .line 6953
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 6956
+    .line 7545
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasNewUrgent()Z
 
@@ -392,21 +376,21 @@
 
     if-eqz v1, :cond_3
 
-    .line 6958
+    .line 7546
+    const/4 v1, 0x4
+
+    .line 7547
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->getNewUrgent()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x4
-
-    .line 6957
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 6960
+    .line 7549
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasOldUrgent()Z
 
@@ -414,33 +398,32 @@
 
     if-eqz v1, :cond_4
 
-    .line 6962
+    .line 7550
+    const/4 v1, 0x5
+
+    .line 7551
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->getOldUrgent()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x5
-
-    .line 6961
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 6964
+    .line 7553
     :cond_4
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->cachedSize:I
 
-    .line 6965
+    .line 7554
     return v0
 .end method
 
 .method public hasMessageType()Z
     .locals 1
 
-    .prologue
-    .line 6816
+    .line 7405
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasMessageType:Z
 
     return v0
@@ -449,8 +432,7 @@
 .method public hasNewMessage()Z
     .locals 1
 
-    .prologue
-    .line 6834
+    .line 7423
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasNewMessage:Z
 
     return v0
@@ -459,8 +441,7 @@
 .method public hasNewUrgent()Z
     .locals 1
 
-    .prologue
-    .line 6868
+    .line 7457
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasNewUrgent:Z
 
     return v0
@@ -469,8 +450,7 @@
 .method public hasOldMessage()Z
     .locals 1
 
-    .prologue
-    .line 6851
+    .line 7440
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasOldMessage:Z
 
     return v0
@@ -479,8 +459,7 @@
 .method public hasOldUrgent()Z
     .locals 1
 
-    .prologue
-    .line 6885
+    .line 7474
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasOldUrgent:Z
 
     return v0
@@ -489,29 +468,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 6908
+    .line 7497
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 6969
+    .line 7396
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
@@ -523,110 +499,125 @@
         }
     .end annotation
 
-    .prologue
-    .line 6973
-    :cond_0
+    .line 7562
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 6974
+    .line 7563
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_6
 
-    .line 6978
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_4
+
+    const/16 v1, 0x15
+
+    if-eq v0, v1, :cond_3
+
+    const/16 v1, 0x1d
+
+    if-eq v0, v1, :cond_2
+
+    const/16 v1, 0x25
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x2d
+
+    if-eq v0, v1, :cond_0
+
+    .line 7567
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_5
 
-    .line 6979
+    .line 7568
     return-object p0
 
-    .line 6976
-    :sswitch_0
-    return-object p0
-
-    .line 6984
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->setMessageType(I)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
-
-    goto :goto_0
-
-    .line 6988
-    :sswitch_2
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->setNewMessage(I)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
-
-    goto :goto_0
-
-    .line 6992
-    :sswitch_3
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->setOldMessage(I)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
-
-    goto :goto_0
-
-    .line 6996
-    :sswitch_4
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->setNewUrgent(I)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
-
-    goto :goto_0
-
-    .line 7000
-    :sswitch_5
+    .line 7589
+    :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->setOldUrgent(I)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 6974
+    .line 7585
+    :cond_1
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->setNewUrgent(I)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
+
+    .line 7586
+    goto :goto_1
+
+    .line 7581
+    :cond_2
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->setOldMessage(I)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
+
+    .line 7582
+    goto :goto_1
+
+    .line 7577
+    :cond_3
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->setNewMessage(I)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
+
+    .line 7578
+    goto :goto_1
+
+    .line 7573
+    :cond_4
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->setMessageType(I)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
+
+    .line 7574
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x15 -> :sswitch_2
-        0x1d -> :sswitch_3
-        0x25 -> :sswitch_4
-        0x2d -> :sswitch_5
-    .end sparse-switch
+    .line 7593
+    .end local v0    # "tag":I
+    :cond_5
+    :goto_1
+    goto :goto_0
+
+    .line 7565
+    .restart local v0    # "tag":I
+    :cond_6
+    return-object p0
 .end method
 
 .method public setMessageType(I)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 6819
+    .line 7408
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasMessageType:Z
 
-    .line 6820
+    .line 7409
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->messageType_:I
 
-    .line 6821
+    .line 7410
     return-object p0
 .end method
 
@@ -634,16 +625,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 6836
+    .line 7425
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasNewMessage:Z
 
-    .line 6837
+    .line 7426
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->newMessage_:I
 
-    .line 6838
+    .line 7427
     return-object p0
 .end method
 
@@ -651,16 +641,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 6870
+    .line 7459
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasNewUrgent:Z
 
-    .line 6871
+    .line 7460
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->newUrgent_:I
 
-    .line 6872
+    .line 7461
     return-object p0
 .end method
 
@@ -668,16 +657,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 6853
+    .line 7442
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasOldMessage:Z
 
-    .line 6854
+    .line 7443
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->oldMessage_:I
 
-    .line 6855
+    .line 7444
     return-object p0
 .end method
 
@@ -685,16 +673,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 6887
+    .line 7476
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasOldUrgent:Z
 
-    .line 6888
+    .line 7477
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->oldUrgent_:I
 
-    .line 6889
+    .line 7478
     return-object p0
 .end method
 
@@ -707,24 +694,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 6914
+    .line 7503
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasMessageType()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 6915
+    .line 7504
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->getMessageType()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 6917
+    .line 7506
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasNewMessage()Z
 
@@ -732,16 +718,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 6918
+    .line 7507
+    const/4 v0, 0x2
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->getNewMessage()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x2
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 6920
+    .line 7509
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasOldMessage()Z
 
@@ -749,16 +735,16 @@
 
     if-eqz v0, :cond_2
 
-    .line 6921
+    .line 7510
+    const/4 v0, 0x3
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->getOldMessage()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x3
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 6923
+    .line 7512
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasNewUrgent()Z
 
@@ -766,16 +752,16 @@
 
     if-eqz v0, :cond_3
 
-    .line 6924
+    .line 7513
+    const/4 v0, 0x4
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->getNewUrgent()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x4
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 6926
+    .line 7515
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->hasOldUrgent()Z
 
@@ -783,16 +769,16 @@
 
     if-eqz v0, :cond_4
 
-    .line 6927
+    .line 7516
+    const/4 v0, 0x5
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;->getOldUrgent()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x5
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 6913
+    .line 7518
     :cond_4
     return-void
 .end method

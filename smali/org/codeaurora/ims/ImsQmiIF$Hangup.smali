@@ -54,37 +54,36 @@
 .method public constructor <init>()V
     .locals 2
 
-    .prologue
-    const/4 v1, 0x0
-
-    .line 2620
+    .line 2986
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 2625
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->connIndex_:I
+    .line 2991
+    const/4 v0, 0x0
 
-    .line 2642
-    iput-boolean v1, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->multiParty_:Z
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->connIndex_:I
 
-    .line 2659
-    const-string/jumbo v0, ""
+    .line 3008
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->multiParty_:Z
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->connUri_:Ljava/lang/String;
+    .line 3025
+    const-string v1, ""
 
-    .line 2676
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->confId_:I
+    iput-object v1, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->connUri_:Ljava/lang/String;
 
-    .line 2693
+    .line 3042
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->confId_:I
+
+    .line 3059
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->failCauseResponse_:Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
-    .line 2744
+    .line 3110
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->cachedSize:I
 
-    .line 2620
+    .line 2986
     return-void
 .end method
 
@@ -97,8 +96,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 2830
+    .line 3196
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;-><init>()V
@@ -119,8 +117,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 2824
+    .line 3190
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;-><init>()V
@@ -139,128 +136,121 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$Hangup;
     .locals 1
 
-    .prologue
-    .line 2711
+    .line 3077
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->clearConnIndex()Lorg/codeaurora/ims/ImsQmiIF$Hangup;
 
-    .line 2712
+    .line 3078
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->clearMultiParty()Lorg/codeaurora/ims/ImsQmiIF$Hangup;
 
-    .line 2713
+    .line 3079
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->clearConnUri()Lorg/codeaurora/ims/ImsQmiIF$Hangup;
 
-    .line 2714
+    .line 3080
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->clearConfId()Lorg/codeaurora/ims/ImsQmiIF$Hangup;
 
-    .line 2715
+    .line 3081
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->clearFailCauseResponse()Lorg/codeaurora/ims/ImsQmiIF$Hangup;
 
-    .line 2716
+    .line 3082
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->cachedSize:I
 
-    .line 2717
+    .line 3083
     return-object p0
 .end method
 
 .method public clearConfId()Lorg/codeaurora/ims/ImsQmiIF$Hangup;
     .locals 1
 
-    .prologue
+    .line 3051
     const/4 v0, 0x0
 
-    .line 2685
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConfId:Z
 
-    .line 2686
+    .line 3052
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->confId_:I
 
-    .line 2687
+    .line 3053
     return-object p0
 .end method
 
 .method public clearConnIndex()Lorg/codeaurora/ims/ImsQmiIF$Hangup;
     .locals 1
 
-    .prologue
+    .line 3000
     const/4 v0, 0x0
 
-    .line 2634
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConnIndex:Z
 
-    .line 2635
+    .line 3001
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->connIndex_:I
 
-    .line 2636
+    .line 3002
     return-object p0
 .end method
 
 .method public clearConnUri()Lorg/codeaurora/ims/ImsQmiIF$Hangup;
     .locals 1
 
-    .prologue
-    .line 2668
+    .line 3034
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConnUri:Z
 
-    .line 2669
-    const-string/jumbo v0, ""
+    .line 3035
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->connUri_:Ljava/lang/String;
 
-    .line 2670
+    .line 3036
     return-object p0
 .end method
 
 .method public clearFailCauseResponse()Lorg/codeaurora/ims/ImsQmiIF$Hangup;
     .locals 1
 
-    .prologue
-    .line 2705
+    .line 3071
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasFailCauseResponse:Z
 
-    .line 2706
+    .line 3072
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->failCauseResponse_:Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
-    .line 2707
+    .line 3073
     return-object p0
 .end method
 
 .method public clearMultiParty()Lorg/codeaurora/ims/ImsQmiIF$Hangup;
     .locals 1
 
-    .prologue
+    .line 3017
     const/4 v0, 0x0
 
-    .line 2651
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasMultiParty:Z
 
-    .line 2652
+    .line 3018
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->multiParty_:Z
 
-    .line 2653
+    .line 3019
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 2747
+    .line 3113
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 2749
+    .line 3115
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->getSerializedSize()I
 
-    .line 2751
+    .line 3117
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->cachedSize:I
 
@@ -270,8 +260,7 @@
 .method public getConfId()I
     .locals 1
 
-    .prologue
-    .line 2677
+    .line 3043
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->confId_:I
 
     return v0
@@ -280,8 +269,7 @@
 .method public getConnIndex()I
     .locals 1
 
-    .prologue
-    .line 2626
+    .line 2992
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->connIndex_:I
 
     return v0
@@ -290,8 +278,7 @@
 .method public getConnUri()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 2660
+    .line 3026
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->connUri_:Ljava/lang/String;
 
     return-object v0
@@ -300,8 +287,7 @@
 .method public getFailCauseResponse()Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
     .locals 1
 
-    .prologue
-    .line 2695
+    .line 3061
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->failCauseResponse_:Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
     return-object v0
@@ -310,8 +296,7 @@
 .method public getMultiParty()Z
     .locals 1
 
-    .prologue
-    .line 2643
+    .line 3009
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->multiParty_:Z
 
     return v0
@@ -320,11 +305,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 2756
+    .line 3122
     const/4 v0, 0x0
 
-    .line 2757
+    .line 3123
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConnIndex()Z
 
@@ -332,21 +316,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 2759
+    .line 3124
+    const/4 v1, 0x1
+
+    .line 3125
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->getConnIndex()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 2758
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 2761
+    .line 3127
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasMultiParty()Z
 
@@ -354,21 +338,21 @@
 
     if-eqz v1, :cond_1
 
-    .line 2763
+    .line 3128
+    const/4 v1, 0x2
+
+    .line 3129
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->getMultiParty()Z
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x2
-
-    .line 2762
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeBoolSize(IZ)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeBoolSize(IZ)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 2765
+    .line 3131
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConnUri()Z
 
@@ -376,21 +360,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 2767
+    .line 3132
+    const/4 v1, 0x3
+
+    .line 3133
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->getConnUri()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x3
-
-    .line 2766
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 2769
+    .line 3135
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConfId()Z
 
@@ -398,21 +382,21 @@
 
     if-eqz v1, :cond_3
 
-    .line 2771
+    .line 3136
+    const/4 v1, 0x4
+
+    .line 3137
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->getConfId()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x4
-
-    .line 2770
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 2773
+    .line 3139
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasFailCauseResponse()Z
 
@@ -420,33 +404,32 @@
 
     if-eqz v1, :cond_4
 
-    .line 2775
+    .line 3140
+    const/4 v1, 0x5
+
+    .line 3141
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->getFailCauseResponse()Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x5
-
-    .line 2774
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 2777
+    .line 3143
     :cond_4
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->cachedSize:I
 
-    .line 2778
+    .line 3144
     return v0
 .end method
 
 .method public hasConfId()Z
     .locals 1
 
-    .prologue
-    .line 2678
+    .line 3044
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConfId:Z
 
     return v0
@@ -455,8 +438,7 @@
 .method public hasConnIndex()Z
     .locals 1
 
-    .prologue
-    .line 2627
+    .line 2993
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConnIndex:Z
 
     return v0
@@ -465,8 +447,7 @@
 .method public hasConnUri()Z
     .locals 1
 
-    .prologue
-    .line 2661
+    .line 3027
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConnUri:Z
 
     return v0
@@ -475,8 +456,7 @@
 .method public hasFailCauseResponse()Z
     .locals 1
 
-    .prologue
-    .line 2694
+    .line 3060
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasFailCauseResponse:Z
 
     return v0
@@ -485,8 +465,7 @@
 .method public hasMultiParty()Z
     .locals 1
 
-    .prologue
-    .line 2644
+    .line 3010
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasMultiParty:Z
 
     return v0
@@ -495,33 +474,30 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 2721
+    .line 3087
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 2782
+    .line 2983
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$Hangup;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$Hangup;
-    .locals 3
+    .locals 2
     .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -529,115 +505,132 @@
         }
     .end annotation
 
-    .prologue
-    .line 2786
-    :cond_0
+    .line 3152
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 2787
+    .line 3153
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_6
 
-    .line 2791
+    const/16 v1, 0xd
+
+    if-eq v0, v1, :cond_4
+
+    const/16 v1, 0x10
+
+    if-eq v0, v1, :cond_3
+
+    const/16 v1, 0x1a
+
+    if-eq v0, v1, :cond_2
+
+    const/16 v1, 0x25
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x2a
+
+    if-eq v0, v1, :cond_0
+
+    .line 3157
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_0
+    if-nez v1, :cond_5
 
-    .line 2792
+    .line 3158
     return-object p0
 
-    .line 2789
-    :sswitch_0
-    return-object p0
-
-    .line 2797
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->setConnIndex(I)Lorg/codeaurora/ims/ImsQmiIF$Hangup;
-
-    goto :goto_0
-
-    .line 2801
-    :sswitch_2
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->setMultiParty(Z)Lorg/codeaurora/ims/ImsQmiIF$Hangup;
-
-    goto :goto_0
-
-    .line 2805
-    :sswitch_3
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->setConnUri(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$Hangup;
-
-    goto :goto_0
-
-    .line 2809
-    :sswitch_4
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->setConfId(I)Lorg/codeaurora/ims/ImsQmiIF$Hangup;
-
-    goto :goto_0
-
-    .line 2813
-    :sswitch_5
+    .line 3179
+    :cond_0
     new-instance v1, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
     invoke-direct {v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;-><init>()V
 
-    .line 2814
+    .line 3180
     .local v1, "value":Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2815
+    .line 3181
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->setFailCauseResponse(Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;)Lorg/codeaurora/ims/ImsQmiIF$Hangup;
 
-    goto :goto_0
+    .line 3182
+    goto :goto_1
 
-    .line 2787
+    .line 3175
+    .end local v1    # "value":Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
+    :cond_1
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->setConfId(I)Lorg/codeaurora/ims/ImsQmiIF$Hangup;
+
+    .line 3176
+    goto :goto_1
+
+    .line 3171
+    :cond_2
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->setConnUri(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$Hangup;
+
+    .line 3172
+    goto :goto_1
+
+    .line 3167
+    :cond_3
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->setMultiParty(Z)Lorg/codeaurora/ims/ImsQmiIF$Hangup;
+
+    .line 3168
+    goto :goto_1
+
+    .line 3163
+    :cond_4
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->setConnIndex(I)Lorg/codeaurora/ims/ImsQmiIF$Hangup;
+
+    .line 3164
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0xd -> :sswitch_1
-        0x10 -> :sswitch_2
-        0x1a -> :sswitch_3
-        0x25 -> :sswitch_4
-        0x2a -> :sswitch_5
-    .end sparse-switch
+    .line 3185
+    .end local v0    # "tag":I
+    :cond_5
+    :goto_1
+    goto :goto_0
+
+    .line 3155
+    .restart local v0    # "tag":I
+    :cond_6
+    return-object p0
 .end method
 
 .method public setConfId(I)Lorg/codeaurora/ims/ImsQmiIF$Hangup;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 2680
+    .line 3046
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConfId:Z
 
-    .line 2681
+    .line 3047
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->confId_:I
 
-    .line 2682
+    .line 3048
     return-object p0
 .end method
 
@@ -645,16 +638,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 2629
+    .line 2995
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConnIndex:Z
 
-    .line 2630
+    .line 2996
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->connIndex_:I
 
-    .line 2631
+    .line 2997
     return-object p0
 .end method
 
@@ -662,16 +654,15 @@
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 2663
+    .line 3029
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConnUri:Z
 
-    .line 2664
+    .line 3030
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->connUri_:Ljava/lang/String;
 
-    .line 2665
+    .line 3031
     return-object p0
 .end method
 
@@ -679,44 +670,42 @@
     .locals 1
     .param p1, "value"    # Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
-    .prologue
-    .line 2697
-    if-nez p1, :cond_0
+    .line 3063
+    if-eqz p1, :cond_0
 
-    .line 2698
+    .line 3066
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasFailCauseResponse:Z
+
+    .line 3067
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->failCauseResponse_:Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
+
+    .line 3068
+    return-object p0
+
+    .line 3064
+    :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
-
-    .line 2700
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasFailCauseResponse:Z
-
-    .line 2701
-    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->failCauseResponse_:Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
-
-    .line 2702
-    return-object p0
 .end method
 
 .method public setMultiParty(Z)Lorg/codeaurora/ims/ImsQmiIF$Hangup;
     .locals 1
     .param p1, "value"    # Z
 
-    .prologue
-    .line 2646
+    .line 3012
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasMultiParty:Z
 
-    .line 2647
+    .line 3013
     iput-boolean p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->multiParty_:Z
 
-    .line 2648
+    .line 3014
     return-object p0
 .end method
 
@@ -729,24 +718,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 2727
+    .line 3093
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConnIndex()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 2728
+    .line 3094
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->getConnIndex()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 2730
+    .line 3096
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasMultiParty()Z
 
@@ -754,16 +742,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 2731
+    .line 3097
+    const/4 v0, 0x2
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->getMultiParty()Z
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x2
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
-
-    .line 2733
+    .line 3099
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConnUri()Z
 
@@ -771,16 +759,16 @@
 
     if-eqz v0, :cond_2
 
-    .line 2734
+    .line 3100
+    const/4 v0, 0x3
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->getConnUri()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x3
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 2736
+    .line 3102
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasConfId()Z
 
@@ -788,16 +776,16 @@
 
     if-eqz v0, :cond_3
 
-    .line 2737
+    .line 3103
+    const/4 v0, 0x4
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->getConfId()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x4
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 2739
+    .line 3105
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->hasFailCauseResponse()Z
 
@@ -805,16 +793,16 @@
 
     if-eqz v0, :cond_4
 
-    .line 2740
+    .line 3106
+    const/4 v0, 0x5
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Hangup;->getFailCauseResponse()Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x5
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
-
-    .line 2726
+    .line 3108
     :cond_4
     return-void
 .end method

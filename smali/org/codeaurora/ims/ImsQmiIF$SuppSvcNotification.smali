@@ -21,6 +21,8 @@
 
 .field public static final HISTORY_INFO_FIELD_NUMBER:I = 0x7
 
+.field public static final HOLD_TONE_FIELD_NUMBER:I = 0x8
+
 .field public static final INDEX_FIELD_NUMBER:I = 0x3
 
 .field public static final NOTIFICATIONTYPE_FIELD_NUMBER:I = 0x1
@@ -43,6 +45,8 @@
 
 .field private hasHistoryInfo:Z
 
+.field private hasHoldTone:Z
+
 .field private hasIndex:Z
 
 .field private hasNotificationType:Z
@@ -52,6 +56,8 @@
 .field private hasType:Z
 
 .field private historyInfo_:Ljava/lang/String;
+
+.field private holdTone_:Z
 
 .field private index_:I
 
@@ -66,43 +72,43 @@
 .method public constructor <init>()V
     .locals 2
 
-    .prologue
-    const/4 v1, 0x0
-
-    .line 5983
+    .line 6509
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 5988
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->notificationType_:I
+    .line 6514
+    const/4 v0, 0x0
 
-    .line 6005
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->code_:I
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->notificationType_:I
 
-    .line 6022
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->index_:I
+    .line 6531
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->code_:I
 
-    .line 6039
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->type_:I
+    .line 6548
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->index_:I
 
-    .line 6056
-    const-string/jumbo v0, ""
+    .line 6565
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->type_:I
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->number_:Ljava/lang/String;
+    .line 6582
+    const-string v1, ""
 
-    .line 6073
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->connId_:I
+    iput-object v1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->number_:Ljava/lang/String;
 
-    .line 6090
-    const-string/jumbo v0, ""
+    .line 6599
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->connId_:I
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->historyInfo_:Ljava/lang/String;
+    .line 6616
+    iput-object v1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->historyInfo_:Ljava/lang/String;
 
-    .line 6146
+    .line 6633
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->holdTone_:Z
+
+    .line 6693
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->cachedSize:I
 
-    .line 5983
+    .line 6509
     return-void
 .end method
 
@@ -115,8 +121,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 6246
+    .line 6801
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;-><init>()V
@@ -137,8 +142,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 6240
+    .line 6795
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;-><init>()V
@@ -157,166 +161,175 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
     .locals 1
 
-    .prologue
-    .line 6105
+    .line 6648
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->clearNotificationType()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
 
-    .line 6106
+    .line 6649
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->clearCode()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
 
-    .line 6107
+    .line 6650
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->clearIndex()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
 
-    .line 6108
+    .line 6651
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->clearType()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
 
-    .line 6109
+    .line 6652
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->clearNumber()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
 
-    .line 6110
+    .line 6653
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->clearConnId()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
 
-    .line 6111
+    .line 6654
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->clearHistoryInfo()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
 
-    .line 6112
+    .line 6655
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->clearHoldTone()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
+
+    .line 6656
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->cachedSize:I
 
-    .line 6113
+    .line 6657
     return-object p0
 .end method
 
 .method public clearCode()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
     .locals 1
 
-    .prologue
+    .line 6540
     const/4 v0, 0x0
 
-    .line 6014
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasCode:Z
 
-    .line 6015
+    .line 6541
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->code_:I
 
-    .line 6016
+    .line 6542
     return-object p0
 .end method
 
 .method public clearConnId()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
     .locals 1
 
-    .prologue
+    .line 6608
     const/4 v0, 0x0
 
-    .line 6082
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasConnId:Z
 
-    .line 6083
+    .line 6609
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->connId_:I
 
-    .line 6084
+    .line 6610
     return-object p0
 .end method
 
 .method public clearHistoryInfo()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
     .locals 1
 
-    .prologue
-    .line 6099
+    .line 6625
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasHistoryInfo:Z
 
-    .line 6100
-    const-string/jumbo v0, ""
+    .line 6626
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->historyInfo_:Ljava/lang/String;
 
-    .line 6101
+    .line 6627
+    return-object p0
+.end method
+
+.method public clearHoldTone()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
+    .locals 1
+
+    .line 6642
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasHoldTone:Z
+
+    .line 6643
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->holdTone_:Z
+
+    .line 6644
     return-object p0
 .end method
 
 .method public clearIndex()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
     .locals 1
 
-    .prologue
+    .line 6557
     const/4 v0, 0x0
 
-    .line 6031
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasIndex:Z
 
-    .line 6032
+    .line 6558
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->index_:I
 
-    .line 6033
+    .line 6559
     return-object p0
 .end method
 
 .method public clearNotificationType()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
     .locals 1
 
-    .prologue
+    .line 6523
     const/4 v0, 0x0
 
-    .line 5997
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasNotificationType:Z
 
-    .line 5998
+    .line 6524
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->notificationType_:I
 
-    .line 5999
+    .line 6525
     return-object p0
 .end method
 
 .method public clearNumber()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
     .locals 1
 
-    .prologue
-    .line 6065
+    .line 6591
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasNumber:Z
 
-    .line 6066
-    const-string/jumbo v0, ""
+    .line 6592
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->number_:Ljava/lang/String;
 
-    .line 6067
+    .line 6593
     return-object p0
 .end method
 
 .method public clearType()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
     .locals 1
 
-    .prologue
+    .line 6574
     const/4 v0, 0x0
 
-    .line 6048
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasType:Z
 
-    .line 6049
+    .line 6575
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->type_:I
 
-    .line 6050
+    .line 6576
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 6149
+    .line 6696
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 6151
+    .line 6698
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getSerializedSize()I
 
-    .line 6153
+    .line 6700
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->cachedSize:I
 
@@ -326,8 +339,7 @@
 .method public getCode()I
     .locals 1
 
-    .prologue
-    .line 6006
+    .line 6532
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->code_:I
 
     return v0
@@ -336,8 +348,7 @@
 .method public getConnId()I
     .locals 1
 
-    .prologue
-    .line 6074
+    .line 6600
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->connId_:I
 
     return v0
@@ -346,18 +357,25 @@
 .method public getHistoryInfo()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 6091
+    .line 6617
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->historyInfo_:Ljava/lang/String;
 
     return-object v0
 .end method
 
+.method public getHoldTone()Z
+    .locals 1
+
+    .line 6634
+    iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->holdTone_:Z
+
+    return v0
+.end method
+
 .method public getIndex()I
     .locals 1
 
-    .prologue
-    .line 6023
+    .line 6549
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->index_:I
 
     return v0
@@ -366,8 +384,7 @@
 .method public getNotificationType()I
     .locals 1
 
-    .prologue
-    .line 5990
+    .line 6516
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->notificationType_:I
 
     return v0
@@ -376,8 +393,7 @@
 .method public getNumber()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 6057
+    .line 6583
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->number_:Ljava/lang/String;
 
     return-object v0
@@ -386,11 +402,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 6158
+    .line 6705
     const/4 v0, 0x0
 
-    .line 6159
+    .line 6706
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasNotificationType()Z
 
@@ -398,21 +413,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 6161
+    .line 6707
+    const/4 v1, 0x1
+
+    .line 6708
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getNotificationType()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 6160
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 6163
+    .line 6710
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasCode()Z
 
@@ -420,21 +435,21 @@
 
     if-eqz v1, :cond_1
 
-    .line 6165
+    .line 6711
+    const/4 v1, 0x2
+
+    .line 6712
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getCode()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x2
-
-    .line 6164
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 6167
+    .line 6714
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasIndex()Z
 
@@ -442,21 +457,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 6169
+    .line 6715
+    const/4 v1, 0x3
+
+    .line 6716
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getIndex()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x3
-
-    .line 6168
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 6171
+    .line 6718
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasType()Z
 
@@ -464,21 +479,21 @@
 
     if-eqz v1, :cond_3
 
-    .line 6173
+    .line 6719
+    const/4 v1, 0x4
+
+    .line 6720
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getType()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x4
-
-    .line 6172
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 6175
+    .line 6722
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasNumber()Z
 
@@ -486,21 +501,21 @@
 
     if-eqz v1, :cond_4
 
-    .line 6177
+    .line 6723
+    const/4 v1, 0x5
+
+    .line 6724
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getNumber()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x5
-
-    .line 6176
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 6179
+    .line 6726
     :cond_4
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasConnId()Z
 
@@ -508,21 +523,21 @@
 
     if-eqz v1, :cond_5
 
-    .line 6181
+    .line 6727
+    const/4 v1, 0x6
+
+    .line 6728
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getConnId()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x6
-
-    .line 6180
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 6183
+    .line 6730
     :cond_5
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasHistoryInfo()Z
 
@@ -530,33 +545,54 @@
 
     if-eqz v1, :cond_6
 
-    .line 6185
+    .line 6731
+    const/4 v1, 0x7
+
+    .line 6732
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getHistoryInfo()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x7
-
-    .line 6184
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 6187
+    .line 6734
     :cond_6
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasHoldTone()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_7
+
+    .line 6735
+    const/16 v1, 0x8
+
+    .line 6736
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getHoldTone()Z
+
+    move-result v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeBoolSize(IZ)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 6738
+    :cond_7
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->cachedSize:I
 
-    .line 6188
+    .line 6739
     return v0
 .end method
 
 .method public getType()I
     .locals 1
 
-    .prologue
-    .line 6040
+    .line 6566
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->type_:I
 
     return v0
@@ -565,8 +601,7 @@
 .method public hasCode()Z
     .locals 1
 
-    .prologue
-    .line 6007
+    .line 6533
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasCode:Z
 
     return v0
@@ -575,8 +610,7 @@
 .method public hasConnId()Z
     .locals 1
 
-    .prologue
-    .line 6075
+    .line 6601
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasConnId:Z
 
     return v0
@@ -585,9 +619,17 @@
 .method public hasHistoryInfo()Z
     .locals 1
 
-    .prologue
-    .line 6092
+    .line 6618
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasHistoryInfo:Z
+
+    return v0
+.end method
+
+.method public hasHoldTone()Z
+    .locals 1
+
+    .line 6635
+    iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasHoldTone:Z
 
     return v0
 .end method
@@ -595,8 +637,7 @@
 .method public hasIndex()Z
     .locals 1
 
-    .prologue
-    .line 6024
+    .line 6550
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasIndex:Z
 
     return v0
@@ -605,8 +646,7 @@
 .method public hasNotificationType()Z
     .locals 1
 
-    .prologue
-    .line 5989
+    .line 6515
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasNotificationType:Z
 
     return v0
@@ -615,8 +655,7 @@
 .method public hasNumber()Z
     .locals 1
 
-    .prologue
-    .line 6058
+    .line 6584
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasNumber:Z
 
     return v0
@@ -625,8 +664,7 @@
 .method public hasType()Z
     .locals 1
 
-    .prologue
-    .line 6041
+    .line 6567
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasType:Z
 
     return v0
@@ -635,29 +673,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 6117
+    .line 6661
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 6192
+    .line 6506
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
@@ -669,132 +704,170 @@
         }
     .end annotation
 
-    .prologue
-    .line 6196
-    :cond_0
+    .line 6747
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 6197
+    .line 6748
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_9
 
-    .line 6201
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_7
+
+    const/16 v1, 0x15
+
+    if-eq v0, v1, :cond_6
+
+    const/16 v1, 0x1d
+
+    if-eq v0, v1, :cond_5
+
+    const/16 v1, 0x25
+
+    if-eq v0, v1, :cond_4
+
+    const/16 v1, 0x2a
+
+    if-eq v0, v1, :cond_3
+
+    const/16 v1, 0x35
+
+    if-eq v0, v1, :cond_2
+
+    const/16 v1, 0x3a
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x40
+
+    if-eq v0, v1, :cond_0
+
+    .line 6752
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_8
 
-    .line 6202
+    .line 6753
     return-object p0
 
-    .line 6199
-    :sswitch_0
-    return-object p0
-
-    .line 6207
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+    .line 6786
+    :cond_0
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->setNotificationType(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->setHoldTone(Z)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 6211
-    :sswitch_2
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->setCode(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
-
-    goto :goto_0
-
-    .line 6215
-    :sswitch_3
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->setIndex(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
-
-    goto :goto_0
-
-    .line 6219
-    :sswitch_4
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->setType(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
-
-    goto :goto_0
-
-    .line 6223
-    :sswitch_5
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->setNumber(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
-
-    goto :goto_0
-
-    .line 6227
-    :sswitch_6
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->setConnId(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
-
-    goto :goto_0
-
-    .line 6231
-    :sswitch_7
+    .line 6782
+    :cond_1
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->setHistoryInfo(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
 
-    goto :goto_0
+    .line 6783
+    goto :goto_1
 
-    .line 6197
+    .line 6778
+    :cond_2
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->setConnId(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
+
+    .line 6779
+    goto :goto_1
+
+    .line 6774
+    :cond_3
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->setNumber(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
+
+    .line 6775
+    goto :goto_1
+
+    .line 6770
+    :cond_4
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->setType(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
+
+    .line 6771
+    goto :goto_1
+
+    .line 6766
+    :cond_5
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->setIndex(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
+
+    .line 6767
+    goto :goto_1
+
+    .line 6762
+    :cond_6
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->setCode(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
+
+    .line 6763
+    goto :goto_1
+
+    .line 6758
+    :cond_7
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->setNotificationType(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
+
+    .line 6759
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x15 -> :sswitch_2
-        0x1d -> :sswitch_3
-        0x25 -> :sswitch_4
-        0x2a -> :sswitch_5
-        0x35 -> :sswitch_6
-        0x3a -> :sswitch_7
-    .end sparse-switch
+    .line 6790
+    .end local v0    # "tag":I
+    :cond_8
+    :goto_1
+    goto :goto_0
+
+    .line 6750
+    .restart local v0    # "tag":I
+    :cond_9
+    return-object p0
 .end method
 
 .method public setCode(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 6009
+    .line 6535
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasCode:Z
 
-    .line 6010
+    .line 6536
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->code_:I
 
-    .line 6011
+    .line 6537
     return-object p0
 .end method
 
@@ -802,16 +875,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 6077
+    .line 6603
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasConnId:Z
 
-    .line 6078
+    .line 6604
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->connId_:I
 
-    .line 6079
+    .line 6605
     return-object p0
 .end method
 
@@ -819,16 +891,31 @@
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 6094
+    .line 6620
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasHistoryInfo:Z
 
-    .line 6095
+    .line 6621
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->historyInfo_:Ljava/lang/String;
 
-    .line 6096
+    .line 6622
+    return-object p0
+.end method
+
+.method public setHoldTone(Z)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;
+    .locals 1
+    .param p1, "value"    # Z
+
+    .line 6637
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasHoldTone:Z
+
+    .line 6638
+    iput-boolean p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->holdTone_:Z
+
+    .line 6639
     return-object p0
 .end method
 
@@ -836,16 +923,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 6026
+    .line 6552
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasIndex:Z
 
-    .line 6027
+    .line 6553
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->index_:I
 
-    .line 6028
+    .line 6554
     return-object p0
 .end method
 
@@ -853,16 +939,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 5992
+    .line 6518
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasNotificationType:Z
 
-    .line 5993
+    .line 6519
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->notificationType_:I
 
-    .line 5994
+    .line 6520
     return-object p0
 .end method
 
@@ -870,16 +955,15 @@
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 6060
+    .line 6586
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasNumber:Z
 
-    .line 6061
+    .line 6587
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->number_:Ljava/lang/String;
 
-    .line 6062
+    .line 6588
     return-object p0
 .end method
 
@@ -887,16 +971,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 6043
+    .line 6569
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasType:Z
 
-    .line 6044
+    .line 6570
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->type_:I
 
-    .line 6045
+    .line 6571
     return-object p0
 .end method
 
@@ -909,24 +992,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 6123
+    .line 6667
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasNotificationType()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 6124
+    .line 6668
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getNotificationType()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 6126
+    .line 6670
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasCode()Z
 
@@ -934,16 +1016,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 6127
+    .line 6671
+    const/4 v0, 0x2
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getCode()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x2
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 6129
+    .line 6673
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasIndex()Z
 
@@ -951,16 +1033,16 @@
 
     if-eqz v0, :cond_2
 
-    .line 6130
+    .line 6674
+    const/4 v0, 0x3
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getIndex()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x3
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 6132
+    .line 6676
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasType()Z
 
@@ -968,16 +1050,16 @@
 
     if-eqz v0, :cond_3
 
-    .line 6133
+    .line 6677
+    const/4 v0, 0x4
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getType()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x4
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 6135
+    .line 6679
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasNumber()Z
 
@@ -985,16 +1067,16 @@
 
     if-eqz v0, :cond_4
 
-    .line 6136
+    .line 6680
+    const/4 v0, 0x5
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getNumber()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x5
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 6138
+    .line 6682
     :cond_4
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasConnId()Z
 
@@ -1002,16 +1084,16 @@
 
     if-eqz v0, :cond_5
 
-    .line 6139
+    .line 6683
+    const/4 v0, 0x6
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getConnId()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x6
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 6141
+    .line 6685
     :cond_5
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasHistoryInfo()Z
 
@@ -1019,16 +1101,33 @@
 
     if-eqz v0, :cond_6
 
-    .line 6142
+    .line 6686
+    const/4 v0, 0x7
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getHistoryInfo()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x7
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 6122
+    .line 6688
     :cond_6
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->hasHoldTone()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    .line 6689
+    const/16 v0, 0x8
+
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getHoldTone()Z
+
+    move-result v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
+
+    .line 6691
+    :cond_7
     return-void
 .end method

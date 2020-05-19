@@ -36,26 +36,25 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 3965
+    .line 4389
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 3970
+    .line 4394
     const/4 v0, 0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->type_:I
 
-    .line 3987
+    .line 4411
     sget-object v0, Lcom/google/protobuf/micro/ByteStringMicro;->EMPTY:Lcom/google/protobuf/micro/ByteStringMicro;
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->extraInfo_:Lcom/google/protobuf/micro/ByteStringMicro;
 
-    .line 4023
+    .line 4447
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->cachedSize:I
 
-    .line 3965
+    .line 4389
     return-void
 .end method
 
@@ -68,8 +67,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 4083
+    .line 4507
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$Extra;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$Extra;-><init>()V
@@ -90,8 +88,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 4077
+    .line 4501
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$Extra;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$Extra;-><init>()V
@@ -110,71 +107,67 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$Extra;
     .locals 1
 
-    .prologue
-    .line 4002
+    .line 4426
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->clearType()Lorg/codeaurora/ims/ImsQmiIF$Extra;
 
-    .line 4003
+    .line 4427
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->clearExtraInfo()Lorg/codeaurora/ims/ImsQmiIF$Extra;
 
-    .line 4004
+    .line 4428
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->cachedSize:I
 
-    .line 4005
+    .line 4429
     return-object p0
 .end method
 
 .method public clearExtraInfo()Lorg/codeaurora/ims/ImsQmiIF$Extra;
     .locals 1
 
-    .prologue
-    .line 3996
+    .line 4420
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->hasExtraInfo:Z
 
-    .line 3997
+    .line 4421
     sget-object v0, Lcom/google/protobuf/micro/ByteStringMicro;->EMPTY:Lcom/google/protobuf/micro/ByteStringMicro;
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->extraInfo_:Lcom/google/protobuf/micro/ByteStringMicro;
 
-    .line 3998
+    .line 4422
     return-object p0
 .end method
 
 .method public clearType()Lorg/codeaurora/ims/ImsQmiIF$Extra;
     .locals 1
 
-    .prologue
-    .line 3979
+    .line 4403
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->hasType:Z
 
-    .line 3980
+    .line 4404
     const/4 v0, 0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->type_:I
 
-    .line 3981
+    .line 4405
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 4026
+    .line 4450
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 4028
+    .line 4452
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->getSerializedSize()I
 
-    .line 4030
+    .line 4454
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->cachedSize:I
 
@@ -184,8 +177,7 @@
 .method public getExtraInfo()Lcom/google/protobuf/micro/ByteStringMicro;
     .locals 1
 
-    .prologue
-    .line 3988
+    .line 4412
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->extraInfo_:Lcom/google/protobuf/micro/ByteStringMicro;
 
     return-object v0
@@ -194,11 +186,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 4035
+    .line 4459
     const/4 v0, 0x0
 
-    .line 4036
+    .line 4460
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->hasType()Z
 
@@ -206,21 +197,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 4038
+    .line 4461
+    const/4 v1, 0x1
+
+    .line 4462
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->getType()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 4037
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 4040
+    .line 4464
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->hasExtraInfo()Z
 
@@ -228,33 +219,32 @@
 
     if-eqz v1, :cond_1
 
-    .line 4042
+    .line 4465
+    const/4 v1, 0x2
+
+    .line 4466
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->getExtraInfo()Lcom/google/protobuf/micro/ByteStringMicro;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x2
-
-    .line 4041
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeBytesSize(ILcom/google/protobuf/micro/ByteStringMicro;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeBytesSize(ILcom/google/protobuf/micro/ByteStringMicro;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 4044
+    .line 4468
     :cond_1
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->cachedSize:I
 
-    .line 4045
+    .line 4469
     return v0
 .end method
 
 .method public getType()I
     .locals 1
 
-    .prologue
-    .line 3972
+    .line 4396
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->type_:I
 
     return v0
@@ -263,8 +253,7 @@
 .method public hasExtraInfo()Z
     .locals 1
 
-    .prologue
-    .line 3989
+    .line 4413
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->hasExtraInfo:Z
 
     return v0
@@ -273,8 +262,7 @@
 .method public hasType()Z
     .locals 1
 
-    .prologue
-    .line 3971
+    .line 4395
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->hasType:Z
 
     return v0
@@ -283,29 +271,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 4009
+    .line 4433
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 4049
+    .line 4386
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$Extra;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$Extra;
@@ -317,77 +302,80 @@
         }
     .end annotation
 
-    .prologue
-    .line 4053
-    :cond_0
+    .line 4477
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 4054
+    .line 4478
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_3
 
-    .line 4058
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x12
+
+    if-eq v0, v1, :cond_0
+
+    .line 4482
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_2
 
-    .line 4059
+    .line 4483
     return-object p0
 
-    .line 4056
-    :sswitch_0
-    return-object p0
-
-    .line 4064
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->setType(I)Lorg/codeaurora/ims/ImsQmiIF$Extra;
-
-    goto :goto_0
-
-    .line 4068
-    :sswitch_2
+    .line 4492
+    :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBytes()Lcom/google/protobuf/micro/ByteStringMicro;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->setExtraInfo(Lcom/google/protobuf/micro/ByteStringMicro;)Lorg/codeaurora/ims/ImsQmiIF$Extra;
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 4054
+    .line 4488
+    :cond_1
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->setType(I)Lorg/codeaurora/ims/ImsQmiIF$Extra;
+
+    .line 4489
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x12 -> :sswitch_2
-    .end sparse-switch
+    .line 4496
+    .end local v0    # "tag":I
+    :cond_2
+    :goto_1
+    goto :goto_0
+
+    .line 4480
+    .restart local v0    # "tag":I
+    :cond_3
+    return-object p0
 .end method
 
 .method public setExtraInfo(Lcom/google/protobuf/micro/ByteStringMicro;)Lorg/codeaurora/ims/ImsQmiIF$Extra;
     .locals 1
     .param p1, "value"    # Lcom/google/protobuf/micro/ByteStringMicro;
 
-    .prologue
-    .line 3991
+    .line 4415
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->hasExtraInfo:Z
 
-    .line 3992
+    .line 4416
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->extraInfo_:Lcom/google/protobuf/micro/ByteStringMicro;
 
-    .line 3993
+    .line 4417
     return-object p0
 .end method
 
@@ -395,16 +383,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 3974
+    .line 4398
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->hasType:Z
 
-    .line 3975
+    .line 4399
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Extra;->type_:I
 
-    .line 3976
+    .line 4400
     return-object p0
 .end method
 
@@ -417,24 +404,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 4015
+    .line 4439
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->hasType()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4016
+    .line 4440
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->getType()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 4018
+    .line 4442
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->hasExtraInfo()Z
 
@@ -442,16 +428,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 4019
+    .line 4443
+    const/4 v0, 0x2
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Extra;->getExtraInfo()Lcom/google/protobuf/micro/ByteStringMicro;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x2
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBytes(ILcom/google/protobuf/micro/ByteStringMicro;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBytes(ILcom/google/protobuf/micro/ByteStringMicro;)V
-
-    .line 4014
+    .line 4445
     :cond_1
     return-void
 .end method

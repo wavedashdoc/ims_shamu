@@ -30,21 +30,20 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 4464
+    .line 4888
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 4469
+    .line 4893
     const/4 v0, 0x0
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->state_:I
 
-    .line 4501
+    .line 4925
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->cachedSize:I
 
-    .line 4464
+    .line 4888
     return-void
 .end method
 
@@ -57,8 +56,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 4553
+    .line 4977
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;-><init>()V
@@ -79,8 +77,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 4547
+    .line 4971
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;-><init>()V
@@ -99,48 +96,45 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;
     .locals 1
 
-    .prologue
-    .line 4484
+    .line 4908
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->clearState()Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;
 
-    .line 4485
+    .line 4909
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->cachedSize:I
 
-    .line 4486
+    .line 4910
     return-object p0
 .end method
 
 .method public clearState()Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;
     .locals 1
 
-    .prologue
+    .line 4902
     const/4 v0, 0x0
 
-    .line 4478
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->hasState:Z
 
-    .line 4479
+    .line 4903
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->state_:I
 
-    .line 4480
+    .line 4904
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 4504
+    .line 4928
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 4506
+    .line 4930
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->getSerializedSize()I
 
-    .line 4508
+    .line 4932
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->cachedSize:I
 
@@ -150,11 +144,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 4513
+    .line 4937
     const/4 v0, 0x0
 
-    .line 4514
+    .line 4938
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->hasState()Z
 
@@ -162,33 +155,32 @@
 
     if-eqz v1, :cond_0
 
-    .line 4516
+    .line 4939
+    const/4 v1, 0x1
+
+    .line 4940
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->getState()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 4515
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 4518
+    .line 4942
     :cond_0
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->cachedSize:I
 
-    .line 4519
+    .line 4943
     return v0
 .end method
 
 .method public getState()I
     .locals 1
 
-    .prologue
-    .line 4471
+    .line 4895
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->state_:I
 
     return v0
@@ -197,8 +189,7 @@
 .method public hasState()Z
     .locals 1
 
-    .prologue
-    .line 4470
+    .line 4894
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->hasState:Z
 
     return v0
@@ -207,29 +198,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 4490
+    .line 4914
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 4523
+    .line 4885
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;
@@ -241,66 +229,62 @@
         }
     .end annotation
 
-    .prologue
-    .line 4527
-    :cond_0
+    .line 4951
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 4528
+    .line 4952
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_2
 
-    .line 4532
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_0
+
+    .line 4956
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_1
 
-    .line 4533
+    .line 4957
     return-object p0
 
-    .line 4530
-    :sswitch_0
-    return-object p0
-
-    .line 4538
-    :sswitch_1
+    .line 4962
+    :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->setState(I)Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;
 
+    .line 4966
+    .end local v0    # "tag":I
+    :cond_1
     goto :goto_0
 
-    .line 4528
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-    .end sparse-switch
+    .line 4954
+    .restart local v0    # "tag":I
+    :cond_2
+    return-object p0
 .end method
 
 .method public setState(I)Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 4473
+    .line 4897
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->hasState:Z
 
-    .line 4474
+    .line 4898
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->state_:I
 
-    .line 4475
+    .line 4899
     return-object p0
 .end method
 
@@ -313,24 +297,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 4496
+    .line 4920
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->hasState()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4497
+    .line 4921
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;->getState()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 4495
+    .line 4923
     :cond_0
     return-void
 .end method

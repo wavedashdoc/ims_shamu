@@ -24,8 +24,7 @@
 .field private srvStatusInfo_:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/List",
-            "<",
+            "Ljava/util/List<",
             "Lorg/codeaurora/ims/ImsQmiIF$Info;",
             ">;"
         }
@@ -37,24 +36,25 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 1100
+    .line 1316
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1105
+    .line 1320
+    nop
+
+    .line 1321
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 1104
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->srvStatusInfo_:Ljava/util/List;
 
-    .line 1153
+    .line 1369
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->cachedSize:I
 
-    .line 1100
+    .line 1316
     return-void
 .end method
 
@@ -67,8 +67,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 1207
+    .line 1423
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;-><init>()V
@@ -89,8 +88,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 1201
+    .line 1417
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;-><init>()V
@@ -110,88 +108,84 @@
     .locals 1
     .param p1, "value"    # Lorg/codeaurora/ims/ImsQmiIF$Info;
 
-    .prologue
-    .line 1121
-    if-nez p1, :cond_0
+    .line 1337
+    if-eqz p1, :cond_1
 
-    .line 1122
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw v0
-
-    .line 1124
-    :cond_0
+    .line 1340
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->srvStatusInfo_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    .line 1125
+    .line 1341
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->srvStatusInfo_:Ljava/util/List;
 
-    .line 1127
-    :cond_1
+    .line 1343
+    :cond_0
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->srvStatusInfo_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1128
+    .line 1344
     return-object p0
+
+    .line 1338
+    :cond_1
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
 .end method
 
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
     .locals 1
 
-    .prologue
-    .line 1136
+    .line 1352
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->clearSrvStatusInfo()Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
-    .line 1137
+    .line 1353
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->cachedSize:I
 
-    .line 1138
+    .line 1354
     return-object p0
 .end method
 
 .method public clearSrvStatusInfo()Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
     .locals 1
 
-    .prologue
-    .line 1131
+    .line 1347
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->srvStatusInfo_:Ljava/util/List;
 
-    .line 1132
+    .line 1348
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 1156
+    .line 1372
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 1158
+    .line 1374
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->getSerializedSize()I
 
-    .line 1160
+    .line 1376
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->cachedSize:I
 
@@ -201,62 +195,60 @@
 .method public getSerializedSize()I
     .locals 4
 
-    .prologue
-    .line 1165
-    const/4 v2, 0x0
+    .line 1381
+    const/4 v0, 0x0
 
-    .line 1166
-    .local v2, "size":I
+    .line 1382
+    .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->getSrvStatusInfoList()Ljava/util/List;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .local v1, "element$iterator":Ljava/util/Iterator;
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_0
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v2
 
-    check-cast v0, Lorg/codeaurora/ims/ImsQmiIF$Info;
+    check-cast v2, Lorg/codeaurora/ims/ImsQmiIF$Info;
 
-    .line 1168
-    .local v0, "element":Lorg/codeaurora/ims/ImsQmiIF$Info;
+    .line 1383
+    .local v2, "element":Lorg/codeaurora/ims/ImsQmiIF$Info;
     const/4 v3, 0x2
 
-    .line 1167
-    invoke-static {v3, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+    .line 1384
+    invoke-static {v3, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
 
     move-result v3
 
-    add-int/2addr v2, v3
+    add-int/2addr v0, v3
 
+    .line 1385
+    .end local v2    # "element":Lorg/codeaurora/ims/ImsQmiIF$Info;
     goto :goto_0
 
-    .line 1170
-    .end local v0    # "element":Lorg/codeaurora/ims/ImsQmiIF$Info;
+    .line 1386
     :cond_0
-    iput v2, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->cachedSize:I
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->cachedSize:I
 
-    .line 1171
-    return v2
+    .line 1387
+    return v0
 .end method
 
 .method public getSrvStatusInfo(I)Lorg/codeaurora/ims/ImsQmiIF$Info;
     .locals 1
     .param p1, "index"    # I
 
-    .prologue
-    .line 1111
+    .line 1327
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->srvStatusInfo_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -271,8 +263,7 @@
 .method public getSrvStatusInfoCount()I
     .locals 1
 
-    .prologue
-    .line 1109
+    .line 1325
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->srvStatusInfo_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -287,15 +278,13 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ljava/util/List",
-            "<",
+            "Ljava/util/List<",
             "Lorg/codeaurora/ims/ImsQmiIF$Info;",
             ">;"
         }
     .end annotation
 
-    .prologue
-    .line 1107
+    .line 1323
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->srvStatusInfo_:Ljava/util/List;
 
     return-object v0
@@ -304,33 +293,30 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 1142
+    .line 1358
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 1175
+    .line 1313
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
-    .locals 3
+    .locals 2
     .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -338,55 +324,56 @@
         }
     .end annotation
 
-    .prologue
-    .line 1179
-    :cond_0
+    .line 1395
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1180
+    .line 1396
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_2
 
-    .line 1184
+    const/16 v1, 0x12
+
+    if-eq v0, v1, :cond_0
+
+    .line 1400
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_0
+    if-nez v1, :cond_1
 
-    .line 1185
+    .line 1401
     return-object p0
 
-    .line 1182
-    :sswitch_0
-    return-object p0
-
-    .line 1190
-    :sswitch_1
+    .line 1406
+    :cond_0
     new-instance v1, Lorg/codeaurora/ims/ImsQmiIF$Info;
 
     invoke-direct {v1}, Lorg/codeaurora/ims/ImsQmiIF$Info;-><init>()V
 
-    .line 1191
+    .line 1407
     .local v1, "value":Lorg/codeaurora/ims/ImsQmiIF$Info;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1192
+    .line 1408
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->addSrvStatusInfo(Lorg/codeaurora/ims/ImsQmiIF$Info;)Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
-    goto :goto_0
-
-    .line 1180
+    .line 1409
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x12 -> :sswitch_1
-    .end sparse-switch
+    .line 1412
+    .end local v0    # "tag":I
+    .end local v1    # "value":Lorg/codeaurora/ims/ImsQmiIF$Info;
+    :cond_1
+    goto :goto_0
+
+    .line 1398
+    .restart local v0    # "tag":I
+    :cond_2
+    return-object p0
 .end method
 
 .method public setSrvStatusInfo(ILorg/codeaurora/ims/ImsQmiIF$Info;)Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
@@ -394,25 +381,24 @@
     .param p1, "index"    # I
     .param p2, "value"    # Lorg/codeaurora/ims/ImsQmiIF$Info;
 
-    .prologue
-    .line 1114
-    if-nez p2, :cond_0
+    .line 1330
+    if-eqz p2, :cond_0
 
-    .line 1115
+    .line 1333
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->srvStatusInfo_:Ljava/util/List;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    .line 1334
+    return-object p0
+
+    .line 1331
+    :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
-
-    .line 1117
-    :cond_0
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->srvStatusInfo_:Ljava/util/List;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
-
-    .line 1118
-    return-object p0
 .end method
 
 .method public writeTo(Lcom/google/protobuf/micro/CodedOutputStreamMicro;)V
@@ -424,40 +410,39 @@
         }
     .end annotation
 
-    .prologue
-    .line 1148
+    .line 1364
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;->getSrvStatusInfoList()Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, "element$iterator":Ljava/util/Iterator;
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lorg/codeaurora/ims/ImsQmiIF$Info;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    .line 1149
-    .local v0, "element":Lorg/codeaurora/ims/ImsQmiIF$Info;
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lorg/codeaurora/ims/ImsQmiIF$Info;
+
+    .line 1365
+    .local v1, "element":Lorg/codeaurora/ims/ImsQmiIF$Info;
     const/4 v2, 0x2
 
-    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+    invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
+    .line 1366
+    .end local v1    # "element":Lorg/codeaurora/ims/ImsQmiIF$Info;
     goto :goto_0
 
-    .line 1147
-    .end local v0    # "element":Lorg/codeaurora/ims/ImsQmiIF$Info;
+    .line 1367
     :cond_0
     return-void
 .end method

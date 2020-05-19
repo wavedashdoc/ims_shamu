@@ -30,21 +30,20 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 7582
+    .line 8171
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 7587
+    .line 8176
     const/4 v0, 0x0
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Resume;->callId_:I
 
-    .line 7619
+    .line 8208
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Resume;->cachedSize:I
 
-    .line 7582
+    .line 8171
     return-void
 .end method
 
@@ -57,8 +56,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 7671
+    .line 8260
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$Resume;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$Resume;-><init>()V
@@ -79,8 +77,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 7665
+    .line 8254
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$Resume;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$Resume;-><init>()V
@@ -99,48 +96,45 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$Resume;
     .locals 1
 
-    .prologue
-    .line 7602
+    .line 8191
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Resume;->clearCallId()Lorg/codeaurora/ims/ImsQmiIF$Resume;
 
-    .line 7603
+    .line 8192
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Resume;->cachedSize:I
 
-    .line 7604
+    .line 8193
     return-object p0
 .end method
 
 .method public clearCallId()Lorg/codeaurora/ims/ImsQmiIF$Resume;
     .locals 1
 
-    .prologue
+    .line 8185
     const/4 v0, 0x0
 
-    .line 7596
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Resume;->hasCallId:Z
 
-    .line 7597
+    .line 8186
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Resume;->callId_:I
 
-    .line 7598
+    .line 8187
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 7622
+    .line 8211
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Resume;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 7624
+    .line 8213
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Resume;->getSerializedSize()I
 
-    .line 7626
+    .line 8215
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Resume;->cachedSize:I
 
@@ -150,8 +144,7 @@
 .method public getCallId()I
     .locals 1
 
-    .prologue
-    .line 7588
+    .line 8177
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Resume;->callId_:I
 
     return v0
@@ -160,11 +153,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 7631
+    .line 8220
     const/4 v0, 0x0
 
-    .line 7632
+    .line 8221
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Resume;->hasCallId()Z
 
@@ -172,33 +164,32 @@
 
     if-eqz v1, :cond_0
 
-    .line 7634
+    .line 8222
+    const/4 v1, 0x1
+
+    .line 8223
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Resume;->getCallId()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 7633
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 7636
+    .line 8225
     :cond_0
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Resume;->cachedSize:I
 
-    .line 7637
+    .line 8226
     return v0
 .end method
 
 .method public hasCallId()Z
     .locals 1
 
-    .prologue
-    .line 7589
+    .line 8178
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Resume;->hasCallId:Z
 
     return v0
@@ -207,29 +198,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 7608
+    .line 8197
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 7641
+    .line 8168
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$Resume;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$Resume;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$Resume;
@@ -241,66 +229,62 @@
         }
     .end annotation
 
-    .prologue
-    .line 7645
-    :cond_0
+    .line 8234
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 7646
+    .line 8235
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_2
 
-    .line 7650
+    const/16 v1, 0xd
+
+    if-eq v0, v1, :cond_0
+
+    .line 8239
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$Resume;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_1
 
-    .line 7651
+    .line 8240
     return-object p0
 
-    .line 7648
-    :sswitch_0
-    return-object p0
-
-    .line 7656
-    :sswitch_1
+    .line 8245
+    :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Resume;->setCallId(I)Lorg/codeaurora/ims/ImsQmiIF$Resume;
 
+    .line 8249
+    .end local v0    # "tag":I
+    :cond_1
     goto :goto_0
 
-    .line 7646
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0xd -> :sswitch_1
-    .end sparse-switch
+    .line 8237
+    .restart local v0    # "tag":I
+    :cond_2
+    return-object p0
 .end method
 
 .method public setCallId(I)Lorg/codeaurora/ims/ImsQmiIF$Resume;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 7591
+    .line 8180
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Resume;->hasCallId:Z
 
-    .line 7592
+    .line 8181
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Resume;->callId_:I
 
-    .line 7593
+    .line 8182
     return-object p0
 .end method
 
@@ -313,24 +297,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 7614
+    .line 8203
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Resume;->hasCallId()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 7615
+    .line 8204
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Resume;->getCallId()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 7613
+    .line 8206
     :cond_0
     return-void
 .end method

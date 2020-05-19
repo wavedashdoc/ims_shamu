@@ -30,21 +30,20 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 3216
+    .line 3582
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 3221
+    .line 3587
     const/4 v0, 0x0
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->callType_:I
 
-    .line 3253
+    .line 3619
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->cachedSize:I
 
-    .line 3216
+    .line 3582
     return-void
 .end method
 
@@ -57,8 +56,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 3305
+    .line 3671
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;-><init>()V
@@ -79,8 +77,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 3299
+    .line 3665
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;-><init>()V
@@ -99,48 +96,45 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;
     .locals 1
 
-    .prologue
-    .line 3236
+    .line 3602
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->clearCallType()Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;
 
-    .line 3237
+    .line 3603
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->cachedSize:I
 
-    .line 3238
+    .line 3604
     return-object p0
 .end method
 
 .method public clearCallType()Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;
     .locals 1
 
-    .prologue
+    .line 3596
     const/4 v0, 0x0
 
-    .line 3230
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->hasCallType:Z
 
-    .line 3231
+    .line 3597
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->callType_:I
 
-    .line 3232
+    .line 3598
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 3256
+    .line 3622
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 3258
+    .line 3624
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->getSerializedSize()I
 
-    .line 3260
+    .line 3626
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->cachedSize:I
 
@@ -150,8 +144,7 @@
 .method public getCallType()I
     .locals 1
 
-    .prologue
-    .line 3223
+    .line 3589
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->callType_:I
 
     return v0
@@ -160,11 +153,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 3265
+    .line 3631
     const/4 v0, 0x0
 
-    .line 3266
+    .line 3632
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->hasCallType()Z
 
@@ -172,33 +164,32 @@
 
     if-eqz v1, :cond_0
 
-    .line 3268
+    .line 3633
+    const/4 v1, 0x1
+
+    .line 3634
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->getCallType()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 3267
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 3270
+    .line 3636
     :cond_0
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->cachedSize:I
 
-    .line 3271
+    .line 3637
     return v0
 .end method
 
 .method public hasCallType()Z
     .locals 1
 
-    .prologue
-    .line 3222
+    .line 3588
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->hasCallType:Z
 
     return v0
@@ -207,29 +198,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 3242
+    .line 3608
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 3275
+    .line 3579
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;
@@ -241,66 +229,62 @@
         }
     .end annotation
 
-    .prologue
-    .line 3279
-    :cond_0
+    .line 3645
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 3280
+    .line 3646
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_2
 
-    .line 3284
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_0
+
+    .line 3650
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_1
 
-    .line 3285
+    .line 3651
     return-object p0
 
-    .line 3282
-    :sswitch_0
-    return-object p0
-
-    .line 3290
-    :sswitch_1
+    .line 3656
+    :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->setCallType(I)Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;
 
+    .line 3660
+    .end local v0    # "tag":I
+    :cond_1
     goto :goto_0
 
-    .line 3280
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-    .end sparse-switch
+    .line 3648
+    .restart local v0    # "tag":I
+    :cond_2
+    return-object p0
 .end method
 
 .method public setCallType(I)Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 3225
+    .line 3591
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->hasCallType:Z
 
-    .line 3226
+    .line 3592
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->callType_:I
 
-    .line 3227
+    .line 3593
     return-object p0
 .end method
 
@@ -313,24 +297,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 3248
+    .line 3614
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->hasCallType()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3249
+    .line 3615
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;->getCallType()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 3247
+    .line 3617
     :cond_0
     return-void
 .end method

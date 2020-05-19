@@ -21,6 +21,10 @@
 
 .field public static final NOT_REGISTERED:I = 0x2
 
+.field public static final PASSOCIATEDURIS_FIELD_NUMBER:I = 0x5
+
+.field public static final RADIOTECH_FIELD_NUMBER:I = 0x4
+
 .field public static final REGISTERED:I = 0x1
 
 .field public static final REGISTERING:I = 0x3
@@ -39,40 +43,53 @@
 
 .field private hasErrorMessage:Z
 
+.field private hasPAssociatedUris:Z
+
+.field private hasRadioTech:Z
+
 .field private hasState:Z
+
+.field private pAssociatedUris_:Ljava/lang/String;
+
+.field private radioTech_:I
 
 .field private state_:I
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 2
 
-    .prologue
-    .line 3507
+    .line 3873
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 3517
+    .line 3883
     const/4 v0, 0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->state_:I
 
-    .line 3534
+    .line 3900
     const/4 v0, 0x0
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->errorCode_:I
 
-    .line 3551
-    const-string/jumbo v0, ""
+    .line 3917
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->errorMessage_:Ljava/lang/String;
 
-    .line 3591
-    const/4 v0, -0x1
+    .line 3934
+    const/4 v1, -0x1
 
-    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->cachedSize:I
+    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->radioTech_:I
 
-    .line 3507
+    .line 3951
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->pAssociatedUris_:Ljava/lang/String;
+
+    .line 3999
+    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->cachedSize:I
+
+    .line 3873
     return-void
 .end method
 
@@ -85,8 +102,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 3659
+    .line 4083
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$Registration;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;-><init>()V
@@ -107,8 +123,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 3653
+    .line 4077
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$Registration;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;-><init>()V
@@ -127,90 +142,125 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$Registration;
     .locals 1
 
-    .prologue
-    .line 3566
+    .line 3966
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->clearState()Lorg/codeaurora/ims/ImsQmiIF$Registration;
 
-    .line 3567
+    .line 3967
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->clearErrorCode()Lorg/codeaurora/ims/ImsQmiIF$Registration;
 
-    .line 3568
+    .line 3968
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->clearErrorMessage()Lorg/codeaurora/ims/ImsQmiIF$Registration;
 
-    .line 3569
+    .line 3969
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->clearRadioTech()Lorg/codeaurora/ims/ImsQmiIF$Registration;
+
+    .line 3970
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->clearPAssociatedUris()Lorg/codeaurora/ims/ImsQmiIF$Registration;
+
+    .line 3971
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->cachedSize:I
 
-    .line 3570
+    .line 3972
     return-object p0
 .end method
 
 .method public clearErrorCode()Lorg/codeaurora/ims/ImsQmiIF$Registration;
     .locals 1
 
-    .prologue
+    .line 3909
     const/4 v0, 0x0
 
-    .line 3543
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasErrorCode:Z
 
-    .line 3544
+    .line 3910
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->errorCode_:I
 
-    .line 3545
+    .line 3911
     return-object p0
 .end method
 
 .method public clearErrorMessage()Lorg/codeaurora/ims/ImsQmiIF$Registration;
     .locals 1
 
-    .prologue
-    .line 3560
+    .line 3926
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasErrorMessage:Z
 
-    .line 3561
-    const-string/jumbo v0, ""
+    .line 3927
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->errorMessage_:Ljava/lang/String;
 
-    .line 3562
+    .line 3928
+    return-object p0
+.end method
+
+.method public clearPAssociatedUris()Lorg/codeaurora/ims/ImsQmiIF$Registration;
+    .locals 1
+
+    .line 3960
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasPAssociatedUris:Z
+
+    .line 3961
+    const-string v0, ""
+
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->pAssociatedUris_:Ljava/lang/String;
+
+    .line 3962
+    return-object p0
+.end method
+
+.method public clearRadioTech()Lorg/codeaurora/ims/ImsQmiIF$Registration;
+    .locals 1
+
+    .line 3943
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasRadioTech:Z
+
+    .line 3944
+    const/4 v0, -0x1
+
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->radioTech_:I
+
+    .line 3945
     return-object p0
 .end method
 
 .method public clearState()Lorg/codeaurora/ims/ImsQmiIF$Registration;
     .locals 1
 
-    .prologue
-    .line 3526
+    .line 3892
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasState:Z
 
-    .line 3527
+    .line 3893
     const/4 v0, 0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->state_:I
 
-    .line 3528
+    .line 3894
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 3594
+    .line 4002
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 3596
+    .line 4004
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->getSerializedSize()I
 
-    .line 3598
+    .line 4006
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->cachedSize:I
 
@@ -220,8 +270,7 @@
 .method public getErrorCode()I
     .locals 1
 
-    .prologue
-    .line 3535
+    .line 3901
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->errorCode_:I
 
     return v0
@@ -230,21 +279,37 @@
 .method public getErrorMessage()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 3552
+    .line 3918
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->errorMessage_:Ljava/lang/String;
 
     return-object v0
 .end method
 
+.method public getPAssociatedUris()Ljava/lang/String;
+    .locals 1
+
+    .line 3952
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->pAssociatedUris_:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getRadioTech()I
+    .locals 1
+
+    .line 3936
+    iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->radioTech_:I
+
+    return v0
+.end method
+
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 3603
+    .line 4011
     const/4 v0, 0x0
 
-    .line 3604
+    .line 4012
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasState()Z
 
@@ -252,21 +317,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 3606
+    .line 4013
+    const/4 v1, 0x1
+
+    .line 4014
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->getState()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 3605
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 3608
+    .line 4016
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasErrorCode()Z
 
@@ -274,21 +339,21 @@
 
     if-eqz v1, :cond_1
 
-    .line 3610
+    .line 4017
+    const/4 v1, 0x2
+
+    .line 4018
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->getErrorCode()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x2
-
-    .line 3609
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 3612
+    .line 4020
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasErrorMessage()Z
 
@@ -296,33 +361,76 @@
 
     if-eqz v1, :cond_2
 
-    .line 3614
+    .line 4021
+    const/4 v1, 0x3
+
+    .line 4022
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->getErrorMessage()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x3
-
-    .line 3613
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 3616
+    .line 4024
     :cond_2
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasRadioTech()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    .line 4025
+    const/4 v1, 0x4
+
+    .line 4026
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->getRadioTech()I
+
+    move-result v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 4028
+    :cond_3
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasPAssociatedUris()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    .line 4029
+    const/4 v1, 0x5
+
+    .line 4030
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->getPAssociatedUris()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 4032
+    :cond_4
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->cachedSize:I
 
-    .line 3617
+    .line 4033
     return v0
 .end method
 
 .method public getState()I
     .locals 1
 
-    .prologue
-    .line 3519
+    .line 3885
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->state_:I
 
     return v0
@@ -331,8 +439,7 @@
 .method public hasErrorCode()Z
     .locals 1
 
-    .prologue
-    .line 3536
+    .line 3902
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasErrorCode:Z
 
     return v0
@@ -341,9 +448,26 @@
 .method public hasErrorMessage()Z
     .locals 1
 
-    .prologue
-    .line 3553
+    .line 3919
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasErrorMessage:Z
+
+    return v0
+.end method
+
+.method public hasPAssociatedUris()Z
+    .locals 1
+
+    .line 3953
+    iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasPAssociatedUris:Z
+
+    return v0
+.end method
+
+.method public hasRadioTech()Z
+    .locals 1
+
+    .line 3935
+    iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasRadioTech:Z
 
     return v0
 .end method
@@ -351,8 +475,7 @@
 .method public hasState()Z
     .locals 1
 
-    .prologue
-    .line 3518
+    .line 3884
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasState:Z
 
     return v0
@@ -361,29 +484,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 3574
+    .line 3976
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 3621
+    .line 3870
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$Registration;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$Registration;
@@ -395,88 +515,125 @@
         }
     .end annotation
 
-    .prologue
-    .line 3625
-    :cond_0
+    .line 4041
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 3626
+    .line 4042
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_6
 
-    .line 3630
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_4
+
+    const/16 v1, 0x15
+
+    if-eq v0, v1, :cond_3
+
+    const/16 v1, 0x1a
+
+    if-eq v0, v1, :cond_2
+
+    const/16 v1, 0x20
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x2a
+
+    if-eq v0, v1, :cond_0
+
+    .line 4046
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_5
 
-    .line 3631
+    .line 4047
     return-object p0
 
-    .line 3628
-    :sswitch_0
-    return-object p0
+    .line 4068
+    :cond_0
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
-    .line 3636
-    :sswitch_1
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->setPAssociatedUris(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$Registration;
+
+    goto :goto_1
+
+    .line 4064
+    :cond_1
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->setState(I)Lorg/codeaurora/ims/ImsQmiIF$Registration;
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->setRadioTech(I)Lorg/codeaurora/ims/ImsQmiIF$Registration;
 
-    goto :goto_0
+    .line 4065
+    goto :goto_1
 
-    .line 3640
-    :sswitch_2
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->setErrorCode(I)Lorg/codeaurora/ims/ImsQmiIF$Registration;
-
-    goto :goto_0
-
-    .line 3644
-    :sswitch_3
+    .line 4060
+    :cond_2
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->setErrorMessage(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$Registration;
 
-    goto :goto_0
+    .line 4061
+    goto :goto_1
 
-    .line 3626
+    .line 4056
+    :cond_3
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->setErrorCode(I)Lorg/codeaurora/ims/ImsQmiIF$Registration;
+
+    .line 4057
+    goto :goto_1
+
+    .line 4052
+    :cond_4
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->setState(I)Lorg/codeaurora/ims/ImsQmiIF$Registration;
+
+    .line 4053
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x15 -> :sswitch_2
-        0x1a -> :sswitch_3
-    .end sparse-switch
+    .line 4072
+    .end local v0    # "tag":I
+    :cond_5
+    :goto_1
+    goto :goto_0
+
+    .line 4044
+    .restart local v0    # "tag":I
+    :cond_6
+    return-object p0
 .end method
 
 .method public setErrorCode(I)Lorg/codeaurora/ims/ImsQmiIF$Registration;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 3538
+    .line 3904
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasErrorCode:Z
 
-    .line 3539
+    .line 3905
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->errorCode_:I
 
-    .line 3540
+    .line 3906
     return-object p0
 .end method
 
@@ -484,16 +641,47 @@
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 3555
+    .line 3921
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasErrorMessage:Z
 
-    .line 3556
+    .line 3922
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->errorMessage_:Ljava/lang/String;
 
-    .line 3557
+    .line 3923
+    return-object p0
+.end method
+
+.method public setPAssociatedUris(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$Registration;
+    .locals 1
+    .param p1, "value"    # Ljava/lang/String;
+
+    .line 3955
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasPAssociatedUris:Z
+
+    .line 3956
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->pAssociatedUris_:Ljava/lang/String;
+
+    .line 3957
+    return-object p0
+.end method
+
+.method public setRadioTech(I)Lorg/codeaurora/ims/ImsQmiIF$Registration;
+    .locals 1
+    .param p1, "value"    # I
+
+    .line 3938
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasRadioTech:Z
+
+    .line 3939
+    iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->radioTech_:I
+
+    .line 3940
     return-object p0
 .end method
 
@@ -501,16 +689,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 3521
+    .line 3887
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasState:Z
 
-    .line 3522
+    .line 3888
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Registration;->state_:I
 
-    .line 3523
+    .line 3889
     return-object p0
 .end method
 
@@ -523,24 +710,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 3580
+    .line 3982
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasState()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3581
+    .line 3983
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->getState()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 3583
+    .line 3985
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasErrorCode()Z
 
@@ -548,16 +734,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 3584
+    .line 3986
+    const/4 v0, 0x2
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->getErrorCode()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x2
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 3586
+    .line 3988
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasErrorMessage()Z
 
@@ -565,16 +751,50 @@
 
     if-eqz v0, :cond_2
 
-    .line 3587
+    .line 3989
+    const/4 v0, 0x3
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->getErrorMessage()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x3
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 3579
+    .line 3991
     :cond_2
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasRadioTech()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    .line 3992
+    const/4 v0, 0x4
+
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->getRadioTech()I
+
+    move-result v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
+
+    .line 3994
+    :cond_3
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasPAssociatedUris()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    .line 3995
+    const/4 v0, 0x5
+
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->getPAssociatedUris()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 3997
+    :cond_4
     return-void
 .end method

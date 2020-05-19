@@ -30,21 +30,20 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 4658
+    .line 5116
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 4663
+    .line 5121
     const/4 v0, 0x0
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->serviceClass_:I
 
-    .line 4695
+    .line 5153
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->cachedSize:I
 
-    .line 4658
+    .line 5116
     return-void
 .end method
 
@@ -57,8 +56,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 4747
+    .line 5205
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;-><init>()V
@@ -79,8 +77,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 4741
+    .line 5199
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;-><init>()V
@@ -99,48 +96,45 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;
     .locals 1
 
-    .prologue
-    .line 4678
+    .line 5136
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->clearServiceClass()Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;
 
-    .line 4679
+    .line 5137
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->cachedSize:I
 
-    .line 4680
+    .line 5138
     return-object p0
 .end method
 
 .method public clearServiceClass()Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;
     .locals 1
 
-    .prologue
+    .line 5130
     const/4 v0, 0x0
 
-    .line 4672
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->hasServiceClass:Z
 
-    .line 4673
+    .line 5131
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->serviceClass_:I
 
-    .line 4674
+    .line 5132
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 4698
+    .line 5156
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 4700
+    .line 5158
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->getSerializedSize()I
 
-    .line 4702
+    .line 5160
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->cachedSize:I
 
@@ -150,11 +144,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 4707
+    .line 5165
     const/4 v0, 0x0
 
-    .line 4708
+    .line 5166
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->hasServiceClass()Z
 
@@ -162,33 +155,32 @@
 
     if-eqz v1, :cond_0
 
-    .line 4710
+    .line 5167
+    const/4 v1, 0x1
+
+    .line 5168
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->getServiceClass()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 4709
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 4712
+    .line 5170
     :cond_0
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->cachedSize:I
 
-    .line 4713
+    .line 5171
     return v0
 .end method
 
 .method public getServiceClass()I
     .locals 1
 
-    .prologue
-    .line 4664
+    .line 5122
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->serviceClass_:I
 
     return v0
@@ -197,8 +189,7 @@
 .method public hasServiceClass()Z
     .locals 1
 
-    .prologue
-    .line 4665
+    .line 5123
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->hasServiceClass:Z
 
     return v0
@@ -207,29 +198,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 4684
+    .line 5142
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 4717
+    .line 5113
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;
@@ -241,66 +229,62 @@
         }
     .end annotation
 
-    .prologue
-    .line 4721
-    :cond_0
+    .line 5179
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 4722
+    .line 5180
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_2
 
-    .line 4726
+    const/16 v1, 0xd
+
+    if-eq v0, v1, :cond_0
+
+    .line 5184
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_1
 
-    .line 4727
+    .line 5185
     return-object p0
 
-    .line 4724
-    :sswitch_0
-    return-object p0
-
-    .line 4732
-    :sswitch_1
+    .line 5190
+    :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->setServiceClass(I)Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;
 
+    .line 5194
+    .end local v0    # "tag":I
+    :cond_1
     goto :goto_0
 
-    .line 4722
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0xd -> :sswitch_1
-    .end sparse-switch
+    .line 5182
+    .restart local v0    # "tag":I
+    :cond_2
+    return-object p0
 .end method
 
 .method public setServiceClass(I)Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 4667
+    .line 5125
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->hasServiceClass:Z
 
-    .line 4668
+    .line 5126
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->serviceClass_:I
 
-    .line 4669
+    .line 5127
     return-object p0
 .end method
 
@@ -313,24 +297,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 4690
+    .line 5148
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->hasServiceClass()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4691
+    .line 5149
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;->getServiceClass()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 4689
+    .line 5151
     :cond_0
     return-void
 .end method

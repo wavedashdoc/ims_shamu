@@ -60,42 +60,39 @@
 .method public constructor <init>()V
     .locals 2
 
-    .prologue
-    const/4 v1, -0x1
-
-    .line 4091
+    .line 4515
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 4096
+    .line 4520
     const/4 v0, 0x0
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->type_:I
 
-    .line 4113
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->srcTech_:I
+    .line 4537
+    const/4 v0, -0x1
 
-    .line 4130
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->targetTech_:I
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->srcTech_:I
 
-    .line 4147
-    const/4 v0, 0x0
+    .line 4554
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->targetTech_:I
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hoExtra_:Lorg/codeaurora/ims/ImsQmiIF$Extra;
+    .line 4571
+    const/4 v1, 0x0
 
-    .line 4167
-    const-string/jumbo v0, ""
+    iput-object v1, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hoExtra_:Lorg/codeaurora/ims/ImsQmiIF$Extra;
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->errorCode_:Ljava/lang/String;
+    .line 4591
+    const-string v1, ""
 
-    .line 4184
-    const-string/jumbo v0, ""
+    iput-object v1, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->errorCode_:Ljava/lang/String;
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->errorMessage_:Ljava/lang/String;
+    .line 4608
+    iput-object v1, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->errorMessage_:Ljava/lang/String;
 
-    .line 4236
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->cachedSize:I
+    .line 4660
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->cachedSize:I
 
-    .line 4091
+    .line 4515
     return-void
 .end method
 
@@ -108,8 +105,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 4330
+    .line 4754
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$Handover;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;-><init>()V
@@ -130,8 +126,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 4324
+    .line 4748
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$Handover;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;-><init>()V
@@ -150,153 +145,145 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$Handover;
     .locals 1
 
-    .prologue
-    .line 4199
+    .line 4623
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->clearType()Lorg/codeaurora/ims/ImsQmiIF$Handover;
 
-    .line 4200
+    .line 4624
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->clearSrcTech()Lorg/codeaurora/ims/ImsQmiIF$Handover;
 
-    .line 4201
+    .line 4625
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->clearTargetTech()Lorg/codeaurora/ims/ImsQmiIF$Handover;
 
-    .line 4202
+    .line 4626
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->clearHoExtra()Lorg/codeaurora/ims/ImsQmiIF$Handover;
 
-    .line 4203
+    .line 4627
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->clearErrorCode()Lorg/codeaurora/ims/ImsQmiIF$Handover;
 
-    .line 4204
+    .line 4628
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->clearErrorMessage()Lorg/codeaurora/ims/ImsQmiIF$Handover;
 
-    .line 4205
+    .line 4629
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->cachedSize:I
 
-    .line 4206
+    .line 4630
     return-object p0
 .end method
 
 .method public clearErrorCode()Lorg/codeaurora/ims/ImsQmiIF$Handover;
     .locals 1
 
-    .prologue
-    .line 4176
+    .line 4600
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasErrorCode:Z
 
-    .line 4177
-    const-string/jumbo v0, ""
+    .line 4601
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->errorCode_:Ljava/lang/String;
 
-    .line 4178
+    .line 4602
     return-object p0
 .end method
 
 .method public clearErrorMessage()Lorg/codeaurora/ims/ImsQmiIF$Handover;
     .locals 1
 
-    .prologue
-    .line 4193
+    .line 4617
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasErrorMessage:Z
 
-    .line 4194
-    const-string/jumbo v0, ""
+    .line 4618
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->errorMessage_:Ljava/lang/String;
 
-    .line 4195
+    .line 4619
     return-object p0
 .end method
 
 .method public clearHoExtra()Lorg/codeaurora/ims/ImsQmiIF$Handover;
     .locals 1
 
-    .prologue
-    .line 4159
+    .line 4583
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasHoExtra:Z
 
-    .line 4160
+    .line 4584
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hoExtra_:Lorg/codeaurora/ims/ImsQmiIF$Extra;
 
-    .line 4161
+    .line 4585
     return-object p0
 .end method
 
 .method public clearSrcTech()Lorg/codeaurora/ims/ImsQmiIF$Handover;
     .locals 1
 
-    .prologue
-    .line 4122
+    .line 4546
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasSrcTech:Z
 
-    .line 4123
+    .line 4547
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->srcTech_:I
 
-    .line 4124
+    .line 4548
     return-object p0
 .end method
 
 .method public clearTargetTech()Lorg/codeaurora/ims/ImsQmiIF$Handover;
     .locals 1
 
-    .prologue
-    .line 4139
+    .line 4563
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasTargetTech:Z
 
-    .line 4140
+    .line 4564
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->targetTech_:I
 
-    .line 4141
+    .line 4565
     return-object p0
 .end method
 
 .method public clearType()Lorg/codeaurora/ims/ImsQmiIF$Handover;
     .locals 1
 
-    .prologue
+    .line 4529
     const/4 v0, 0x0
 
-    .line 4105
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasType:Z
 
-    .line 4106
+    .line 4530
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->type_:I
 
-    .line 4107
+    .line 4531
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 4239
+    .line 4663
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 4241
+    .line 4665
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->getSerializedSize()I
 
-    .line 4243
+    .line 4667
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->cachedSize:I
 
@@ -306,8 +293,7 @@
 .method public getErrorCode()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 4168
+    .line 4592
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->errorCode_:Ljava/lang/String;
 
     return-object v0
@@ -316,8 +302,7 @@
 .method public getErrorMessage()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 4185
+    .line 4609
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->errorMessage_:Ljava/lang/String;
 
     return-object v0
@@ -326,8 +311,7 @@
 .method public getHoExtra()Lorg/codeaurora/ims/ImsQmiIF$Extra;
     .locals 1
 
-    .prologue
-    .line 4149
+    .line 4573
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hoExtra_:Lorg/codeaurora/ims/ImsQmiIF$Extra;
 
     return-object v0
@@ -336,11 +320,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 4248
+    .line 4672
     const/4 v0, 0x0
 
-    .line 4249
+    .line 4673
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasType()Z
 
@@ -348,21 +331,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 4251
+    .line 4674
+    const/4 v1, 0x1
+
+    .line 4675
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->getType()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 4250
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 4253
+    .line 4677
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasSrcTech()Z
 
@@ -370,21 +353,21 @@
 
     if-eqz v1, :cond_1
 
-    .line 4255
+    .line 4678
+    const/4 v1, 0x2
+
+    .line 4679
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->getSrcTech()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x2
-
-    .line 4254
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 4257
+    .line 4681
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasTargetTech()Z
 
@@ -392,21 +375,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 4259
+    .line 4682
+    const/4 v1, 0x3
+
+    .line 4683
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->getTargetTech()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x3
-
-    .line 4258
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 4261
+    .line 4685
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasHoExtra()Z
 
@@ -414,21 +397,21 @@
 
     if-eqz v1, :cond_3
 
-    .line 4263
+    .line 4686
+    const/4 v1, 0x4
+
+    .line 4687
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->getHoExtra()Lorg/codeaurora/ims/ImsQmiIF$Extra;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x4
-
-    .line 4262
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 4265
+    .line 4689
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasErrorCode()Z
 
@@ -436,21 +419,21 @@
 
     if-eqz v1, :cond_4
 
-    .line 4267
+    .line 4690
+    const/4 v1, 0x5
+
+    .line 4691
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->getErrorCode()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x5
-
-    .line 4266
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 4269
+    .line 4693
     :cond_4
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasErrorMessage()Z
 
@@ -458,33 +441,32 @@
 
     if-eqz v1, :cond_5
 
-    .line 4271
+    .line 4694
+    const/4 v1, 0x6
+
+    .line 4695
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->getErrorMessage()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x6
-
-    .line 4270
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 4273
+    .line 4697
     :cond_5
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->cachedSize:I
 
-    .line 4274
+    .line 4698
     return v0
 .end method
 
 .method public getSrcTech()I
     .locals 1
 
-    .prologue
-    .line 4115
+    .line 4539
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->srcTech_:I
 
     return v0
@@ -493,8 +475,7 @@
 .method public getTargetTech()I
     .locals 1
 
-    .prologue
-    .line 4132
+    .line 4556
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->targetTech_:I
 
     return v0
@@ -503,8 +484,7 @@
 .method public getType()I
     .locals 1
 
-    .prologue
-    .line 4098
+    .line 4522
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->type_:I
 
     return v0
@@ -513,8 +493,7 @@
 .method public hasErrorCode()Z
     .locals 1
 
-    .prologue
-    .line 4169
+    .line 4593
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasErrorCode:Z
 
     return v0
@@ -523,8 +502,7 @@
 .method public hasErrorMessage()Z
     .locals 1
 
-    .prologue
-    .line 4186
+    .line 4610
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasErrorMessage:Z
 
     return v0
@@ -533,8 +511,7 @@
 .method public hasHoExtra()Z
     .locals 1
 
-    .prologue
-    .line 4148
+    .line 4572
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasHoExtra:Z
 
     return v0
@@ -543,8 +520,7 @@
 .method public hasSrcTech()Z
     .locals 1
 
-    .prologue
-    .line 4114
+    .line 4538
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasSrcTech:Z
 
     return v0
@@ -553,8 +529,7 @@
 .method public hasTargetTech()Z
     .locals 1
 
-    .prologue
-    .line 4131
+    .line 4555
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasTargetTech:Z
 
     return v0
@@ -563,8 +538,7 @@
 .method public hasType()Z
     .locals 1
 
-    .prologue
-    .line 4097
+    .line 4521
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasType:Z
 
     return v0
@@ -573,33 +547,30 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 4210
+    .line 4634
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 4278
+    .line 4512
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$Handover;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$Handover;
-    .locals 3
+    .locals 2
     .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -607,127 +578,146 @@
         }
     .end annotation
 
-    .prologue
-    .line 4282
-    :cond_0
+    .line 4706
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 4283
+    .line 4707
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_7
 
-    .line 4287
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_5
+
+    const/16 v1, 0x10
+
+    if-eq v0, v1, :cond_4
+
+    const/16 v1, 0x18
+
+    if-eq v0, v1, :cond_3
+
+    const/16 v1, 0x22
+
+    if-eq v0, v1, :cond_2
+
+    const/16 v1, 0x2a
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x32
+
+    if-eq v0, v1, :cond_0
+
+    .line 4711
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_0
+    if-nez v1, :cond_6
 
-    .line 4288
+    .line 4712
     return-object p0
 
-    .line 4285
-    :sswitch_0
-    return-object p0
+    .line 4739
+    :cond_0
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
-    .line 4293
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+    move-result-object v1
 
-    move-result v2
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->setErrorMessage(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$Handover;
 
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->setType(I)Lorg/codeaurora/ims/ImsQmiIF$Handover;
+    goto :goto_1
 
-    goto :goto_0
+    .line 4735
+    :cond_1
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
-    .line 4297
-    :sswitch_2
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+    move-result-object v1
 
-    move-result v2
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->setErrorCode(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$Handover;
 
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->setSrcTech(I)Lorg/codeaurora/ims/ImsQmiIF$Handover;
+    .line 4736
+    goto :goto_1
 
-    goto :goto_0
-
-    .line 4301
-    :sswitch_3
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->setTargetTech(I)Lorg/codeaurora/ims/ImsQmiIF$Handover;
-
-    goto :goto_0
-
-    .line 4305
-    :sswitch_4
+    .line 4729
+    :cond_2
     new-instance v1, Lorg/codeaurora/ims/ImsQmiIF$Extra;
 
     invoke-direct {v1}, Lorg/codeaurora/ims/ImsQmiIF$Extra;-><init>()V
 
-    .line 4306
+    .line 4730
     .local v1, "value":Lorg/codeaurora/ims/ImsQmiIF$Extra;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 4307
+    .line 4731
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->setHoExtra(Lorg/codeaurora/ims/ImsQmiIF$Extra;)Lorg/codeaurora/ims/ImsQmiIF$Handover;
 
-    goto :goto_0
+    .line 4732
+    goto :goto_1
 
-    .line 4311
+    .line 4725
     .end local v1    # "value":Lorg/codeaurora/ims/ImsQmiIF$Extra;
-    :sswitch_5
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+    :cond_3
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
-    move-result-object v2
+    move-result v1
 
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->setErrorCode(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$Handover;
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->setTargetTech(I)Lorg/codeaurora/ims/ImsQmiIF$Handover;
 
-    goto :goto_0
+    .line 4726
+    goto :goto_1
 
-    .line 4315
-    :sswitch_6
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+    .line 4721
+    :cond_4
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
-    move-result-object v2
+    move-result v1
 
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->setErrorMessage(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$Handover;
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->setSrcTech(I)Lorg/codeaurora/ims/ImsQmiIF$Handover;
 
-    goto :goto_0
+    .line 4722
+    goto :goto_1
 
-    .line 4283
+    .line 4717
+    :cond_5
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->setType(I)Lorg/codeaurora/ims/ImsQmiIF$Handover;
+
+    .line 4718
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x10 -> :sswitch_2
-        0x18 -> :sswitch_3
-        0x22 -> :sswitch_4
-        0x2a -> :sswitch_5
-        0x32 -> :sswitch_6
-    .end sparse-switch
+    .line 4743
+    .end local v0    # "tag":I
+    :cond_6
+    :goto_1
+    goto :goto_0
+
+    .line 4709
+    .restart local v0    # "tag":I
+    :cond_7
+    return-object p0
 .end method
 
 .method public setErrorCode(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$Handover;
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 4171
+    .line 4595
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasErrorCode:Z
 
-    .line 4172
+    .line 4596
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->errorCode_:Ljava/lang/String;
 
-    .line 4173
+    .line 4597
     return-object p0
 .end method
 
@@ -735,16 +725,15 @@
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 4188
+    .line 4612
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasErrorMessage:Z
 
-    .line 4189
+    .line 4613
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->errorMessage_:Ljava/lang/String;
 
-    .line 4190
+    .line 4614
     return-object p0
 .end method
 
@@ -752,44 +741,42 @@
     .locals 1
     .param p1, "value"    # Lorg/codeaurora/ims/ImsQmiIF$Extra;
 
-    .prologue
-    .line 4151
-    if-nez p1, :cond_0
+    .line 4575
+    if-eqz p1, :cond_0
 
-    .line 4152
+    .line 4578
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasHoExtra:Z
+
+    .line 4579
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hoExtra_:Lorg/codeaurora/ims/ImsQmiIF$Extra;
+
+    .line 4580
+    return-object p0
+
+    .line 4576
+    :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
-
-    .line 4154
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasHoExtra:Z
-
-    .line 4155
-    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hoExtra_:Lorg/codeaurora/ims/ImsQmiIF$Extra;
-
-    .line 4156
-    return-object p0
 .end method
 
 .method public setSrcTech(I)Lorg/codeaurora/ims/ImsQmiIF$Handover;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 4117
+    .line 4541
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasSrcTech:Z
 
-    .line 4118
+    .line 4542
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->srcTech_:I
 
-    .line 4119
+    .line 4543
     return-object p0
 .end method
 
@@ -797,16 +784,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 4134
+    .line 4558
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasTargetTech:Z
 
-    .line 4135
+    .line 4559
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->targetTech_:I
 
-    .line 4136
+    .line 4560
     return-object p0
 .end method
 
@@ -814,16 +800,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 4100
+    .line 4524
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasType:Z
 
-    .line 4101
+    .line 4525
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Handover;->type_:I
 
-    .line 4102
+    .line 4526
     return-object p0
 .end method
 
@@ -836,24 +821,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 4216
+    .line 4640
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasType()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4217
+    .line 4641
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->getType()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 4219
+    .line 4643
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasSrcTech()Z
 
@@ -861,16 +845,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 4220
+    .line 4644
+    const/4 v0, 0x2
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->getSrcTech()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x2
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 4222
+    .line 4646
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasTargetTech()Z
 
@@ -878,16 +862,16 @@
 
     if-eqz v0, :cond_2
 
-    .line 4223
+    .line 4647
+    const/4 v0, 0x3
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->getTargetTech()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x3
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 4225
+    .line 4649
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasHoExtra()Z
 
@@ -895,16 +879,16 @@
 
     if-eqz v0, :cond_3
 
-    .line 4226
+    .line 4650
+    const/4 v0, 0x4
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->getHoExtra()Lorg/codeaurora/ims/ImsQmiIF$Extra;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x4
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
-
-    .line 4228
+    .line 4652
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasErrorCode()Z
 
@@ -912,16 +896,16 @@
 
     if-eqz v0, :cond_4
 
-    .line 4229
+    .line 4653
+    const/4 v0, 0x5
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->getErrorCode()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x5
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 4231
+    .line 4655
     :cond_4
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->hasErrorMessage()Z
 
@@ -929,16 +913,16 @@
 
     if-eqz v0, :cond_5
 
-    .line 4232
+    .line 4656
+    const/4 v0, 0x6
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Handover;->getErrorMessage()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x6
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 4215
+    .line 4658
     :cond_5
     return-void
 .end method

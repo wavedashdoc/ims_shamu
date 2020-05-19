@@ -66,39 +66,38 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    const/4 v0, 0x0
-
-    .line 5586
+    .line 6112
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 5591
+    .line 6117
+    const/4 v0, 0x0
+
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->year_:I
 
-    .line 5608
+    .line 6134
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->month_:I
 
-    .line 5625
+    .line 6151
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->day_:I
 
-    .line 5642
+    .line 6168
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hour_:I
 
-    .line 5659
+    .line 6185
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->minute_:I
 
-    .line 5676
+    .line 6202
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->second_:I
 
-    .line 5693
+    .line 6219
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->timezone_:I
 
-    .line 5749
+    .line 6275
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->cachedSize:I
 
-    .line 5586
+    .line 6112
     return-void
 .end method
 
@@ -111,8 +110,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 5849
+    .line 6375
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;-><init>()V
@@ -133,8 +131,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 5843
+    .line 6369
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;-><init>()V
@@ -153,162 +150,153 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
     .locals 1
 
-    .prologue
-    .line 5708
+    .line 6234
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->clearYear()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    .line 5709
+    .line 6235
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->clearMonth()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    .line 5710
+    .line 6236
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->clearDay()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    .line 5711
+    .line 6237
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->clearHour()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    .line 5712
+    .line 6238
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->clearMinute()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    .line 5713
+    .line 6239
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->clearSecond()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    .line 5714
+    .line 6240
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->clearTimezone()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    .line 5715
+    .line 6241
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->cachedSize:I
 
-    .line 5716
+    .line 6242
     return-object p0
 .end method
 
 .method public clearDay()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
     .locals 1
 
-    .prologue
+    .line 6160
     const/4 v0, 0x0
 
-    .line 5634
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasDay:Z
 
-    .line 5635
+    .line 6161
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->day_:I
 
-    .line 5636
+    .line 6162
     return-object p0
 .end method
 
 .method public clearHour()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
     .locals 1
 
-    .prologue
+    .line 6177
     const/4 v0, 0x0
 
-    .line 5651
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasHour:Z
 
-    .line 5652
+    .line 6178
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hour_:I
 
-    .line 5653
+    .line 6179
     return-object p0
 .end method
 
 .method public clearMinute()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
     .locals 1
 
-    .prologue
+    .line 6194
     const/4 v0, 0x0
 
-    .line 5668
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasMinute:Z
 
-    .line 5669
+    .line 6195
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->minute_:I
 
-    .line 5670
+    .line 6196
     return-object p0
 .end method
 
 .method public clearMonth()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
     .locals 1
 
-    .prologue
+    .line 6143
     const/4 v0, 0x0
 
-    .line 5617
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasMonth:Z
 
-    .line 5618
+    .line 6144
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->month_:I
 
-    .line 5619
+    .line 6145
     return-object p0
 .end method
 
 .method public clearSecond()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
     .locals 1
 
-    .prologue
+    .line 6211
     const/4 v0, 0x0
 
-    .line 5685
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasSecond:Z
 
-    .line 5686
+    .line 6212
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->second_:I
 
-    .line 5687
+    .line 6213
     return-object p0
 .end method
 
 .method public clearTimezone()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
     .locals 1
 
-    .prologue
+    .line 6228
     const/4 v0, 0x0
 
-    .line 5702
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasTimezone:Z
 
-    .line 5703
+    .line 6229
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->timezone_:I
 
-    .line 5704
+    .line 6230
     return-object p0
 .end method
 
 .method public clearYear()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
     .locals 1
 
-    .prologue
+    .line 6126
     const/4 v0, 0x0
 
-    .line 5600
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasYear:Z
 
-    .line 5601
+    .line 6127
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->year_:I
 
-    .line 5602
+    .line 6128
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 5752
+    .line 6278
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 5754
+    .line 6280
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getSerializedSize()I
 
-    .line 5756
+    .line 6282
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->cachedSize:I
 
@@ -318,8 +306,7 @@
 .method public getDay()I
     .locals 1
 
-    .prologue
-    .line 5626
+    .line 6152
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->day_:I
 
     return v0
@@ -328,8 +315,7 @@
 .method public getHour()I
     .locals 1
 
-    .prologue
-    .line 5643
+    .line 6169
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hour_:I
 
     return v0
@@ -338,8 +324,7 @@
 .method public getMinute()I
     .locals 1
 
-    .prologue
-    .line 5660
+    .line 6186
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->minute_:I
 
     return v0
@@ -348,8 +333,7 @@
 .method public getMonth()I
     .locals 1
 
-    .prologue
-    .line 5609
+    .line 6135
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->month_:I
 
     return v0
@@ -358,8 +342,7 @@
 .method public getSecond()I
     .locals 1
 
-    .prologue
-    .line 5677
+    .line 6203
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->second_:I
 
     return v0
@@ -368,11 +351,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 5761
+    .line 6287
     const/4 v0, 0x0
 
-    .line 5762
+    .line 6288
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasYear()Z
 
@@ -380,21 +362,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 5764
+    .line 6289
+    const/4 v1, 0x1
+
+    .line 6290
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getYear()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 5763
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 5766
+    .line 6292
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasMonth()Z
 
@@ -402,21 +384,21 @@
 
     if-eqz v1, :cond_1
 
-    .line 5768
+    .line 6293
+    const/4 v1, 0x2
+
+    .line 6294
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getMonth()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x2
-
-    .line 5767
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 5770
+    .line 6296
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasDay()Z
 
@@ -424,21 +406,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 5772
+    .line 6297
+    const/4 v1, 0x3
+
+    .line 6298
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getDay()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x3
-
-    .line 5771
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 5774
+    .line 6300
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasHour()Z
 
@@ -446,21 +428,21 @@
 
     if-eqz v1, :cond_3
 
-    .line 5776
+    .line 6301
+    const/4 v1, 0x4
+
+    .line 6302
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getHour()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x4
-
-    .line 5775
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 5778
+    .line 6304
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasMinute()Z
 
@@ -468,21 +450,21 @@
 
     if-eqz v1, :cond_4
 
-    .line 5780
+    .line 6305
+    const/4 v1, 0x5
+
+    .line 6306
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getMinute()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x5
-
-    .line 5779
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 5782
+    .line 6308
     :cond_4
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasSecond()Z
 
@@ -490,21 +472,21 @@
 
     if-eqz v1, :cond_5
 
-    .line 5784
+    .line 6309
+    const/4 v1, 0x6
+
+    .line 6310
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getSecond()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x6
-
-    .line 5783
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 5786
+    .line 6312
     :cond_5
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasTimezone()Z
 
@@ -512,33 +494,32 @@
 
     if-eqz v1, :cond_6
 
-    .line 5788
+    .line 6313
+    const/4 v1, 0x7
+
+    .line 6314
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getTimezone()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x7
-
-    .line 5787
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 5790
+    .line 6316
     :cond_6
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->cachedSize:I
 
-    .line 5791
+    .line 6317
     return v0
 .end method
 
 .method public getTimezone()I
     .locals 1
 
-    .prologue
-    .line 5694
+    .line 6220
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->timezone_:I
 
     return v0
@@ -547,8 +528,7 @@
 .method public getYear()I
     .locals 1
 
-    .prologue
-    .line 5592
+    .line 6118
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->year_:I
 
     return v0
@@ -557,8 +537,7 @@
 .method public hasDay()Z
     .locals 1
 
-    .prologue
-    .line 5627
+    .line 6153
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasDay:Z
 
     return v0
@@ -567,8 +546,7 @@
 .method public hasHour()Z
     .locals 1
 
-    .prologue
-    .line 5644
+    .line 6170
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasHour:Z
 
     return v0
@@ -577,8 +555,7 @@
 .method public hasMinute()Z
     .locals 1
 
-    .prologue
-    .line 5661
+    .line 6187
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasMinute:Z
 
     return v0
@@ -587,8 +564,7 @@
 .method public hasMonth()Z
     .locals 1
 
-    .prologue
-    .line 5610
+    .line 6136
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasMonth:Z
 
     return v0
@@ -597,8 +573,7 @@
 .method public hasSecond()Z
     .locals 1
 
-    .prologue
-    .line 5678
+    .line 6204
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasSecond:Z
 
     return v0
@@ -607,8 +582,7 @@
 .method public hasTimezone()Z
     .locals 1
 
-    .prologue
-    .line 5695
+    .line 6221
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasTimezone:Z
 
     return v0
@@ -617,8 +591,7 @@
 .method public hasYear()Z
     .locals 1
 
-    .prologue
-    .line 5593
+    .line 6119
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasYear:Z
 
     return v0
@@ -627,29 +600,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 5720
+    .line 6246
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 5795
+    .line 6109
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
@@ -661,132 +631,155 @@
         }
     .end annotation
 
-    .prologue
-    .line 5799
-    :cond_0
+    .line 6325
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 5800
+    .line 6326
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_8
 
-    .line 5804
+    const/16 v1, 0xd
+
+    if-eq v0, v1, :cond_6
+
+    const/16 v1, 0x15
+
+    if-eq v0, v1, :cond_5
+
+    const/16 v1, 0x1d
+
+    if-eq v0, v1, :cond_4
+
+    const/16 v1, 0x25
+
+    if-eq v0, v1, :cond_3
+
+    const/16 v1, 0x2d
+
+    if-eq v0, v1, :cond_2
+
+    const/16 v1, 0x35
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x3d
+
+    if-eq v0, v1, :cond_0
+
+    .line 6330
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_7
 
-    .line 5805
+    .line 6331
     return-object p0
 
-    .line 5802
-    :sswitch_0
-    return-object p0
-
-    .line 5810
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->setYear(I)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
-
-    goto :goto_0
-
-    .line 5814
-    :sswitch_2
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->setMonth(I)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
-
-    goto :goto_0
-
-    .line 5818
-    :sswitch_3
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->setDay(I)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
-
-    goto :goto_0
-
-    .line 5822
-    :sswitch_4
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->setHour(I)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
-
-    goto :goto_0
-
-    .line 5826
-    :sswitch_5
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->setMinute(I)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
-
-    goto :goto_0
-
-    .line 5830
-    :sswitch_6
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->setSecond(I)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
-
-    goto :goto_0
-
-    .line 5834
-    :sswitch_7
+    .line 6360
+    :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->setTimezone(I)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 5800
+    .line 6356
+    :cond_1
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->setSecond(I)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
+
+    .line 6357
+    goto :goto_1
+
+    .line 6352
+    :cond_2
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->setMinute(I)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
+
+    .line 6353
+    goto :goto_1
+
+    .line 6348
+    :cond_3
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->setHour(I)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
+
+    .line 6349
+    goto :goto_1
+
+    .line 6344
+    :cond_4
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->setDay(I)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
+
+    .line 6345
+    goto :goto_1
+
+    .line 6340
+    :cond_5
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->setMonth(I)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
+
+    .line 6341
+    goto :goto_1
+
+    .line 6336
+    :cond_6
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->setYear(I)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
+
+    .line 6337
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0xd -> :sswitch_1
-        0x15 -> :sswitch_2
-        0x1d -> :sswitch_3
-        0x25 -> :sswitch_4
-        0x2d -> :sswitch_5
-        0x35 -> :sswitch_6
-        0x3d -> :sswitch_7
-    .end sparse-switch
+    .line 6364
+    .end local v0    # "tag":I
+    :cond_7
+    :goto_1
+    goto :goto_0
+
+    .line 6328
+    .restart local v0    # "tag":I
+    :cond_8
+    return-object p0
 .end method
 
 .method public setDay(I)Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 5629
+    .line 6155
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasDay:Z
 
-    .line 5630
+    .line 6156
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->day_:I
 
-    .line 5631
+    .line 6157
     return-object p0
 .end method
 
@@ -794,16 +787,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 5646
+    .line 6172
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasHour:Z
 
-    .line 5647
+    .line 6173
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hour_:I
 
-    .line 5648
+    .line 6174
     return-object p0
 .end method
 
@@ -811,16 +803,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 5663
+    .line 6189
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasMinute:Z
 
-    .line 5664
+    .line 6190
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->minute_:I
 
-    .line 5665
+    .line 6191
     return-object p0
 .end method
 
@@ -828,16 +819,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 5612
+    .line 6138
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasMonth:Z
 
-    .line 5613
+    .line 6139
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->month_:I
 
-    .line 5614
+    .line 6140
     return-object p0
 .end method
 
@@ -845,16 +835,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 5680
+    .line 6206
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasSecond:Z
 
-    .line 5681
+    .line 6207
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->second_:I
 
-    .line 5682
+    .line 6208
     return-object p0
 .end method
 
@@ -862,16 +851,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 5697
+    .line 6223
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasTimezone:Z
 
-    .line 5698
+    .line 6224
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->timezone_:I
 
-    .line 5699
+    .line 6225
     return-object p0
 .end method
 
@@ -879,16 +867,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 5595
+    .line 6121
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasYear:Z
 
-    .line 5596
+    .line 6122
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->year_:I
 
-    .line 5597
+    .line 6123
     return-object p0
 .end method
 
@@ -901,24 +888,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 5726
+    .line 6252
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasYear()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 5727
+    .line 6253
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getYear()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 5729
+    .line 6255
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasMonth()Z
 
@@ -926,16 +912,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 5730
+    .line 6256
+    const/4 v0, 0x2
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getMonth()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x2
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 5732
+    .line 6258
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasDay()Z
 
@@ -943,16 +929,16 @@
 
     if-eqz v0, :cond_2
 
-    .line 5733
+    .line 6259
+    const/4 v0, 0x3
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getDay()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x3
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 5735
+    .line 6261
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasHour()Z
 
@@ -960,16 +946,16 @@
 
     if-eqz v0, :cond_3
 
-    .line 5736
+    .line 6262
+    const/4 v0, 0x4
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getHour()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x4
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 5738
+    .line 6264
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasMinute()Z
 
@@ -977,16 +963,16 @@
 
     if-eqz v0, :cond_4
 
-    .line 5739
+    .line 6265
+    const/4 v0, 0x5
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getMinute()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x5
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 5741
+    .line 6267
     :cond_4
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasSecond()Z
 
@@ -994,16 +980,16 @@
 
     if-eqz v0, :cond_5
 
-    .line 5742
+    .line 6268
+    const/4 v0, 0x6
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getSecond()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x6
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 5744
+    .line 6270
     :cond_5
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->hasTimezone()Z
 
@@ -1011,16 +997,16 @@
 
     if-eqz v0, :cond_6
 
-    .line 5745
+    .line 6271
+    const/4 v0, 0x7
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;->getTimezone()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x7
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 5725
+    .line 6273
     :cond_6
     return-void
 .end method

@@ -48,32 +48,31 @@
 .method public constructor <init>()V
     .locals 2
 
-    .prologue
-    const/4 v0, 0x0
-
-    const/4 v1, -0x1
-
-    .line 622
+    .line 838
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 627
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->networkMode_:I
+    .line 843
+    const/4 v0, -0x1
 
-    .line 644
-    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->status_:I
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->networkMode_:I
 
-    .line 661
-    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->restrictionCause_:I
+    .line 860
+    const/4 v1, 0x0
 
-    .line 678
-    const/4 v0, 0x0
+    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->status_:I
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->registered_:Lorg/codeaurora/ims/ImsQmiIF$Registration;
+    .line 877
+    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->restrictionCause_:I
 
-    .line 725
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->cachedSize:I
+    .line 894
+    const/4 v1, 0x0
 
-    .line 622
+    iput-object v1, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->registered_:Lorg/codeaurora/ims/ImsQmiIF$Registration;
+
+    .line 941
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->cachedSize:I
+
+    .line 838
     return-void
 .end method
 
@@ -86,8 +85,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 803
+    .line 1019
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;-><init>()V
@@ -108,8 +106,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 797
+    .line 1013
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;-><init>()V
@@ -128,109 +125,103 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
     .locals 1
 
-    .prologue
-    .line 696
+    .line 912
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->clearNetworkMode()Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
 
-    .line 697
+    .line 913
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->clearStatus()Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
 
-    .line 698
+    .line 914
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->clearRestrictionCause()Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
 
-    .line 699
+    .line 915
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->clearRegistered()Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
 
-    .line 700
+    .line 916
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->cachedSize:I
 
-    .line 701
+    .line 917
     return-object p0
 .end method
 
 .method public clearNetworkMode()Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
     .locals 1
 
-    .prologue
-    .line 636
+    .line 852
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasNetworkMode:Z
 
-    .line 637
+    .line 853
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->networkMode_:I
 
-    .line 638
+    .line 854
     return-object p0
 .end method
 
 .method public clearRegistered()Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
     .locals 1
 
-    .prologue
-    .line 690
+    .line 906
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasRegistered:Z
 
-    .line 691
+    .line 907
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->registered_:Lorg/codeaurora/ims/ImsQmiIF$Registration;
 
-    .line 692
+    .line 908
     return-object p0
 .end method
 
 .method public clearRestrictionCause()Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
     .locals 1
 
-    .prologue
+    .line 886
     const/4 v0, 0x0
 
-    .line 670
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasRestrictionCause:Z
 
-    .line 671
+    .line 887
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->restrictionCause_:I
 
-    .line 672
+    .line 888
     return-object p0
 .end method
 
 .method public clearStatus()Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
     .locals 1
 
-    .prologue
+    .line 869
     const/4 v0, 0x0
 
-    .line 653
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasStatus:Z
 
-    .line 654
+    .line 870
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->status_:I
 
-    .line 655
+    .line 871
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 728
+    .line 944
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 730
+    .line 946
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->getSerializedSize()I
 
-    .line 732
+    .line 948
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->cachedSize:I
 
@@ -240,8 +231,7 @@
 .method public getNetworkMode()I
     .locals 1
 
-    .prologue
-    .line 629
+    .line 845
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->networkMode_:I
 
     return v0
@@ -250,8 +240,7 @@
 .method public getRegistered()Lorg/codeaurora/ims/ImsQmiIF$Registration;
     .locals 1
 
-    .prologue
-    .line 680
+    .line 896
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->registered_:Lorg/codeaurora/ims/ImsQmiIF$Registration;
 
     return-object v0
@@ -260,8 +249,7 @@
 .method public getRestrictionCause()I
     .locals 1
 
-    .prologue
-    .line 662
+    .line 878
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->restrictionCause_:I
 
     return v0
@@ -270,11 +258,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 737
+    .line 953
     const/4 v0, 0x0
 
-    .line 738
+    .line 954
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasNetworkMode()Z
 
@@ -282,21 +269,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 740
+    .line 955
+    const/4 v1, 0x1
+
+    .line 956
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->getNetworkMode()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 739
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 742
+    .line 958
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasStatus()Z
 
@@ -304,21 +291,21 @@
 
     if-eqz v1, :cond_1
 
-    .line 744
+    .line 959
+    const/4 v1, 0x2
+
+    .line 960
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->getStatus()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x2
-
-    .line 743
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 746
+    .line 962
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasRestrictionCause()Z
 
@@ -326,21 +313,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 748
+    .line 963
+    const/4 v1, 0x3
+
+    .line 964
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->getRestrictionCause()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x3
-
-    .line 747
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 750
+    .line 966
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasRegistered()Z
 
@@ -348,33 +335,32 @@
 
     if-eqz v1, :cond_3
 
-    .line 752
+    .line 967
+    const/4 v1, 0x4
+
+    .line 968
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->getRegistered()Lorg/codeaurora/ims/ImsQmiIF$Registration;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x4
-
-    .line 751
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 754
+    .line 970
     :cond_3
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->cachedSize:I
 
-    .line 755
+    .line 971
     return v0
 .end method
 
 .method public getStatus()I
     .locals 1
 
-    .prologue
-    .line 646
+    .line 862
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->status_:I
 
     return v0
@@ -383,8 +369,7 @@
 .method public hasNetworkMode()Z
     .locals 1
 
-    .prologue
-    .line 628
+    .line 844
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasNetworkMode:Z
 
     return v0
@@ -393,8 +378,7 @@
 .method public hasRegistered()Z
     .locals 1
 
-    .prologue
-    .line 679
+    .line 895
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasRegistered:Z
 
     return v0
@@ -403,8 +387,7 @@
 .method public hasRestrictionCause()Z
     .locals 1
 
-    .prologue
-    .line 663
+    .line 879
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasRestrictionCause:Z
 
     return v0
@@ -413,8 +396,7 @@
 .method public hasStatus()Z
     .locals 1
 
-    .prologue
-    .line 645
+    .line 861
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasStatus:Z
 
     return v0
@@ -423,33 +405,30 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 705
+    .line 921
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 759
+    .line 835
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
-    .locals 3
+    .locals 2
     .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -457,104 +436,117 @@
         }
     .end annotation
 
-    .prologue
-    .line 763
-    :cond_0
+    .line 979
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 764
+    .line 980
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_5
 
-    .line 768
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_3
+
+    const/16 v1, 0x10
+
+    if-eq v0, v1, :cond_2
+
+    const/16 v1, 0x1d
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x22
+
+    if-eq v0, v1, :cond_0
+
+    .line 984
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_0
+    if-nez v1, :cond_4
 
-    .line 769
+    .line 985
     return-object p0
 
-    .line 766
-    :sswitch_0
-    return-object p0
-
-    .line 774
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->setNetworkMode(I)Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
-
-    goto :goto_0
-
-    .line 778
-    :sswitch_2
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->setStatus(I)Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
-
-    goto :goto_0
-
-    .line 782
-    :sswitch_3
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->setRestrictionCause(I)Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
-
-    goto :goto_0
-
-    .line 786
-    :sswitch_4
+    .line 1002
+    :cond_0
     new-instance v1, Lorg/codeaurora/ims/ImsQmiIF$Registration;
 
     invoke-direct {v1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;-><init>()V
 
-    .line 787
+    .line 1003
     .local v1, "value":Lorg/codeaurora/ims/ImsQmiIF$Registration;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 788
+    .line 1004
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->setRegistered(Lorg/codeaurora/ims/ImsQmiIF$Registration;)Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
 
-    goto :goto_0
+    .line 1005
+    goto :goto_1
 
-    .line 764
+    .line 998
+    .end local v1    # "value":Lorg/codeaurora/ims/ImsQmiIF$Registration;
+    :cond_1
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->setRestrictionCause(I)Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
+
+    .line 999
+    goto :goto_1
+
+    .line 994
+    :cond_2
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->setStatus(I)Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
+
+    .line 995
+    goto :goto_1
+
+    .line 990
+    :cond_3
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->setNetworkMode(I)Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
+
+    .line 991
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x10 -> :sswitch_2
-        0x1d -> :sswitch_3
-        0x22 -> :sswitch_4
-    .end sparse-switch
+    .line 1008
+    .end local v0    # "tag":I
+    :cond_4
+    :goto_1
+    goto :goto_0
+
+    .line 982
+    .restart local v0    # "tag":I
+    :cond_5
+    return-object p0
 .end method
 
 .method public setNetworkMode(I)Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 631
+    .line 847
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasNetworkMode:Z
 
-    .line 632
+    .line 848
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->networkMode_:I
 
-    .line 633
+    .line 849
     return-object p0
 .end method
 
@@ -562,44 +554,42 @@
     .locals 1
     .param p1, "value"    # Lorg/codeaurora/ims/ImsQmiIF$Registration;
 
-    .prologue
-    .line 682
-    if-nez p1, :cond_0
+    .line 898
+    if-eqz p1, :cond_0
 
-    .line 683
+    .line 901
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasRegistered:Z
+
+    .line 902
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->registered_:Lorg/codeaurora/ims/ImsQmiIF$Registration;
+
+    .line 903
+    return-object p0
+
+    .line 899
+    :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
-
-    .line 685
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasRegistered:Z
-
-    .line 686
-    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->registered_:Lorg/codeaurora/ims/ImsQmiIF$Registration;
-
-    .line 687
-    return-object p0
 .end method
 
 .method public setRestrictionCause(I)Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 665
+    .line 881
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasRestrictionCause:Z
 
-    .line 666
+    .line 882
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->restrictionCause_:I
 
-    .line 667
+    .line 883
     return-object p0
 .end method
 
@@ -607,16 +597,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 648
+    .line 864
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasStatus:Z
 
-    .line 649
+    .line 865
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->status_:I
 
-    .line 650
+    .line 866
     return-object p0
 .end method
 
@@ -629,24 +618,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 711
+    .line 927
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasNetworkMode()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 712
+    .line 928
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->getNetworkMode()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 714
+    .line 930
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasStatus()Z
 
@@ -654,16 +642,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 715
+    .line 931
+    const/4 v0, 0x2
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->getStatus()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x2
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 717
+    .line 933
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasRestrictionCause()Z
 
@@ -671,16 +659,16 @@
 
     if-eqz v0, :cond_2
 
-    .line 718
+    .line 934
+    const/4 v0, 0x3
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->getRestrictionCause()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x3
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 720
+    .line 936
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->hasRegistered()Z
 
@@ -688,16 +676,16 @@
 
     if-eqz v0, :cond_3
 
-    .line 721
+    .line 937
+    const/4 v0, 0x4
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;->getRegistered()Lorg/codeaurora/ims/ImsQmiIF$Registration;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x4
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
-
-    .line 710
+    .line 939
     :cond_3
     return-void
 .end method

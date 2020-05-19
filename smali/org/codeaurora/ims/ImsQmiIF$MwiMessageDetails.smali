@@ -66,47 +66,38 @@
 .method public constructor <init>()V
     .locals 2
 
-    .prologue
-    const/4 v1, -0x1
-
-    .line 7023
+    .line 7612
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 7028
-    const-string/jumbo v0, ""
+    .line 7617
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->toAddress_:Ljava/lang/String;
 
-    .line 7045
-    const-string/jumbo v0, ""
-
+    .line 7634
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->fromAddress_:Ljava/lang/String;
 
-    .line 7062
-    const-string/jumbo v0, ""
-
+    .line 7651
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->subject_:Ljava/lang/String;
 
-    .line 7079
-    const-string/jumbo v0, ""
-
+    .line 7668
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->date_:Ljava/lang/String;
 
-    .line 7096
+    .line 7685
+    const/4 v1, -0x1
+
     iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->priority_:I
 
-    .line 7113
-    const-string/jumbo v0, ""
-
+    .line 7702
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->messageId_:Ljava/lang/String;
 
-    .line 7130
+    .line 7719
     iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->messageType_:I
 
-    .line 7186
+    .line 7775
     iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->cachedSize:I
 
-    .line 7023
+    .line 7612
     return-void
 .end method
 
@@ -119,8 +110,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 7286
+    .line 7875
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;-><init>()V
@@ -141,8 +131,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 7280
+    .line 7869
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;-><init>()V
@@ -161,176 +150,167 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
     .locals 1
 
-    .prologue
-    .line 7145
+    .line 7734
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->clearToAddress()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
 
-    .line 7146
+    .line 7735
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->clearFromAddress()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
 
-    .line 7147
+    .line 7736
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->clearSubject()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
 
-    .line 7148
+    .line 7737
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->clearDate()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
 
-    .line 7149
+    .line 7738
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->clearPriority()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
 
-    .line 7150
+    .line 7739
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->clearMessageId()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
 
-    .line 7151
+    .line 7740
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->clearMessageType()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
 
-    .line 7152
+    .line 7741
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->cachedSize:I
 
-    .line 7153
+    .line 7742
     return-object p0
 .end method
 
 .method public clearDate()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
     .locals 1
 
-    .prologue
-    .line 7088
+    .line 7677
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasDate:Z
 
-    .line 7089
-    const-string/jumbo v0, ""
+    .line 7678
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->date_:Ljava/lang/String;
 
-    .line 7090
+    .line 7679
     return-object p0
 .end method
 
 .method public clearFromAddress()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
     .locals 1
 
-    .prologue
-    .line 7054
+    .line 7643
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasFromAddress:Z
 
-    .line 7055
-    const-string/jumbo v0, ""
+    .line 7644
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->fromAddress_:Ljava/lang/String;
 
-    .line 7056
+    .line 7645
     return-object p0
 .end method
 
 .method public clearMessageId()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
     .locals 1
 
-    .prologue
-    .line 7122
+    .line 7711
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasMessageId:Z
 
-    .line 7123
-    const-string/jumbo v0, ""
+    .line 7712
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->messageId_:Ljava/lang/String;
 
-    .line 7124
+    .line 7713
     return-object p0
 .end method
 
 .method public clearMessageType()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
     .locals 1
 
-    .prologue
-    .line 7139
+    .line 7728
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasMessageType:Z
 
-    .line 7140
+    .line 7729
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->messageType_:I
 
-    .line 7141
+    .line 7730
     return-object p0
 .end method
 
 .method public clearPriority()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
     .locals 1
 
-    .prologue
-    .line 7105
+    .line 7694
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasPriority:Z
 
-    .line 7106
+    .line 7695
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->priority_:I
 
-    .line 7107
+    .line 7696
     return-object p0
 .end method
 
 .method public clearSubject()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
     .locals 1
 
-    .prologue
-    .line 7071
+    .line 7660
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasSubject:Z
 
-    .line 7072
-    const-string/jumbo v0, ""
+    .line 7661
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->subject_:Ljava/lang/String;
 
-    .line 7073
+    .line 7662
     return-object p0
 .end method
 
 .method public clearToAddress()Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
     .locals 1
 
-    .prologue
-    .line 7037
+    .line 7626
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasToAddress:Z
 
-    .line 7038
-    const-string/jumbo v0, ""
+    .line 7627
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->toAddress_:Ljava/lang/String;
 
-    .line 7039
+    .line 7628
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 7189
+    .line 7778
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 7191
+    .line 7780
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getSerializedSize()I
 
-    .line 7193
+    .line 7782
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->cachedSize:I
 
@@ -340,8 +320,7 @@
 .method public getDate()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 7080
+    .line 7669
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->date_:Ljava/lang/String;
 
     return-object v0
@@ -350,8 +329,7 @@
 .method public getFromAddress()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 7046
+    .line 7635
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->fromAddress_:Ljava/lang/String;
 
     return-object v0
@@ -360,8 +338,7 @@
 .method public getMessageId()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 7114
+    .line 7703
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->messageId_:Ljava/lang/String;
 
     return-object v0
@@ -370,8 +347,7 @@
 .method public getMessageType()I
     .locals 1
 
-    .prologue
-    .line 7132
+    .line 7721
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->messageType_:I
 
     return v0
@@ -380,8 +356,7 @@
 .method public getPriority()I
     .locals 1
 
-    .prologue
-    .line 7098
+    .line 7687
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->priority_:I
 
     return v0
@@ -390,11 +365,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 7198
+    .line 7787
     const/4 v0, 0x0
 
-    .line 7199
+    .line 7788
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasToAddress()Z
 
@@ -402,21 +376,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 7201
+    .line 7789
+    const/4 v1, 0x1
+
+    .line 7790
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getToAddress()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x1
-
-    .line 7200
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 7203
+    .line 7792
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasFromAddress()Z
 
@@ -424,21 +398,21 @@
 
     if-eqz v1, :cond_1
 
-    .line 7205
+    .line 7793
+    const/4 v1, 0x2
+
+    .line 7794
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getFromAddress()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x2
-
-    .line 7204
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 7207
+    .line 7796
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasSubject()Z
 
@@ -446,21 +420,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 7209
+    .line 7797
+    const/4 v1, 0x3
+
+    .line 7798
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getSubject()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x3
-
-    .line 7208
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 7211
+    .line 7800
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasDate()Z
 
@@ -468,21 +442,21 @@
 
     if-eqz v1, :cond_3
 
-    .line 7213
+    .line 7801
+    const/4 v1, 0x4
+
+    .line 7802
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getDate()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x4
-
-    .line 7212
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 7215
+    .line 7804
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasPriority()Z
 
@@ -490,21 +464,21 @@
 
     if-eqz v1, :cond_4
 
-    .line 7217
+    .line 7805
+    const/4 v1, 0x5
+
+    .line 7806
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getPriority()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x5
-
-    .line 7216
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 7219
+    .line 7808
     :cond_4
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasMessageId()Z
 
@@ -512,21 +486,21 @@
 
     if-eqz v1, :cond_5
 
-    .line 7221
+    .line 7809
+    const/4 v1, 0x6
+
+    .line 7810
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getMessageId()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x6
-
-    .line 7220
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 7223
+    .line 7812
     :cond_5
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasMessageType()Z
 
@@ -534,33 +508,32 @@
 
     if-eqz v1, :cond_6
 
-    .line 7225
+    .line 7813
+    const/4 v1, 0x7
+
+    .line 7814
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getMessageType()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x7
-
-    .line 7224
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 7227
+    .line 7816
     :cond_6
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->cachedSize:I
 
-    .line 7228
+    .line 7817
     return v0
 .end method
 
 .method public getSubject()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 7063
+    .line 7652
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->subject_:Ljava/lang/String;
 
     return-object v0
@@ -569,8 +542,7 @@
 .method public getToAddress()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 7029
+    .line 7618
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->toAddress_:Ljava/lang/String;
 
     return-object v0
@@ -579,8 +551,7 @@
 .method public hasDate()Z
     .locals 1
 
-    .prologue
-    .line 7081
+    .line 7670
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasDate:Z
 
     return v0
@@ -589,8 +560,7 @@
 .method public hasFromAddress()Z
     .locals 1
 
-    .prologue
-    .line 7047
+    .line 7636
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasFromAddress:Z
 
     return v0
@@ -599,8 +569,7 @@
 .method public hasMessageId()Z
     .locals 1
 
-    .prologue
-    .line 7115
+    .line 7704
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasMessageId:Z
 
     return v0
@@ -609,8 +578,7 @@
 .method public hasMessageType()Z
     .locals 1
 
-    .prologue
-    .line 7131
+    .line 7720
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasMessageType:Z
 
     return v0
@@ -619,8 +587,7 @@
 .method public hasPriority()Z
     .locals 1
 
-    .prologue
-    .line 7097
+    .line 7686
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasPriority:Z
 
     return v0
@@ -629,8 +596,7 @@
 .method public hasSubject()Z
     .locals 1
 
-    .prologue
-    .line 7064
+    .line 7653
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasSubject:Z
 
     return v0
@@ -639,8 +605,7 @@
 .method public hasToAddress()Z
     .locals 1
 
-    .prologue
-    .line 7030
+    .line 7619
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasToAddress:Z
 
     return v0
@@ -649,29 +614,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 7157
+    .line 7746
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 7232
+    .line 7609
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
@@ -683,132 +645,155 @@
         }
     .end annotation
 
-    .prologue
-    .line 7236
-    :cond_0
+    .line 7825
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 7237
+    .line 7826
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_8
 
-    .line 7241
+    const/16 v1, 0xa
+
+    if-eq v0, v1, :cond_6
+
+    const/16 v1, 0x12
+
+    if-eq v0, v1, :cond_5
+
+    const/16 v1, 0x1a
+
+    if-eq v0, v1, :cond_4
+
+    const/16 v1, 0x22
+
+    if-eq v0, v1, :cond_3
+
+    const/16 v1, 0x28
+
+    if-eq v0, v1, :cond_2
+
+    const/16 v1, 0x32
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x38
+
+    if-eq v0, v1, :cond_0
+
+    .line 7830
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_7
 
-    .line 7242
+    .line 7831
     return-object p0
 
-    .line 7239
-    :sswitch_0
-    return-object p0
-
-    .line 7247
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->setToAddress(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
-
-    goto :goto_0
-
-    .line 7251
-    :sswitch_2
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->setFromAddress(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
-
-    goto :goto_0
-
-    .line 7255
-    :sswitch_3
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->setSubject(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
-
-    goto :goto_0
-
-    .line 7259
-    :sswitch_4
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->setDate(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
-
-    goto :goto_0
-
-    .line 7263
-    :sswitch_5
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->setPriority(I)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
-
-    goto :goto_0
-
-    .line 7267
-    :sswitch_6
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->setMessageId(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
-
-    goto :goto_0
-
-    .line 7271
-    :sswitch_7
+    .line 7860
+    :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->setMessageType(I)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 7237
+    .line 7856
+    :cond_1
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->setMessageId(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
+
+    .line 7857
+    goto :goto_1
+
+    .line 7852
+    :cond_2
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->setPriority(I)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
+
+    .line 7853
+    goto :goto_1
+
+    .line 7848
+    :cond_3
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->setDate(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
+
+    .line 7849
+    goto :goto_1
+
+    .line 7844
+    :cond_4
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->setSubject(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
+
+    .line 7845
+    goto :goto_1
+
+    .line 7840
+    :cond_5
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->setFromAddress(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
+
+    .line 7841
+    goto :goto_1
+
+    .line 7836
+    :cond_6
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->setToAddress(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
+
+    .line 7837
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0xa -> :sswitch_1
-        0x12 -> :sswitch_2
-        0x1a -> :sswitch_3
-        0x22 -> :sswitch_4
-        0x28 -> :sswitch_5
-        0x32 -> :sswitch_6
-        0x38 -> :sswitch_7
-    .end sparse-switch
+    .line 7864
+    .end local v0    # "tag":I
+    :cond_7
+    :goto_1
+    goto :goto_0
+
+    .line 7828
+    .restart local v0    # "tag":I
+    :cond_8
+    return-object p0
 .end method
 
 .method public setDate(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 7083
+    .line 7672
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasDate:Z
 
-    .line 7084
+    .line 7673
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->date_:Ljava/lang/String;
 
-    .line 7085
+    .line 7674
     return-object p0
 .end method
 
@@ -816,16 +801,15 @@
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 7049
+    .line 7638
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasFromAddress:Z
 
-    .line 7050
+    .line 7639
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->fromAddress_:Ljava/lang/String;
 
-    .line 7051
+    .line 7640
     return-object p0
 .end method
 
@@ -833,16 +817,15 @@
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 7117
+    .line 7706
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasMessageId:Z
 
-    .line 7118
+    .line 7707
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->messageId_:Ljava/lang/String;
 
-    .line 7119
+    .line 7708
     return-object p0
 .end method
 
@@ -850,16 +833,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 7134
+    .line 7723
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasMessageType:Z
 
-    .line 7135
+    .line 7724
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->messageType_:I
 
-    .line 7136
+    .line 7725
     return-object p0
 .end method
 
@@ -867,16 +849,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 7100
+    .line 7689
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasPriority:Z
 
-    .line 7101
+    .line 7690
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->priority_:I
 
-    .line 7102
+    .line 7691
     return-object p0
 .end method
 
@@ -884,16 +865,15 @@
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 7066
+    .line 7655
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasSubject:Z
 
-    .line 7067
+    .line 7656
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->subject_:Ljava/lang/String;
 
-    .line 7068
+    .line 7657
     return-object p0
 .end method
 
@@ -901,16 +881,15 @@
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 7032
+    .line 7621
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasToAddress:Z
 
-    .line 7033
+    .line 7622
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->toAddress_:Ljava/lang/String;
 
-    .line 7034
+    .line 7623
     return-object p0
 .end method
 
@@ -923,24 +902,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 7163
+    .line 7752
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasToAddress()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 7164
+    .line 7753
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getToAddress()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 7166
+    .line 7755
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasFromAddress()Z
 
@@ -948,16 +926,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 7167
+    .line 7756
+    const/4 v0, 0x2
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getFromAddress()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x2
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 7169
+    .line 7758
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasSubject()Z
 
@@ -965,16 +943,16 @@
 
     if-eqz v0, :cond_2
 
-    .line 7170
+    .line 7759
+    const/4 v0, 0x3
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getSubject()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x3
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 7172
+    .line 7761
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasDate()Z
 
@@ -982,16 +960,16 @@
 
     if-eqz v0, :cond_3
 
-    .line 7173
+    .line 7762
+    const/4 v0, 0x4
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getDate()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x4
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 7175
+    .line 7764
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasPriority()Z
 
@@ -999,16 +977,16 @@
 
     if-eqz v0, :cond_4
 
-    .line 7176
+    .line 7765
+    const/4 v0, 0x5
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getPriority()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x5
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 7178
+    .line 7767
     :cond_4
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasMessageId()Z
 
@@ -1016,16 +994,16 @@
 
     if-eqz v0, :cond_5
 
-    .line 7179
+    .line 7768
+    const/4 v0, 0x6
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getMessageId()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x6
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 7181
+    .line 7770
     :cond_5
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->hasMessageType()Z
 
@@ -1033,16 +1011,16 @@
 
     if-eqz v0, :cond_6
 
-    .line 7182
+    .line 7771
+    const/4 v0, 0x7
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;->getMessageType()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x7
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 7162
+    .line 7773
     :cond_6
     return-void
 .end method

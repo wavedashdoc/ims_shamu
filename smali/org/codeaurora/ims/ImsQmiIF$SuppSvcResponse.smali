@@ -17,6 +17,8 @@
 # static fields
 .field public static final CBNUMLISTTYPE_FIELD_NUMBER:I = 0x4
 
+.field public static final ERRORDETAILS_FIELD_NUMBER:I = 0x5
+
 .field public static final FACILITYTYPE_FIELD_NUMBER:I = 0x2
 
 .field public static final FAILURECAUSE_FIELD_NUMBER:I = 0x3
@@ -30,17 +32,20 @@
 .field private cbNumListType_:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/List",
-            "<",
+            "Ljava/util/List<",
             "Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;",
             ">;"
         }
     .end annotation
 .end field
 
+.field private errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
 .field private facilityType_:I
 
 .field private failureCause_:Ljava/lang/String;
+
+.field private hasErrorDetails:Z
 
 .field private hasFacilityType:Z
 
@@ -55,37 +60,43 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    const/4 v0, 0x0
-
-    .line 6511
+    .line 7066
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 6516
+    .line 7071
+    const/4 v0, 0x0
+
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->status_:I
 
-    .line 6533
+    .line 7088
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->facilityType_:I
 
-    .line 6550
-    const-string/jumbo v0, ""
+    .line 7105
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->failureCause_:Ljava/lang/String;
 
-    .line 6567
+    .line 7121
+    nop
+
+    .line 7122
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 6566
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cbNumListType_:Ljava/util/List;
 
-    .line 6627
+    .line 7155
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    .line 7206
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cachedSize:I
 
-    .line 6511
+    .line 7066
     return-void
 .end method
 
@@ -98,8 +109,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 6705
+    .line 7294
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;-><init>()V
@@ -120,8 +130,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 6699
+    .line 7288
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;-><init>()V
@@ -141,147 +150,160 @@
     .locals 1
     .param p1, "value"    # Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
 
-    .prologue
-    .line 6583
-    if-nez p1, :cond_0
+    .line 7138
+    if-eqz p1, :cond_1
 
-    .line 6584
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw v0
-
-    .line 6586
-    :cond_0
+    .line 7141
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cbNumListType_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    .line 6587
+    .line 7142
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cbNumListType_:Ljava/util/List;
 
-    .line 6589
-    :cond_1
+    .line 7144
+    :cond_0
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cbNumListType_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 6590
+    .line 7145
     return-object p0
+
+    .line 7139
+    :cond_1
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
 .end method
 
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
     .locals 1
 
-    .prologue
-    .line 6598
+    .line 7173
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->clearStatus()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
 
-    .line 6599
+    .line 7174
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->clearFacilityType()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
 
-    .line 6600
+    .line 7175
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->clearFailureCause()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
 
-    .line 6601
+    .line 7176
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->clearCbNumListType()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
 
-    .line 6602
+    .line 7177
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->clearErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
+
+    .line 7178
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cachedSize:I
 
-    .line 6603
+    .line 7179
     return-object p0
 .end method
 
 .method public clearCbNumListType()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
     .locals 1
 
-    .prologue
-    .line 6593
+    .line 7148
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cbNumListType_:Ljava/util/List;
 
-    .line 6594
+    .line 7149
+    return-object p0
+.end method
+
+.method public clearErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
+    .locals 1
+
+    .line 7167
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasErrorDetails:Z
+
+    .line 7168
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    .line 7169
     return-object p0
 .end method
 
 .method public clearFacilityType()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
     .locals 1
 
-    .prologue
+    .line 7097
     const/4 v0, 0x0
 
-    .line 6542
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFacilityType:Z
 
-    .line 6543
+    .line 7098
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->facilityType_:I
 
-    .line 6544
+    .line 7099
     return-object p0
 .end method
 
 .method public clearFailureCause()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
     .locals 1
 
-    .prologue
-    .line 6559
+    .line 7114
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFailureCause:Z
 
-    .line 6560
-    const-string/jumbo v0, ""
+    .line 7115
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->failureCause_:Ljava/lang/String;
 
-    .line 6561
+    .line 7116
     return-object p0
 .end method
 
 .method public clearStatus()Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
     .locals 1
 
-    .prologue
+    .line 7080
     const/4 v0, 0x0
 
-    .line 6525
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasStatus:Z
 
-    .line 6526
+    .line 7081
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->status_:I
 
-    .line 6527
+    .line 7082
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 6630
+    .line 7209
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 6632
+    .line 7211
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getSerializedSize()I
 
-    .line 6634
+    .line 7213
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cachedSize:I
 
@@ -292,8 +314,7 @@
     .locals 1
     .param p1, "index"    # I
 
-    .prologue
-    .line 6573
+    .line 7128
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cbNumListType_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -308,8 +329,7 @@
 .method public getCbNumListTypeCount()I
     .locals 1
 
-    .prologue
-    .line 6571
+    .line 7126
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cbNumListType_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -324,16 +344,23 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ljava/util/List",
-            "<",
+            "Ljava/util/List<",
             "Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;",
             ">;"
         }
     .end annotation
 
-    .prologue
-    .line 6569
+    .line 7124
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cbNumListType_:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public getErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+    .locals 1
+
+    .line 7157
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
 
     return-object v0
 .end method
@@ -341,8 +368,7 @@
 .method public getFacilityType()I
     .locals 1
 
-    .prologue
-    .line 6534
+    .line 7089
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->facilityType_:I
 
     return v0
@@ -351,441 +377,94 @@
 .method public getFailureCause()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 6551
+    .line 7106
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->failureCause_:Ljava/lang/String;
 
     return-object v0
 .end method
 
 .method public getSerializedSize()I
-    .locals 5
-
-    .prologue
-    .line 6639
-    const/4 v2, 0x0
-
-    .line 6640
-    .local v2, "size":I
-    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasStatus()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 6642
-    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getStatus()I
-
-    move-result v3
-
-    const/4 v4, 0x1
-
-    .line 6641
-    invoke-static {v4, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
-
-    move-result v3
-
-    add-int/lit8 v2, v3, 0x0
-
-    .line 6644
-    :cond_0
-    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFacilityType()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    .line 6646
-    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getFacilityType()I
-
-    move-result v3
-
-    const/4 v4, 0x2
-
-    .line 6645
-    invoke-static {v4, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    .line 6648
-    :cond_1
-    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFailureCause()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    .line 6650
-    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getFailureCause()Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v4, 0x3
-
-    .line 6649
-    invoke-static {v4, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    .line 6652
-    :cond_2
-    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getCbNumListTypeList()Ljava/util/List;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, "element$iterator":Ljava/util/Iterator;
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
-
-    .line 6654
-    .local v0, "element":Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
-    const/4 v3, 0x4
-
-    .line 6653
-    invoke-static {v3, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    goto :goto_0
-
-    .line 6656
-    .end local v0    # "element":Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
-    :cond_3
-    iput v2, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cachedSize:I
-
-    .line 6657
-    return v2
-.end method
-
-.method public getStatus()I
-    .locals 1
-
-    .prologue
-    .line 6518
-    iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->status_:I
-
-    return v0
-.end method
-
-.method public hasFacilityType()Z
-    .locals 1
-
-    .prologue
-    .line 6535
-    iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFacilityType:Z
-
-    return v0
-.end method
-
-.method public hasFailureCause()Z
-    .locals 1
-
-    .prologue
-    .line 6552
-    iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFailureCause:Z
-
-    return v0
-.end method
-
-.method public hasStatus()Z
-    .locals 1
-
-    .prologue
-    .line 6517
-    iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasStatus:Z
-
-    return v0
-.end method
-
-.method public final isInitialized()Z
-    .locals 1
-
-    .prologue
-    .line 6607
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 6661
-    invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
-    .locals 3
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 6665
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
-
-    move-result v0
-
-    .line 6666
-    .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
-
-    .line 6670
-    invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    .line 6671
-    return-object p0
-
-    .line 6668
-    :sswitch_0
-    return-object p0
-
-    .line 6676
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->setStatus(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
-
-    goto :goto_0
-
-    .line 6680
-    :sswitch_2
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->setFacilityType(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
-
-    goto :goto_0
-
-    .line 6684
-    :sswitch_3
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->setFailureCause(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
-
-    goto :goto_0
-
-    .line 6688
-    :sswitch_4
-    new-instance v1, Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
-
-    invoke-direct {v1}, Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;-><init>()V
-
-    .line 6689
-    .local v1, "value":Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
-    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
-
-    .line 6690
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->addCbNumListType(Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
-
-    goto :goto_0
-
-    .line 6666
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x15 -> :sswitch_2
-        0x1a -> :sswitch_3
-        0x22 -> :sswitch_4
-    .end sparse-switch
-.end method
-
-.method public setCbNumListType(ILorg/codeaurora/ims/ImsQmiIF$CbNumListType;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
-    .locals 1
-    .param p1, "index"    # I
-    .param p2, "value"    # Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
-
-    .prologue
-    .line 6576
-    if-nez p2, :cond_0
-
-    .line 6577
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw v0
-
-    .line 6579
-    :cond_0
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cbNumListType_:Ljava/util/List;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
-
-    .line 6580
-    return-object p0
-.end method
-
-.method public setFacilityType(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
-    .locals 1
-    .param p1, "value"    # I
-
-    .prologue
-    .line 6537
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFacilityType:Z
-
-    .line 6538
-    iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->facilityType_:I
-
-    .line 6539
-    return-object p0
-.end method
-
-.method public setFailureCause(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
-    .locals 1
-    .param p1, "value"    # Ljava/lang/String;
-
-    .prologue
-    .line 6554
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFailureCause:Z
-
-    .line 6555
-    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->failureCause_:Ljava/lang/String;
-
-    .line 6556
-    return-object p0
-.end method
-
-.method public setStatus(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
-    .locals 1
-    .param p1, "value"    # I
-
-    .prologue
-    .line 6520
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasStatus:Z
-
-    .line 6521
-    iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->status_:I
-
-    .line 6522
-    return-object p0
-.end method
-
-.method public writeTo(Lcom/google/protobuf/micro/CodedOutputStreamMicro;)V
     .locals 4
-    .param p1, "output"    # Lcom/google/protobuf/micro/CodedOutputStreamMicro;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
-    .prologue
-    .line 6613
+    .line 7218
+    const/4 v0, 0x0
+
+    .line 7219
+    .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasStatus()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
-    .line 6614
+    .line 7220
+    const/4 v1, 0x1
+
+    .line 7221
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getStatus()I
 
     move-result v2
 
-    const/4 v3, 0x1
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
-    invoke-virtual {p1, v3, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
+    move-result v1
 
-    .line 6616
+    add-int/2addr v0, v1
+
+    .line 7223
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFacilityType()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    .line 6617
+    .line 7224
+    const/4 v1, 0x2
+
+    .line 7225
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getFacilityType()I
 
     move-result v2
 
-    const/4 v3, 0x2
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
-    invoke-virtual {p1, v3, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
+    move-result v1
 
-    .line 6619
+    add-int/2addr v0, v1
+
+    .line 7227
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFailureCause()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
-    .line 6620
+    .line 7228
+    const/4 v1, 0x3
+
+    .line 7229
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getFailureCause()Ljava/lang/String;
 
     move-result-object v2
 
-    const/4 v3, 0x3
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
-    invoke-virtual {p1, v3, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+    move-result v1
 
-    .line 6622
+    add-int/2addr v0, v1
+
+    .line 7231
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getCbNumListTypeList()Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .local v1, "element$iterator":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -795,20 +474,463 @@
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v2
 
-    check-cast v0, Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
+    check-cast v2, Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
 
-    .line 6623
-    .local v0, "element":Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
-    const/4 v2, 0x4
+    .line 7232
+    .local v2, "element":Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
+    const/4 v3, 0x4
 
-    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+    .line 7233
+    invoke-static {v3, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
 
+    move-result v3
+
+    add-int/2addr v0, v3
+
+    .line 7234
+    .end local v2    # "element":Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
     goto :goto_0
 
-    .line 6612
-    .end local v0    # "element":Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
+    .line 7235
     :cond_3
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasErrorDetails()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    .line 7236
+    const/4 v1, 0x5
+
+    .line 7237
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 7239
+    :cond_4
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cachedSize:I
+
+    .line 7240
+    return v0
+.end method
+
+.method public getStatus()I
+    .locals 1
+
+    .line 7073
+    iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->status_:I
+
+    return v0
+.end method
+
+.method public hasErrorDetails()Z
+    .locals 1
+
+    .line 7156
+    iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasErrorDetails:Z
+
+    return v0
+.end method
+
+.method public hasFacilityType()Z
+    .locals 1
+
+    .line 7090
+    iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFacilityType:Z
+
+    return v0
+.end method
+
+.method public hasFailureCause()Z
+    .locals 1
+
+    .line 7107
+    iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFailureCause:Z
+
+    return v0
+.end method
+
+.method public hasStatus()Z
+    .locals 1
+
+    .line 7072
+    iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasStatus:Z
+
+    return v0
+.end method
+
+.method public final isInitialized()Z
+    .locals 1
+
+    .line 7183
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 7063
+    invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
+    .locals 2
+    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 7248
+    :goto_0
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
+
+    move-result v0
+
+    .line 7249
+    .local v0, "tag":I
+    if-eqz v0, :cond_6
+
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_4
+
+    const/16 v1, 0x15
+
+    if-eq v0, v1, :cond_3
+
+    const/16 v1, 0x1a
+
+    if-eq v0, v1, :cond_2
+
+    const/16 v1, 0x22
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x2a
+
+    if-eq v0, v1, :cond_0
+
+    .line 7253
+    invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    .line 7254
+    return-object p0
+
+    .line 7277
+    :cond_0
+    new-instance v1, Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    invoke-direct {v1}, Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;-><init>()V
+
+    .line 7278
+    .local v1, "value":Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 7279
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->setErrorDetails(Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
+
+    .line 7280
+    goto :goto_1
+
+    .line 7271
+    .end local v1    # "value":Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+    :cond_1
+    new-instance v1, Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
+
+    invoke-direct {v1}, Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;-><init>()V
+
+    .line 7272
+    .local v1, "value":Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 7273
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->addCbNumListType(Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
+
+    .line 7274
+    goto :goto_1
+
+    .line 7267
+    .end local v1    # "value":Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
+    :cond_2
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->setFailureCause(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
+
+    .line 7268
+    goto :goto_1
+
+    .line 7263
+    :cond_3
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->setFacilityType(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
+
+    .line 7264
+    goto :goto_1
+
+    .line 7259
+    :cond_4
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->setStatus(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
+
+    .line 7260
+    nop
+
+    .line 7283
+    .end local v0    # "tag":I
+    :cond_5
+    :goto_1
+    goto :goto_0
+
+    .line 7251
+    .restart local v0    # "tag":I
+    :cond_6
+    return-object p0
+.end method
+
+.method public setCbNumListType(ILorg/codeaurora/ims/ImsQmiIF$CbNumListType;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
+    .locals 1
+    .param p1, "index"    # I
+    .param p2, "value"    # Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
+
+    .line 7131
+    if-eqz p2, :cond_0
+
+    .line 7134
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->cbNumListType_:Ljava/util/List;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    .line 7135
+    return-object p0
+
+    .line 7132
+    :cond_0
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+.end method
+
+.method public setErrorDetails(Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
+    .locals 1
+    .param p1, "value"    # Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    .line 7159
+    if-eqz p1, :cond_0
+
+    .line 7162
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasErrorDetails:Z
+
+    .line 7163
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    .line 7164
+    return-object p0
+
+    .line 7160
+    :cond_0
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+.end method
+
+.method public setFacilityType(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
+    .locals 1
+    .param p1, "value"    # I
+
+    .line 7092
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFacilityType:Z
+
+    .line 7093
+    iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->facilityType_:I
+
+    .line 7094
+    return-object p0
+.end method
+
+.method public setFailureCause(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
+    .locals 1
+    .param p1, "value"    # Ljava/lang/String;
+
+    .line 7109
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFailureCause:Z
+
+    .line 7110
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->failureCause_:Ljava/lang/String;
+
+    .line 7111
+    return-object p0
+.end method
+
+.method public setStatus(I)Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
+    .locals 1
+    .param p1, "value"    # I
+
+    .line 7075
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasStatus:Z
+
+    .line 7076
+    iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->status_:I
+
+    .line 7077
+    return-object p0
+.end method
+
+.method public writeTo(Lcom/google/protobuf/micro/CodedOutputStreamMicro;)V
+    .locals 3
+    .param p1, "output"    # Lcom/google/protobuf/micro/CodedOutputStreamMicro;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 7189
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasStatus()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 7190
+    const/4 v0, 0x1
+
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getStatus()I
+
+    move-result v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
+
+    .line 7192
+    :cond_0
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFacilityType()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 7193
+    const/4 v0, 0x2
+
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getFacilityType()I
+
+    move-result v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
+
+    .line 7195
+    :cond_1
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasFailureCause()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 7196
+    const/4 v0, 0x3
+
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getFailureCause()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 7198
+    :cond_2
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getCbNumListTypeList()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
+
+    .line 7199
+    .local v1, "element":Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
+    const/4 v2, 0x4
+
+    invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 7200
+    .end local v1    # "element":Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
+    goto :goto_0
+
+    .line 7201
+    :cond_3
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->hasErrorDetails()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    .line 7202
+    const/4 v0, 0x5
+
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 7204
+    :cond_4
     return-void
 .end method

@@ -34,21 +34,20 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 3667
+    .line 4091
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 3676
+    .line 4100
     const/4 v0, 0x0
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->flag_:I
 
-    .line 3708
+    .line 4132
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->cachedSize:I
 
-    .line 3667
+    .line 4091
     return-void
 .end method
 
@@ -61,8 +60,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 3760
+    .line 4184
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;-><init>()V
@@ -83,8 +81,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 3754
+    .line 4178
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;-><init>()V
@@ -103,48 +100,45 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;
     .locals 1
 
-    .prologue
-    .line 3691
+    .line 4115
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->clearFlag()Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;
 
-    .line 3692
+    .line 4116
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->cachedSize:I
 
-    .line 3693
+    .line 4117
     return-object p0
 .end method
 
 .method public clearFlag()Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;
     .locals 1
 
-    .prologue
+    .line 4109
     const/4 v0, 0x0
 
-    .line 3685
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->hasFlag:Z
 
-    .line 3686
+    .line 4110
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->flag_:I
 
-    .line 3687
+    .line 4111
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 3711
+    .line 4135
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 3713
+    .line 4137
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->getSerializedSize()I
 
-    .line 3715
+    .line 4139
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->cachedSize:I
 
@@ -154,8 +148,7 @@
 .method public getFlag()I
     .locals 1
 
-    .prologue
-    .line 3678
+    .line 4102
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->flag_:I
 
     return v0
@@ -164,11 +157,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 3720
+    .line 4144
     const/4 v0, 0x0
 
-    .line 3721
+    .line 4145
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->hasFlag()Z
 
@@ -176,33 +168,32 @@
 
     if-eqz v1, :cond_0
 
-    .line 3723
+    .line 4146
+    const/4 v1, 0x1
+
+    .line 4147
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->getFlag()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 3722
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 3725
+    .line 4149
     :cond_0
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->cachedSize:I
 
-    .line 3726
+    .line 4150
     return v0
 .end method
 
 .method public hasFlag()Z
     .locals 1
 
-    .prologue
-    .line 3677
+    .line 4101
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->hasFlag:Z
 
     return v0
@@ -211,29 +202,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 3697
+    .line 4121
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 3730
+    .line 4088
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;
@@ -245,66 +233,62 @@
         }
     .end annotation
 
-    .prologue
-    .line 3734
-    :cond_0
+    .line 4158
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 3735
+    .line 4159
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_2
 
-    .line 3739
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_0
+
+    .line 4163
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_1
 
-    .line 3740
+    .line 4164
     return-object p0
 
-    .line 3737
-    :sswitch_0
-    return-object p0
-
-    .line 3745
-    :sswitch_1
+    .line 4169
+    :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->setFlag(I)Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;
 
+    .line 4173
+    .end local v0    # "tag":I
+    :cond_1
     goto :goto_0
 
-    .line 3735
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-    .end sparse-switch
+    .line 4161
+    .restart local v0    # "tag":I
+    :cond_2
+    return-object p0
 .end method
 
 .method public setFlag(I)Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 3680
+    .line 4104
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->hasFlag:Z
 
-    .line 3681
+    .line 4105
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->flag_:I
 
-    .line 3682
+    .line 4106
     return-object p0
 .end method
 
@@ -317,24 +301,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 3703
+    .line 4127
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->hasFlag()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3704
+    .line 4128
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;->getFlag()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 3702
+    .line 4130
     :cond_0
     return-void
 .end method

@@ -70,48 +70,47 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 3
+    .locals 2
 
-    .prologue
-    const/4 v2, 0x0
-
-    const/4 v1, 0x0
-
-    .line 5166
+    .line 5658
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 5171
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->status_:I
+    .line 5663
+    const/4 v0, 0x0
 
-    .line 5188
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->reason_:I
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->status_:I
 
-    .line 5205
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->serviceClass_:I
+    .line 5680
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->reason_:I
 
-    .line 5222
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->toa_:I
+    .line 5697
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->serviceClass_:I
 
-    .line 5239
-    const-string/jumbo v0, ""
+    .line 5714
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->toa_:I
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->number_:Ljava/lang/String;
+    .line 5731
+    const-string v1, ""
 
-    .line 5256
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->timeSeconds_:I
+    iput-object v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->number_:Ljava/lang/String;
 
-    .line 5273
-    iput-object v2, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->callFwdTimerStart_:Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
+    .line 5748
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->timeSeconds_:I
 
-    .line 5293
-    iput-object v2, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->callFwdTimerEnd_:Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
+    .line 5765
+    const/4 v0, 0x0
 
-    .line 5356
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->callFwdTimerStart_:Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
+
+    .line 5785
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->callFwdTimerEnd_:Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
+
+    .line 5848
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->cachedSize:I
 
-    .line 5166
+    .line 5658
     return-void
 .end method
 
@@ -124,8 +123,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 5468
+    .line 5960
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;-><init>()V
@@ -146,8 +144,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 5462
+    .line 5954
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;-><init>()V
@@ -166,187 +163,177 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
     .locals 1
 
-    .prologue
-    .line 5311
+    .line 5803
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->clearStatus()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
 
-    .line 5312
+    .line 5804
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->clearReason()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
 
-    .line 5313
+    .line 5805
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->clearServiceClass()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
 
-    .line 5314
+    .line 5806
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->clearToa()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
 
-    .line 5315
+    .line 5807
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->clearNumber()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
 
-    .line 5316
+    .line 5808
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->clearTimeSeconds()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
 
-    .line 5317
+    .line 5809
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->clearCallFwdTimerStart()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
 
-    .line 5318
+    .line 5810
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->clearCallFwdTimerEnd()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
 
-    .line 5319
+    .line 5811
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->cachedSize:I
 
-    .line 5320
+    .line 5812
     return-object p0
 .end method
 
 .method public clearCallFwdTimerEnd()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
     .locals 1
 
-    .prologue
-    .line 5305
+    .line 5797
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasCallFwdTimerEnd:Z
 
-    .line 5306
+    .line 5798
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->callFwdTimerEnd_:Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    .line 5307
+    .line 5799
     return-object p0
 .end method
 
 .method public clearCallFwdTimerStart()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
     .locals 1
 
-    .prologue
-    .line 5285
+    .line 5777
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasCallFwdTimerStart:Z
 
-    .line 5286
+    .line 5778
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->callFwdTimerStart_:Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    .line 5287
+    .line 5779
     return-object p0
 .end method
 
 .method public clearNumber()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
     .locals 1
 
-    .prologue
-    .line 5248
+    .line 5740
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasNumber:Z
 
-    .line 5249
-    const-string/jumbo v0, ""
+    .line 5741
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->number_:Ljava/lang/String;
 
-    .line 5250
+    .line 5742
     return-object p0
 .end method
 
 .method public clearReason()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
     .locals 1
 
-    .prologue
+    .line 5689
     const/4 v0, 0x0
 
-    .line 5197
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasReason:Z
 
-    .line 5198
+    .line 5690
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->reason_:I
 
-    .line 5199
+    .line 5691
     return-object p0
 .end method
 
 .method public clearServiceClass()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
     .locals 1
 
-    .prologue
+    .line 5706
     const/4 v0, 0x0
 
-    .line 5214
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasServiceClass:Z
 
-    .line 5215
+    .line 5707
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->serviceClass_:I
 
-    .line 5216
+    .line 5708
     return-object p0
 .end method
 
 .method public clearStatus()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
     .locals 1
 
-    .prologue
+    .line 5672
     const/4 v0, 0x0
 
-    .line 5180
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasStatus:Z
 
-    .line 5181
+    .line 5673
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->status_:I
 
-    .line 5182
+    .line 5674
     return-object p0
 .end method
 
 .method public clearTimeSeconds()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
     .locals 1
 
-    .prologue
+    .line 5757
     const/4 v0, 0x0
 
-    .line 5265
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasTimeSeconds:Z
 
-    .line 5266
+    .line 5758
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->timeSeconds_:I
 
-    .line 5267
+    .line 5759
     return-object p0
 .end method
 
 .method public clearToa()Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
     .locals 1
 
-    .prologue
+    .line 5723
     const/4 v0, 0x0
 
-    .line 5231
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasToa:Z
 
-    .line 5232
+    .line 5724
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->toa_:I
 
-    .line 5233
+    .line 5725
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 5359
+    .line 5851
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 5361
+    .line 5853
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getSerializedSize()I
 
-    .line 5363
+    .line 5855
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->cachedSize:I
 
@@ -356,8 +343,7 @@
 .method public getCallFwdTimerEnd()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
     .locals 1
 
-    .prologue
-    .line 5295
+    .line 5787
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->callFwdTimerEnd_:Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
     return-object v0
@@ -366,8 +352,7 @@
 .method public getCallFwdTimerStart()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
     .locals 1
 
-    .prologue
-    .line 5275
+    .line 5767
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->callFwdTimerStart_:Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
     return-object v0
@@ -376,8 +361,7 @@
 .method public getNumber()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 5240
+    .line 5732
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->number_:Ljava/lang/String;
 
     return-object v0
@@ -386,8 +370,7 @@
 .method public getReason()I
     .locals 1
 
-    .prologue
-    .line 5189
+    .line 5681
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->reason_:I
 
     return v0
@@ -396,11 +379,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 5368
+    .line 5860
     const/4 v0, 0x0
 
-    .line 5369
+    .line 5861
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasStatus()Z
 
@@ -408,21 +390,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 5371
+    .line 5862
+    const/4 v1, 0x1
+
+    .line 5863
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getStatus()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 5370
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 5373
+    .line 5865
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasReason()Z
 
@@ -430,21 +412,21 @@
 
     if-eqz v1, :cond_1
 
-    .line 5375
+    .line 5866
+    const/4 v1, 0x2
+
+    .line 5867
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getReason()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x2
-
-    .line 5374
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 5377
+    .line 5869
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasServiceClass()Z
 
@@ -452,21 +434,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 5379
+    .line 5870
+    const/4 v1, 0x3
+
+    .line 5871
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getServiceClass()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x3
-
-    .line 5378
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 5381
+    .line 5873
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasToa()Z
 
@@ -474,21 +456,21 @@
 
     if-eqz v1, :cond_3
 
-    .line 5383
+    .line 5874
+    const/4 v1, 0x4
+
+    .line 5875
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getToa()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x4
-
-    .line 5382
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 5385
+    .line 5877
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasNumber()Z
 
@@ -496,21 +478,21 @@
 
     if-eqz v1, :cond_4
 
-    .line 5387
+    .line 5878
+    const/4 v1, 0x5
+
+    .line 5879
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getNumber()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x5
-
-    .line 5386
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 5389
+    .line 5881
     :cond_4
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasTimeSeconds()Z
 
@@ -518,21 +500,21 @@
 
     if-eqz v1, :cond_5
 
-    .line 5391
+    .line 5882
+    const/4 v1, 0x6
+
+    .line 5883
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getTimeSeconds()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x6
-
-    .line 5390
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 5393
+    .line 5885
     :cond_5
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasCallFwdTimerStart()Z
 
@@ -540,21 +522,21 @@
 
     if-eqz v1, :cond_6
 
-    .line 5395
+    .line 5886
+    const/4 v1, 0x7
+
+    .line 5887
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getCallFwdTimerStart()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x7
-
-    .line 5394
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 5397
+    .line 5889
     :cond_6
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasCallFwdTimerEnd()Z
 
@@ -562,33 +544,32 @@
 
     if-eqz v1, :cond_7
 
-    .line 5399
+    .line 5890
+    const/16 v1, 0x8
+
+    .line 5891
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getCallFwdTimerEnd()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/16 v2, 0x8
-
-    .line 5398
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 5401
+    .line 5893
     :cond_7
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->cachedSize:I
 
-    .line 5402
+    .line 5894
     return v0
 .end method
 
 .method public getServiceClass()I
     .locals 1
 
-    .prologue
-    .line 5206
+    .line 5698
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->serviceClass_:I
 
     return v0
@@ -597,8 +578,7 @@
 .method public getStatus()I
     .locals 1
 
-    .prologue
-    .line 5172
+    .line 5664
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->status_:I
 
     return v0
@@ -607,8 +587,7 @@
 .method public getTimeSeconds()I
     .locals 1
 
-    .prologue
-    .line 5257
+    .line 5749
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->timeSeconds_:I
 
     return v0
@@ -617,8 +596,7 @@
 .method public getToa()I
     .locals 1
 
-    .prologue
-    .line 5223
+    .line 5715
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->toa_:I
 
     return v0
@@ -627,8 +605,7 @@
 .method public hasCallFwdTimerEnd()Z
     .locals 1
 
-    .prologue
-    .line 5294
+    .line 5786
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasCallFwdTimerEnd:Z
 
     return v0
@@ -637,8 +614,7 @@
 .method public hasCallFwdTimerStart()Z
     .locals 1
 
-    .prologue
-    .line 5274
+    .line 5766
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasCallFwdTimerStart:Z
 
     return v0
@@ -647,8 +623,7 @@
 .method public hasNumber()Z
     .locals 1
 
-    .prologue
-    .line 5241
+    .line 5733
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasNumber:Z
 
     return v0
@@ -657,8 +632,7 @@
 .method public hasReason()Z
     .locals 1
 
-    .prologue
-    .line 5190
+    .line 5682
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasReason:Z
 
     return v0
@@ -667,8 +641,7 @@
 .method public hasServiceClass()Z
     .locals 1
 
-    .prologue
-    .line 5207
+    .line 5699
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasServiceClass:Z
 
     return v0
@@ -677,8 +650,7 @@
 .method public hasStatus()Z
     .locals 1
 
-    .prologue
-    .line 5173
+    .line 5665
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasStatus:Z
 
     return v0
@@ -687,8 +659,7 @@
 .method public hasTimeSeconds()Z
     .locals 1
 
-    .prologue
-    .line 5258
+    .line 5750
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasTimeSeconds:Z
 
     return v0
@@ -697,8 +668,7 @@
 .method public hasToa()Z
     .locals 1
 
-    .prologue
-    .line 5224
+    .line 5716
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasToa:Z
 
     return v0
@@ -707,33 +677,30 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 5324
+    .line 5816
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 5406
+    .line 5655
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
-    .locals 3
+    .locals 2
     .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -741,210 +708,237 @@
         }
     .end annotation
 
-    .prologue
-    .line 5410
-    :cond_0
+    .line 5902
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 5411
+    .line 5903
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_9
 
-    .line 5415
+    const/16 v1, 0xd
+
+    if-eq v0, v1, :cond_7
+
+    const/16 v1, 0x15
+
+    if-eq v0, v1, :cond_6
+
+    const/16 v1, 0x1d
+
+    if-eq v0, v1, :cond_5
+
+    const/16 v1, 0x25
+
+    if-eq v0, v1, :cond_4
+
+    const/16 v1, 0x2a
+
+    if-eq v0, v1, :cond_3
+
+    const/16 v1, 0x35
+
+    if-eq v0, v1, :cond_2
+
+    const/16 v1, 0x3a
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x42
+
+    if-eq v0, v1, :cond_0
+
+    .line 5907
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_0
+    if-nez v1, :cond_8
 
-    .line 5416
+    .line 5908
     return-object p0
 
-    .line 5413
-    :sswitch_0
-    return-object p0
-
-    .line 5421
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setStatus(I)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
-
-    goto :goto_0
-
-    .line 5425
-    :sswitch_2
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setReason(I)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
-
-    goto :goto_0
-
-    .line 5429
-    :sswitch_3
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setServiceClass(I)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
-
-    goto :goto_0
-
-    .line 5433
-    :sswitch_4
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setToa(I)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
-
-    goto :goto_0
-
-    .line 5437
-    :sswitch_5
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setNumber(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
-
-    goto :goto_0
-
-    .line 5441
-    :sswitch_6
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setTimeSeconds(I)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
-
-    goto :goto_0
-
-    .line 5445
-    :sswitch_7
+    .line 5943
+    :cond_0
     new-instance v1, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
     invoke-direct {v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;-><init>()V
 
-    .line 5446
+    .line 5944
     .local v1, "value":Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 5447
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setCallFwdTimerStart(Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
+    .line 5945
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setCallFwdTimerEnd(Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
 
-    goto :goto_0
+    .line 5946
+    goto :goto_1
 
-    .line 5451
+    .line 5937
     .end local v1    # "value":Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
-    :sswitch_8
+    :cond_1
     new-instance v1, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
     invoke-direct {v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;-><init>()V
 
-    .line 5452
+    .line 5938
     .restart local v1    # "value":Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 5453
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setCallFwdTimerEnd(Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
+    .line 5939
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setCallFwdTimerStart(Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
 
-    goto :goto_0
+    .line 5940
+    goto :goto_1
 
-    .line 5411
+    .line 5933
+    .end local v1    # "value":Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
+    :cond_2
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setTimeSeconds(I)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
+
+    .line 5934
+    goto :goto_1
+
+    .line 5929
+    :cond_3
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setNumber(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
+
+    .line 5930
+    goto :goto_1
+
+    .line 5925
+    :cond_4
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setToa(I)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
+
+    .line 5926
+    goto :goto_1
+
+    .line 5921
+    :cond_5
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setServiceClass(I)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
+
+    .line 5922
+    goto :goto_1
+
+    .line 5917
+    :cond_6
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setReason(I)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
+
+    .line 5918
+    goto :goto_1
+
+    .line 5913
+    :cond_7
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->setStatus(I)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
+
+    .line 5914
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0xd -> :sswitch_1
-        0x15 -> :sswitch_2
-        0x1d -> :sswitch_3
-        0x25 -> :sswitch_4
-        0x2a -> :sswitch_5
-        0x35 -> :sswitch_6
-        0x3a -> :sswitch_7
-        0x42 -> :sswitch_8
-    .end sparse-switch
+    .line 5949
+    .end local v0    # "tag":I
+    :cond_8
+    :goto_1
+    goto :goto_0
+
+    .line 5905
+    .restart local v0    # "tag":I
+    :cond_9
+    return-object p0
 .end method
 
 .method public setCallFwdTimerEnd(Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
     .locals 1
     .param p1, "value"    # Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    .prologue
-    .line 5297
-    if-nez p1, :cond_0
+    .line 5789
+    if-eqz p1, :cond_0
 
-    .line 5298
+    .line 5792
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasCallFwdTimerEnd:Z
+
+    .line 5793
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->callFwdTimerEnd_:Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
+
+    .line 5794
+    return-object p0
+
+    .line 5790
+    :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
-
-    .line 5300
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasCallFwdTimerEnd:Z
-
-    .line 5301
-    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->callFwdTimerEnd_:Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
-
-    .line 5302
-    return-object p0
 .end method
 
 .method public setCallFwdTimerStart(Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
     .locals 1
     .param p1, "value"    # Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    .prologue
-    .line 5277
-    if-nez p1, :cond_0
+    .line 5769
+    if-eqz p1, :cond_0
 
-    .line 5278
+    .line 5772
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasCallFwdTimerStart:Z
+
+    .line 5773
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->callFwdTimerStart_:Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
+
+    .line 5774
+    return-object p0
+
+    .line 5770
+    :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
-
-    .line 5280
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasCallFwdTimerStart:Z
-
-    .line 5281
-    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->callFwdTimerStart_:Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
-
-    .line 5282
-    return-object p0
 .end method
 
 .method public setNumber(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 5243
+    .line 5735
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasNumber:Z
 
-    .line 5244
+    .line 5736
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->number_:Ljava/lang/String;
 
-    .line 5245
+    .line 5737
     return-object p0
 .end method
 
@@ -952,16 +946,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 5192
+    .line 5684
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasReason:Z
 
-    .line 5193
+    .line 5685
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->reason_:I
 
-    .line 5194
+    .line 5686
     return-object p0
 .end method
 
@@ -969,16 +962,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 5209
+    .line 5701
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasServiceClass:Z
 
-    .line 5210
+    .line 5702
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->serviceClass_:I
 
-    .line 5211
+    .line 5703
     return-object p0
 .end method
 
@@ -986,16 +978,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 5175
+    .line 5667
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasStatus:Z
 
-    .line 5176
+    .line 5668
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->status_:I
 
-    .line 5177
+    .line 5669
     return-object p0
 .end method
 
@@ -1003,16 +994,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 5260
+    .line 5752
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasTimeSeconds:Z
 
-    .line 5261
+    .line 5753
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->timeSeconds_:I
 
-    .line 5262
+    .line 5754
     return-object p0
 .end method
 
@@ -1020,16 +1010,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 5226
+    .line 5718
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasToa:Z
 
-    .line 5227
+    .line 5719
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->toa_:I
 
-    .line 5228
+    .line 5720
     return-object p0
 .end method
 
@@ -1042,24 +1031,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 5330
+    .line 5822
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasStatus()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 5331
+    .line 5823
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getStatus()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 5333
+    .line 5825
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasReason()Z
 
@@ -1067,16 +1055,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 5334
+    .line 5826
+    const/4 v0, 0x2
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getReason()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x2
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 5336
+    .line 5828
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasServiceClass()Z
 
@@ -1084,16 +1072,16 @@
 
     if-eqz v0, :cond_2
 
-    .line 5337
+    .line 5829
+    const/4 v0, 0x3
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getServiceClass()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x3
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 5339
+    .line 5831
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasToa()Z
 
@@ -1101,16 +1089,16 @@
 
     if-eqz v0, :cond_3
 
-    .line 5340
+    .line 5832
+    const/4 v0, 0x4
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getToa()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x4
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 5342
+    .line 5834
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasNumber()Z
 
@@ -1118,16 +1106,16 @@
 
     if-eqz v0, :cond_4
 
-    .line 5343
+    .line 5835
+    const/4 v0, 0x5
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getNumber()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x5
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 5345
+    .line 5837
     :cond_4
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasTimeSeconds()Z
 
@@ -1135,16 +1123,16 @@
 
     if-eqz v0, :cond_5
 
-    .line 5346
+    .line 5838
+    const/4 v0, 0x6
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getTimeSeconds()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x6
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 5348
+    .line 5840
     :cond_5
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasCallFwdTimerStart()Z
 
@@ -1152,16 +1140,16 @@
 
     if-eqz v0, :cond_6
 
-    .line 5349
+    .line 5841
+    const/4 v0, 0x7
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getCallFwdTimerStart()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x7
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
-
-    .line 5351
+    .line 5843
     :cond_6
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->hasCallFwdTimerEnd()Z
 
@@ -1169,16 +1157,16 @@
 
     if-eqz v0, :cond_7
 
-    .line 5352
+    .line 5844
+    const/16 v0, 0x8
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList$CallForwardInfo;->getCallFwdTimerEnd()Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/16 v1, 0x8
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
-
-    .line 5329
+    .line 5846
     :cond_7
     return-void
 .end method

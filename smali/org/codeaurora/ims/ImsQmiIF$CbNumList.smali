@@ -36,26 +36,25 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 4755
+    .line 5213
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 4760
+    .line 5218
     const/4 v0, 0x0
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->status_:I
 
-    .line 4777
-    const-string/jumbo v0, ""
+    .line 5235
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->number_:Ljava/lang/String;
 
-    .line 4813
+    .line 5271
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->cachedSize:I
 
-    .line 4755
+    .line 5213
     return-void
 .end method
 
@@ -68,8 +67,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 4873
+    .line 5331
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;-><init>()V
@@ -90,8 +88,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 4867
+    .line 5325
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;-><init>()V
@@ -110,69 +107,65 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$CbNumList;
     .locals 1
 
-    .prologue
-    .line 4792
+    .line 5250
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->clearStatus()Lorg/codeaurora/ims/ImsQmiIF$CbNumList;
 
-    .line 4793
+    .line 5251
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->clearNumber()Lorg/codeaurora/ims/ImsQmiIF$CbNumList;
 
-    .line 4794
+    .line 5252
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->cachedSize:I
 
-    .line 4795
+    .line 5253
     return-object p0
 .end method
 
 .method public clearNumber()Lorg/codeaurora/ims/ImsQmiIF$CbNumList;
     .locals 1
 
-    .prologue
-    .line 4786
+    .line 5244
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->hasNumber:Z
 
-    .line 4787
-    const-string/jumbo v0, ""
+    .line 5245
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->number_:Ljava/lang/String;
 
-    .line 4788
+    .line 5246
     return-object p0
 .end method
 
 .method public clearStatus()Lorg/codeaurora/ims/ImsQmiIF$CbNumList;
     .locals 1
 
-    .prologue
+    .line 5227
     const/4 v0, 0x0
 
-    .line 4769
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->hasStatus:Z
 
-    .line 4770
+    .line 5228
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->status_:I
 
-    .line 4771
+    .line 5229
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 4816
+    .line 5274
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 4818
+    .line 5276
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->getSerializedSize()I
 
-    .line 4820
+    .line 5278
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->cachedSize:I
 
@@ -182,8 +175,7 @@
 .method public getNumber()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 4778
+    .line 5236
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->number_:Ljava/lang/String;
 
     return-object v0
@@ -192,11 +184,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 4825
+    .line 5283
     const/4 v0, 0x0
 
-    .line 4826
+    .line 5284
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->hasStatus()Z
 
@@ -204,21 +195,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 4828
+    .line 5285
+    const/4 v1, 0x1
+
+    .line 5286
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->getStatus()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 4827
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 4830
+    .line 5288
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->hasNumber()Z
 
@@ -226,33 +217,32 @@
 
     if-eqz v1, :cond_1
 
-    .line 4832
+    .line 5289
+    const/4 v1, 0x2
+
+    .line 5290
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->getNumber()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x2
-
-    .line 4831
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 4834
+    .line 5292
     :cond_1
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->cachedSize:I
 
-    .line 4835
+    .line 5293
     return v0
 .end method
 
 .method public getStatus()I
     .locals 1
 
-    .prologue
-    .line 4762
+    .line 5220
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->status_:I
 
     return v0
@@ -261,8 +251,7 @@
 .method public hasNumber()Z
     .locals 1
 
-    .prologue
-    .line 4779
+    .line 5237
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->hasNumber:Z
 
     return v0
@@ -271,8 +260,7 @@
 .method public hasStatus()Z
     .locals 1
 
-    .prologue
-    .line 4761
+    .line 5219
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->hasStatus:Z
 
     return v0
@@ -281,29 +269,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 4799
+    .line 5257
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 4839
+    .line 5210
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$CbNumList;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$CbNumList;
@@ -315,77 +300,80 @@
         }
     .end annotation
 
-    .prologue
-    .line 4843
-    :cond_0
+    .line 5301
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 4844
+    .line 5302
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_3
 
-    .line 4848
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x12
+
+    if-eq v0, v1, :cond_0
+
+    .line 5306
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_2
 
-    .line 4849
+    .line 5307
     return-object p0
 
-    .line 4846
-    :sswitch_0
-    return-object p0
-
-    .line 4854
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->setStatus(I)Lorg/codeaurora/ims/ImsQmiIF$CbNumList;
-
-    goto :goto_0
-
-    .line 4858
-    :sswitch_2
+    .line 5316
+    :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->setNumber(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$CbNumList;
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 4844
+    .line 5312
+    :cond_1
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->setStatus(I)Lorg/codeaurora/ims/ImsQmiIF$CbNumList;
+
+    .line 5313
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x12 -> :sswitch_2
-    .end sparse-switch
+    .line 5320
+    .end local v0    # "tag":I
+    :cond_2
+    :goto_1
+    goto :goto_0
+
+    .line 5304
+    .restart local v0    # "tag":I
+    :cond_3
+    return-object p0
 .end method
 
 .method public setNumber(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$CbNumList;
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 4781
+    .line 5239
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->hasNumber:Z
 
-    .line 4782
+    .line 5240
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->number_:Ljava/lang/String;
 
-    .line 4783
+    .line 5241
     return-object p0
 .end method
 
@@ -393,16 +381,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 4764
+    .line 5222
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->hasStatus:Z
 
-    .line 4765
+    .line 5223
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->status_:I
 
-    .line 4766
+    .line 5224
     return-object p0
 .end method
 
@@ -415,24 +402,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 4805
+    .line 5263
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->hasStatus()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4806
+    .line 5264
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->getStatus()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 4808
+    .line 5266
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->hasNumber()Z
 
@@ -440,16 +426,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 4809
+    .line 5267
+    const/4 v0, 0x2
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->getNumber()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x2
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 4804
+    .line 5269
     :cond_1
     return-void
 .end method

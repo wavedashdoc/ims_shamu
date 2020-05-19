@@ -15,11 +15,17 @@
 
 
 # static fields
+.field public static final ERRORDETAILS_FIELD_NUMBER:I = 0x2
+
 .field public static final PRESENTATION_FIELD_NUMBER:I = 0x1
 
 
 # instance fields
 .field private cachedSize:I
+
+.field private errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+.field private hasErrorDetails:Z
 
 .field private hasPresentation:Z
 
@@ -30,21 +36,25 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 2305
+    .line 2579
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 2310
+    .line 2584
     const/4 v0, 0x0
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->presentation_:I
 
-    .line 2342
+    .line 2601
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    .line 2640
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->cachedSize:I
 
-    .line 2305
+    .line 2579
     return-void
 .end method
 
@@ -57,8 +67,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 2394
+    .line 2702
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$Colr;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$Colr;-><init>()V
@@ -79,8 +88,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 2388
+    .line 2696
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$Colr;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$Colr;-><init>()V
@@ -99,59 +107,84 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$Colr;
     .locals 1
 
-    .prologue
-    .line 2325
+    .line 2619
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->clearPresentation()Lorg/codeaurora/ims/ImsQmiIF$Colr;
 
-    .line 2326
+    .line 2620
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->clearErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$Colr;
+
+    .line 2621
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->cachedSize:I
 
-    .line 2327
+    .line 2622
+    return-object p0
+.end method
+
+.method public clearErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$Colr;
+    .locals 1
+
+    .line 2613
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->hasErrorDetails:Z
+
+    .line 2614
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    .line 2615
     return-object p0
 .end method
 
 .method public clearPresentation()Lorg/codeaurora/ims/ImsQmiIF$Colr;
     .locals 1
 
-    .prologue
+    .line 2593
     const/4 v0, 0x0
 
-    .line 2319
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->hasPresentation:Z
 
-    .line 2320
+    .line 2594
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->presentation_:I
 
-    .line 2321
+    .line 2595
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 2345
+    .line 2643
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 2347
+    .line 2645
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->getSerializedSize()I
 
-    .line 2349
+    .line 2647
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->cachedSize:I
 
     return v0
 .end method
 
+.method public getErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+    .locals 1
+
+    .line 2603
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    return-object v0
+.end method
+
 .method public getPresentation()I
     .locals 1
 
-    .prologue
-    .line 2312
+    .line 2586
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->presentation_:I
 
     return v0
@@ -160,11 +193,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 2354
+    .line 2652
     const/4 v0, 0x0
 
-    .line 2355
+    .line 2653
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->hasPresentation()Z
 
@@ -172,33 +204,63 @@
 
     if-eqz v1, :cond_0
 
-    .line 2357
+    .line 2654
+    const/4 v1, 0x1
+
+    .line 2655
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->getPresentation()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 2356
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 2359
+    .line 2657
     :cond_0
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->hasErrorDetails()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 2658
+    const/4 v1, 0x2
+
+    .line 2659
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->getErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 2661
+    :cond_1
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->cachedSize:I
 
-    .line 2360
+    .line 2662
+    return v0
+.end method
+
+.method public hasErrorDetails()Z
+    .locals 1
+
+    .line 2602
+    iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->hasErrorDetails:Z
+
     return v0
 .end method
 
 .method public hasPresentation()Z
     .locals 1
 
-    .prologue
-    .line 2311
+    .line 2585
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->hasPresentation:Z
 
     return v0
@@ -207,29 +269,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 2331
+    .line 2626
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 2364
+    .line 2576
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$Colr;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$Colr;
@@ -241,66 +300,114 @@
         }
     .end annotation
 
-    .prologue
-    .line 2368
-    :cond_0
+    .line 2670
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 2369
+    .line 2671
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_3
 
-    .line 2373
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x12
+
+    if-eq v0, v1, :cond_0
+
+    .line 2675
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_2
 
-    .line 2374
+    .line 2676
     return-object p0
 
-    .line 2371
-    :sswitch_0
-    return-object p0
+    .line 2685
+    :cond_0
+    new-instance v1, Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
 
-    .line 2379
-    :sswitch_1
+    invoke-direct {v1}, Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;-><init>()V
+
+    .line 2686
+    .local v1, "value":Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 2687
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->setErrorDetails(Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;)Lorg/codeaurora/ims/ImsQmiIF$Colr;
+
+    .line 2688
+    goto :goto_1
+
+    .line 2681
+    .end local v1    # "value":Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+    :cond_1
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->setPresentation(I)Lorg/codeaurora/ims/ImsQmiIF$Colr;
 
-    goto :goto_0
-
-    .line 2369
+    .line 2682
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-    .end sparse-switch
+    .line 2691
+    .end local v0    # "tag":I
+    :cond_2
+    :goto_1
+    goto :goto_0
+
+    .line 2673
+    .restart local v0    # "tag":I
+    :cond_3
+    return-object p0
+.end method
+
+.method public setErrorDetails(Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;)Lorg/codeaurora/ims/ImsQmiIF$Colr;
+    .locals 1
+    .param p1, "value"    # Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    .line 2605
+    if-eqz p1, :cond_0
+
+    .line 2608
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->hasErrorDetails:Z
+
+    .line 2609
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    .line 2610
+    return-object p0
+
+    .line 2606
+    :cond_0
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
 .end method
 
 .method public setPresentation(I)Lorg/codeaurora/ims/ImsQmiIF$Colr;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 2314
+    .line 2588
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->hasPresentation:Z
 
-    .line 2315
+    .line 2589
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Colr;->presentation_:I
 
-    .line 2316
+    .line 2590
     return-object p0
 .end method
 
@@ -313,24 +420,40 @@
         }
     .end annotation
 
-    .prologue
-    .line 2337
+    .line 2632
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->hasPresentation()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 2338
+    .line 2633
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->getPresentation()I
+
+    move-result v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
+
+    .line 2635
+    :cond_0
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->hasErrorDetails()Z
 
     move-result v0
 
-    const/4 v1, 0x1
+    if-eqz v0, :cond_1
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
+    .line 2636
+    const/4 v0, 0x2
 
-    .line 2336
-    :cond_0
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->getErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 2638
+    :cond_1
     return-void
 .end method

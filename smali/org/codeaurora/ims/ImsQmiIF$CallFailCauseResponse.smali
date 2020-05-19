@@ -15,6 +15,8 @@
 
 
 # static fields
+.field public static final ERRORDETAILS_FIELD_NUMBER:I = 0x4
+
 .field public static final ERRORINFO_FIELD_NUMBER:I = 0x2
 
 .field public static final FAILCAUSE_FIELD_NUMBER:I = 0x1
@@ -25,9 +27,13 @@
 # instance fields
 .field private cachedSize:I
 
+.field private errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
 .field private errorinfo_:Lcom/google/protobuf/micro/ByteStringMicro;
 
 .field private failcause_:I
+
+.field private hasErrorDetails:Z
 
 .field private hasErrorinfo:Z
 
@@ -42,31 +48,35 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 467
+    .line 649
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 472
+    .line 654
     const/4 v0, 0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->failcause_:I
 
-    .line 489
+    .line 671
     sget-object v0, Lcom/google/protobuf/micro/ByteStringMicro;->EMPTY:Lcom/google/protobuf/micro/ByteStringMicro;
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->errorinfo_:Lcom/google/protobuf/micro/ByteStringMicro;
 
-    .line 506
-    const-string/jumbo v0, ""
+    .line 688
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->networkErrorString_:Ljava/lang/String;
 
-    .line 546
+    .line 705
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    .line 752
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->cachedSize:I
 
-    .line 467
+    .line 649
     return-void
 .end method
 
@@ -79,8 +89,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 614
+    .line 830
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;-><init>()V
@@ -101,8 +110,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 608
+    .line 824
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;-><init>()V
@@ -121,103 +129,126 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
     .locals 1
 
-    .prologue
-    .line 521
+    .line 723
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->clearFailcause()Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
-    .line 522
+    .line 724
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->clearErrorinfo()Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
-    .line 523
+    .line 725
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->clearNetworkErrorString()Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
-    .line 524
+    .line 726
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->clearErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
+
+    .line 727
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->cachedSize:I
 
-    .line 525
+    .line 728
+    return-object p0
+.end method
+
+.method public clearErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
+    .locals 1
+
+    .line 717
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasErrorDetails:Z
+
+    .line 718
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    .line 719
     return-object p0
 .end method
 
 .method public clearErrorinfo()Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
     .locals 1
 
-    .prologue
-    .line 498
+    .line 680
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasErrorinfo:Z
 
-    .line 499
+    .line 681
     sget-object v0, Lcom/google/protobuf/micro/ByteStringMicro;->EMPTY:Lcom/google/protobuf/micro/ByteStringMicro;
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->errorinfo_:Lcom/google/protobuf/micro/ByteStringMicro;
 
-    .line 500
+    .line 682
     return-object p0
 .end method
 
 .method public clearFailcause()Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
     .locals 1
 
-    .prologue
-    .line 481
+    .line 663
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasFailcause:Z
 
-    .line 482
+    .line 664
     const/4 v0, 0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->failcause_:I
 
-    .line 483
+    .line 665
     return-object p0
 .end method
 
 .method public clearNetworkErrorString()Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
     .locals 1
 
-    .prologue
-    .line 515
+    .line 697
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasNetworkErrorString:Z
 
-    .line 516
-    const-string/jumbo v0, ""
+    .line 698
+    const-string v0, ""
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->networkErrorString_:Ljava/lang/String;
 
-    .line 517
+    .line 699
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 549
+    .line 755
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 551
+    .line 757
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->getSerializedSize()I
 
-    .line 553
+    .line 759
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->cachedSize:I
 
     return v0
 .end method
 
+.method public getErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+    .locals 1
+
+    .line 707
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    return-object v0
+.end method
+
 .method public getErrorinfo()Lcom/google/protobuf/micro/ByteStringMicro;
     .locals 1
 
-    .prologue
-    .line 490
+    .line 672
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->errorinfo_:Lcom/google/protobuf/micro/ByteStringMicro;
 
     return-object v0
@@ -226,8 +257,7 @@
 .method public getFailcause()I
     .locals 1
 
-    .prologue
-    .line 474
+    .line 656
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->failcause_:I
 
     return v0
@@ -236,8 +266,7 @@
 .method public getNetworkErrorString()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 507
+    .line 689
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->networkErrorString_:Ljava/lang/String;
 
     return-object v0
@@ -246,11 +275,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 558
+    .line 764
     const/4 v0, 0x0
 
-    .line 559
+    .line 765
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasFailcause()Z
 
@@ -258,21 +286,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 561
+    .line 766
+    const/4 v1, 0x1
+
+    .line 767
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->getFailcause()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 560
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 563
+    .line 769
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasErrorinfo()Z
 
@@ -280,21 +308,21 @@
 
     if-eqz v1, :cond_1
 
-    .line 565
+    .line 770
+    const/4 v1, 0x2
+
+    .line 771
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->getErrorinfo()Lcom/google/protobuf/micro/ByteStringMicro;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x2
-
-    .line 564
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeBytesSize(ILcom/google/protobuf/micro/ByteStringMicro;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeBytesSize(ILcom/google/protobuf/micro/ByteStringMicro;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 567
+    .line 773
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasNetworkErrorString()Z
 
@@ -302,33 +330,63 @@
 
     if-eqz v1, :cond_2
 
-    .line 569
+    .line 774
+    const/4 v1, 0x3
+
+    .line 775
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->getNetworkErrorString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x3
-
-    .line 568
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 571
+    .line 777
     :cond_2
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasErrorDetails()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    .line 778
+    const/4 v1, 0x4
+
+    .line 779
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->getErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 781
+    :cond_3
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->cachedSize:I
 
-    .line 572
+    .line 782
+    return v0
+.end method
+
+.method public hasErrorDetails()Z
+    .locals 1
+
+    .line 706
+    iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasErrorDetails:Z
+
     return v0
 .end method
 
 .method public hasErrorinfo()Z
     .locals 1
 
-    .prologue
-    .line 491
+    .line 673
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasErrorinfo:Z
 
     return v0
@@ -337,8 +395,7 @@
 .method public hasFailcause()Z
     .locals 1
 
-    .prologue
-    .line 473
+    .line 655
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasFailcause:Z
 
     return v0
@@ -347,8 +404,7 @@
 .method public hasNetworkErrorString()Z
     .locals 1
 
-    .prologue
-    .line 508
+    .line 690
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasNetworkErrorString:Z
 
     return v0
@@ -357,29 +413,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 529
+    .line 732
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 576
+    .line 646
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
@@ -391,88 +444,144 @@
         }
     .end annotation
 
-    .prologue
-    .line 580
-    :cond_0
+    .line 790
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 581
+    .line 791
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_5
 
-    .line 585
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_3
+
+    const/16 v1, 0x12
+
+    if-eq v0, v1, :cond_2
+
+    const/16 v1, 0x1a
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x22
+
+    if-eq v0, v1, :cond_0
+
+    .line 795
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_4
 
-    .line 586
+    .line 796
     return-object p0
 
-    .line 583
-    :sswitch_0
-    return-object p0
+    .line 813
+    :cond_0
+    new-instance v1, Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
 
-    .line 591
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+    invoke-direct {v1}, Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;-><init>()V
 
-    move-result v1
+    .line 814
+    .local v1, "value":Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->setFailcause(I)Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
+    .line 815
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->setErrorDetails(Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;)Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
-    goto :goto_0
+    .line 816
+    goto :goto_1
 
-    .line 595
-    :sswitch_2
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBytes()Lcom/google/protobuf/micro/ByteStringMicro;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->setErrorinfo(Lcom/google/protobuf/micro/ByteStringMicro;)Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
-
-    goto :goto_0
-
-    .line 599
-    :sswitch_3
+    .line 809
+    .end local v1    # "value":Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+    :cond_1
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->setNetworkErrorString(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
 
-    goto :goto_0
+    .line 810
+    goto :goto_1
 
-    .line 581
+    .line 805
+    :cond_2
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBytes()Lcom/google/protobuf/micro/ByteStringMicro;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->setErrorinfo(Lcom/google/protobuf/micro/ByteStringMicro;)Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
+
+    .line 806
+    goto :goto_1
+
+    .line 801
+    :cond_3
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->setFailcause(I)Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
+
+    .line 802
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x12 -> :sswitch_2
-        0x1a -> :sswitch_3
-    .end sparse-switch
+    .line 819
+    .end local v0    # "tag":I
+    :cond_4
+    :goto_1
+    goto :goto_0
+
+    .line 793
+    .restart local v0    # "tag":I
+    :cond_5
+    return-object p0
+.end method
+
+.method public setErrorDetails(Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;)Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
+    .locals 1
+    .param p1, "value"    # Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    .line 709
+    if-eqz p1, :cond_0
+
+    .line 712
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasErrorDetails:Z
+
+    .line 713
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->errorDetails_:Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    .line 714
+    return-object p0
+
+    .line 710
+    :cond_0
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
 .end method
 
 .method public setErrorinfo(Lcom/google/protobuf/micro/ByteStringMicro;)Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;
     .locals 1
     .param p1, "value"    # Lcom/google/protobuf/micro/ByteStringMicro;
 
-    .prologue
-    .line 493
+    .line 675
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasErrorinfo:Z
 
-    .line 494
+    .line 676
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->errorinfo_:Lcom/google/protobuf/micro/ByteStringMicro;
 
-    .line 495
+    .line 677
     return-object p0
 .end method
 
@@ -480,16 +589,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 476
+    .line 658
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasFailcause:Z
 
-    .line 477
+    .line 659
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->failcause_:I
 
-    .line 478
+    .line 660
     return-object p0
 .end method
 
@@ -497,16 +605,15 @@
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 510
+    .line 692
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasNetworkErrorString:Z
 
-    .line 511
+    .line 693
     iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->networkErrorString_:Ljava/lang/String;
 
-    .line 512
+    .line 694
     return-object p0
 .end method
 
@@ -519,24 +626,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 535
+    .line 738
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasFailcause()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 536
+    .line 739
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->getFailcause()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 538
+    .line 741
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasErrorinfo()Z
 
@@ -544,16 +650,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 539
+    .line 742
+    const/4 v0, 0x2
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->getErrorinfo()Lcom/google/protobuf/micro/ByteStringMicro;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x2
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBytes(ILcom/google/protobuf/micro/ByteStringMicro;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBytes(ILcom/google/protobuf/micro/ByteStringMicro;)V
-
-    .line 541
+    .line 744
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasNetworkErrorString()Z
 
@@ -561,16 +667,33 @@
 
     if-eqz v0, :cond_2
 
-    .line 542
+    .line 745
+    const/4 v0, 0x3
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->getNetworkErrorString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x3
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 534
+    .line 747
     :cond_2
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->hasErrorDetails()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    .line 748
+    const/4 v0, 0x4
+
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;->getErrorDetails()Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 750
+    :cond_3
     return-void
 .end method

@@ -36,24 +36,23 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    const/4 v0, 0x0
-
-    .line 2964
+    .line 3330
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 2969
+    .line 3335
+    const/4 v0, 0x0
+
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->paramM_:I
 
-    .line 2986
+    .line 3352
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->paramN_:I
 
-    .line 3022
+    .line 3388
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->cachedSize:I
 
-    .line 2964
+    .line 3330
     return-void
 .end method
 
@@ -66,8 +65,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 3082
+    .line 3448
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$Clir;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$Clir;-><init>()V
@@ -88,8 +86,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 3076
+    .line 3442
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$Clir;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$Clir;-><init>()V
@@ -108,67 +105,63 @@
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$Clir;
     .locals 1
 
-    .prologue
-    .line 3001
+    .line 3367
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->clearParamM()Lorg/codeaurora/ims/ImsQmiIF$Clir;
 
-    .line 3002
+    .line 3368
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->clearParamN()Lorg/codeaurora/ims/ImsQmiIF$Clir;
 
-    .line 3003
+    .line 3369
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->cachedSize:I
 
-    .line 3004
+    .line 3370
     return-object p0
 .end method
 
 .method public clearParamM()Lorg/codeaurora/ims/ImsQmiIF$Clir;
     .locals 1
 
-    .prologue
+    .line 3344
     const/4 v0, 0x0
 
-    .line 2978
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->hasParamM:Z
 
-    .line 2979
+    .line 3345
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->paramM_:I
 
-    .line 2980
+    .line 3346
     return-object p0
 .end method
 
 .method public clearParamN()Lorg/codeaurora/ims/ImsQmiIF$Clir;
     .locals 1
 
-    .prologue
+    .line 3361
     const/4 v0, 0x0
 
-    .line 2995
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->hasParamN:Z
 
-    .line 2996
+    .line 3362
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->paramN_:I
 
-    .line 2997
+    .line 3363
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 3025
+    .line 3391
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 3027
+    .line 3393
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->getSerializedSize()I
 
-    .line 3029
+    .line 3395
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->cachedSize:I
 
@@ -178,8 +171,7 @@
 .method public getParamM()I
     .locals 1
 
-    .prologue
-    .line 2970
+    .line 3336
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->paramM_:I
 
     return v0
@@ -188,8 +180,7 @@
 .method public getParamN()I
     .locals 1
 
-    .prologue
-    .line 2987
+    .line 3353
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->paramN_:I
 
     return v0
@@ -198,11 +189,10 @@
 .method public getSerializedSize()I
     .locals 3
 
-    .prologue
-    .line 3034
+    .line 3400
     const/4 v0, 0x0
 
-    .line 3035
+    .line 3401
     .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->hasParamM()Z
 
@@ -210,21 +200,21 @@
 
     if-eqz v1, :cond_0
 
-    .line 3037
+    .line 3402
+    const/4 v1, 0x1
+
+    .line 3403
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->getParamM()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
-
-    .line 3036
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
-    add-int/lit8 v0, v1, 0x0
+    add-int/2addr v0, v1
 
-    .line 3039
+    .line 3405
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->hasParamN()Z
 
@@ -232,33 +222,32 @@
 
     if-eqz v1, :cond_1
 
-    .line 3041
+    .line 3406
+    const/4 v1, 0x2
+
+    .line 3407
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->getParamN()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x2
-
-    .line 3040
-    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 3043
+    .line 3409
     :cond_1
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->cachedSize:I
 
-    .line 3044
+    .line 3410
     return v0
 .end method
 
 .method public hasParamM()Z
     .locals 1
 
-    .prologue
-    .line 2971
+    .line 3337
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->hasParamM:Z
 
     return v0
@@ -267,8 +256,7 @@
 .method public hasParamN()Z
     .locals 1
 
-    .prologue
-    .line 2988
+    .line 3354
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->hasParamN:Z
 
     return v0
@@ -277,29 +265,26 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 3008
+    .line 3374
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 3048
+    .line 3327
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$Clir;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$Clir;
@@ -311,77 +296,80 @@
         }
     .end annotation
 
-    .prologue
-    .line 3052
-    :cond_0
+    .line 3418
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 3053
+    .line 3419
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_3
 
-    .line 3057
+    const/16 v1, 0xd
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x15
+
+    if-eq v0, v1, :cond_0
+
+    .line 3423
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_2
 
-    .line 3058
+    .line 3424
     return-object p0
 
-    .line 3055
-    :sswitch_0
-    return-object p0
-
-    .line 3063
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->setParamM(I)Lorg/codeaurora/ims/ImsQmiIF$Clir;
-
-    goto :goto_0
-
-    .line 3067
-    :sswitch_2
+    .line 3433
+    :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->setParamN(I)Lorg/codeaurora/ims/ImsQmiIF$Clir;
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 3053
+    .line 3429
+    :cond_1
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->setParamM(I)Lorg/codeaurora/ims/ImsQmiIF$Clir;
+
+    .line 3430
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0xd -> :sswitch_1
-        0x15 -> :sswitch_2
-    .end sparse-switch
+    .line 3437
+    .end local v0    # "tag":I
+    :cond_2
+    :goto_1
+    goto :goto_0
+
+    .line 3421
+    .restart local v0    # "tag":I
+    :cond_3
+    return-object p0
 .end method
 
 .method public setParamM(I)Lorg/codeaurora/ims/ImsQmiIF$Clir;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 2973
+    .line 3339
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->hasParamM:Z
 
-    .line 2974
+    .line 3340
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->paramM_:I
 
-    .line 2975
+    .line 3341
     return-object p0
 .end method
 
@@ -389,16 +377,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 2990
+    .line 3356
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->hasParamN:Z
 
-    .line 2991
+    .line 3357
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$Clir;->paramN_:I
 
-    .line 2992
+    .line 3358
     return-object p0
 .end method
 
@@ -411,24 +398,23 @@
         }
     .end annotation
 
-    .prologue
-    .line 3014
+    .line 3380
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->hasParamM()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3015
+    .line 3381
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->getParamM()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 3017
+    .line 3383
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->hasParamN()Z
 
@@ -436,16 +422,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 3018
+    .line 3384
+    const/4 v0, 0x2
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$Clir;->getParamN()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x2
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 3013
+    .line 3386
     :cond_1
     return-void
 .end method
