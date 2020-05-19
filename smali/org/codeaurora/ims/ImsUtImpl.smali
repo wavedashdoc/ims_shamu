@@ -1,5 +1,5 @@
 .class public Lorg/codeaurora/ims/ImsUtImpl;
-.super Lcom/android/ims/internal/IImsUt$Stub;
+.super Landroid/telephony/ims/stub/ImsUtImplBase;
 .source "ImsUtImpl.java"
 
 
@@ -98,14 +98,14 @@
 
 .field private mHandler:Landroid/os/Handler;
 
-.field private mListenerProxy:Lorg/codeaurora/ims/ImsUtListenerProxy;
+.field private mListenerImpl:Lorg/codeaurora/ims/ImsUtListenerImpl;
 
 
 # direct methods
-.method static synthetic -get0(Lorg/codeaurora/ims/ImsUtImpl;)Lorg/codeaurora/ims/ImsUtListenerProxy;
+.method static synthetic -get0(Lorg/codeaurora/ims/ImsUtImpl;)Lorg/codeaurora/ims/ImsUtListenerImpl;
     .locals 1
 
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsUtImpl;->mListenerProxy:Lorg/codeaurora/ims/ImsUtListenerProxy;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsUtImpl;->mListenerImpl:Lorg/codeaurora/ims/ImsUtListenerImpl;
 
     return-object v0
 .end method
@@ -147,7 +147,7 @@
 
     .prologue
     .line 98
-    invoke-direct {p0}, Lcom/android/ims/internal/IImsUt$Stub;-><init>()V
+    invoke-direct {p0}, Landroid/telephony/ims/stub/ImsUtImplBase;-><init>()V
 
     .line 85
     const-string/jumbo v0, "android.permission.MODIFY_PHONE_STATE"
@@ -165,11 +165,11 @@
     iput-object v0, p0, Lorg/codeaurora/ims/ImsUtImpl;->READ_PHONE_STATE:Ljava/lang/String;
 
     .line 91
-    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy;
+    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerImpl;
 
-    invoke-direct {v0}, Lorg/codeaurora/ims/ImsUtListenerProxy;-><init>()V
+    invoke-direct {v0}, Lorg/codeaurora/ims/ImsUtListenerImpl;-><init>()V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsUtImpl;->mListenerProxy:Lorg/codeaurora/ims/ImsUtListenerProxy;
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsUtImpl;->mListenerImpl:Lorg/codeaurora/ims/ImsUtListenerImpl;
 
     .line 92
     new-instance v0, Lorg/codeaurora/ims/ImsUtImpl$ImsUtImplHandler;
@@ -570,7 +570,7 @@
     iput-object v3, p0, Lorg/codeaurora/ims/ImsUtImpl;->mCi:Lorg/codeaurora/ims/ImsSenderRxr;
 
     .line 130
-    iput-object v3, p0, Lorg/codeaurora/ims/ImsUtImpl;->mListenerProxy:Lorg/codeaurora/ims/ImsUtListenerProxy;
+    iput-object v3, p0, Lorg/codeaurora/ims/ImsUtImpl;->mListenerImpl:Lorg/codeaurora/ims/ImsUtListenerImpl;
 
     .line 131
     iput-object v3, p0, Lorg/codeaurora/ims/ImsUtImpl;->mHandler:Landroid/os/Handler;
@@ -1318,9 +1318,9 @@
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 552
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsUtImpl;->mListenerProxy:Lorg/codeaurora/ims/ImsUtListenerProxy;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsUtImpl;->mListenerImpl:Lorg/codeaurora/ims/ImsUtListenerImpl;
 
-    iput-object p1, v0, Lorg/codeaurora/ims/ImsUtListenerProxy;->mListener:Lcom/android/ims/internal/IImsUtListener;
+    iput-object p1, v0, Lorg/codeaurora/ims/ImsUtListenerImpl;->mListener:Lcom/android/ims/internal/IImsUtListener;
 
     .line 550
     return-void
