@@ -3758,14 +3758,14 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 1064
-    const/4 v3, -0x1
+    .line 285
+    new-instance v3, Ljava/lang/RuntimeException;
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-string/jumbo v4, "This method will deadlock if called from the main thread."
 
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    return-object v3
+    throw v3
 
     .line 287
     :cond_0
@@ -5995,7 +5995,7 @@
     move-result-object v0
 
     .line 874
-    const v1, 0x111003e
+    const v1, 0x112008e
 
     .line 873
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -6105,7 +6105,7 @@
     move-result-object v3
 
     .line 944
-    const v4, 0x1110051
+    const v4, 0x1120090
 
     .line 943
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -6122,7 +6122,7 @@
     move-result-object v3
 
     .line 946
-    const v4, 0x1110040
+    const v4, 0x1120092
 
     .line 945
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -6190,7 +6190,7 @@
     move-result-object v3
 
     .line 900
-    const v4, 0x1110050
+    const v4, 0x112008c
 
     .line 899
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -6207,7 +6207,7 @@
     move-result-object v3
 
     .line 902
-    const v4, 0x111003d
+    const v4, 0x112008d
 
     .line 901
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -6239,7 +6239,7 @@
     move-result-object v3
 
     .line 910
-    const v4, 0x111003f
+    const v4, 0x112008f
 
     .line 909
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -6390,7 +6390,7 @@
     move-result-object v6
 
     .line 971
-    const v7, 0x1110052
+    const v7, 0x1120093
 
     .line 970
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -6407,7 +6407,7 @@
     move-result-object v6
 
     .line 973
-    const v7, 0x1110041
+    const v7, 0x1120094
 
     .line 972
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getBoolean(I)Z
