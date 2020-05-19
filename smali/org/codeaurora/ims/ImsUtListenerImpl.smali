@@ -1,24 +1,24 @@
-.class public Lorg/codeaurora/ims/ImsUtListenerProxy;
-.super Lcom/android/ims/internal/IImsUtListener$Stub;
-.source "ImsUtListenerProxy.java"
+.class public Lorg/codeaurora/ims/ImsUtListenerImpl;
+.super Landroid/telephony/ims/ImsUtListener;
+.source "ImsUtListenerImpl.java"
 
 
 # static fields
-.field private static final LOG_TAG:Ljava/lang/String; = "ImsUtListenerProxy"
+.field private static final LOG_TAG:Ljava/lang/String; = "ImsUtListenerImpl"
 
 
 # instance fields
-.field public mListener:Lcom/android/ims/internal/IImsUtListener;
+.field public mListener:Landroid/telephony/ims/ImsUtListener;
 
 
 # direct methods
-.method static synthetic -wrap0(Lorg/codeaurora/ims/ImsUtListenerProxy;Ljava/lang/Throwable;Ljava/lang/String;)V
+.method static synthetic -wrap0(Lorg/codeaurora/ims/ImsUtListenerImpl;Ljava/lang/Throwable;Ljava/lang/String;)V
     .locals 0
     .param p1, "t"    # Ljava/lang/Throwable;
     .param p2, "message"    # Ljava/lang/String;
 
     .prologue
-    invoke-direct {p0, p1, p2}, Lorg/codeaurora/ims/ImsUtListenerProxy;->handleError(Ljava/lang/Throwable;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2}, Lorg/codeaurora/ims/ImsUtListenerImpl;->handleError(Ljava/lang/Throwable;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -28,7 +28,7 @@
 
     .prologue
     .line 16
-    invoke-direct {p0}, Lcom/android/ims/internal/IImsUtListener$Stub;-><init>()V
+    invoke-direct {p0}, Landroid/telephony/ims/ImsUtListener;-><init>()V
 
     return-void
 .end method
@@ -40,7 +40,7 @@
 
     .prologue
     .line 166
-    const-string/jumbo v0, "ImsUtListenerProxy"
+    const-string/jumbo v0, "ImsUtListenerImpl"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -80,7 +80,7 @@
     .line 161
     new-instance v0, Ljava/lang/Thread;
 
-    const-string/jumbo v1, "ImsUtListenerProxyThread"
+    const-string/jumbo v1, "ImsUtListenerImplThread"
 
     invoke-direct {v0, p1, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
@@ -100,18 +100,18 @@
 
     .prologue
     .line 103
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy;->mListener:Lcom/android/ims/internal/IImsUtListener;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerImpl;->mListener:Lcom/android/ims/internal/IImsUtListener;
 
     if-eqz v1, :cond_0
 
     .line 104
-    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;
+    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerImpl$5;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$5;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerImpl$5;-><init>(Lorg/codeaurora/ims/ImsUtListenerImpl;Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
 
     .line 114
     .local v0, "r":Ljava/lang/Runnable;
-    invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsUtListenerProxy;->startThread(Ljava/lang/Runnable;)V
+    invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsUtListenerImpl;->startThread(Ljava/lang/Runnable;)V
 
     .line 102
     .end local v0    # "r":Ljava/lang/Runnable;
@@ -127,18 +127,18 @@
 
     .prologue
     .line 124
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy;->mListener:Lcom/android/ims/internal/IImsUtListener;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerImpl;->mListener:Lcom/android/ims/internal/IImsUtListener;
 
     if-eqz v1, :cond_0
 
     .line 125
-    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$6;
+    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerImpl$6;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$6;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsCallForwardInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerImpl$6;-><init>(Lorg/codeaurora/ims/ImsUtListenerImpl;Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsCallForwardInfo;)V
 
     .line 135
     .local v0, "r":Ljava/lang/Runnable;
-    invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsUtListenerProxy;->startThread(Ljava/lang/Runnable;)V
+    invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsUtListenerImpl;->startThread(Ljava/lang/Runnable;)V
 
     .line 123
     .end local v0    # "r":Ljava/lang/Runnable;
@@ -154,18 +154,18 @@
 
     .prologue
     .line 145
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy;->mListener:Lcom/android/ims/internal/IImsUtListener;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerImpl;->mListener:Lcom/android/ims/internal/IImsUtListener;
 
     if-eqz v1, :cond_0
 
     .line 146
-    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$7;
+    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerImpl$7;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$7;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerImpl$7;-><init>(Lorg/codeaurora/ims/ImsUtListenerImpl;Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
 
     .line 156
     .local v0, "r":Ljava/lang/Runnable;
-    invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsUtListenerProxy;->startThread(Ljava/lang/Runnable;)V
+    invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsUtListenerImpl;->startThread(Ljava/lang/Runnable;)V
 
     .line 144
     .end local v0    # "r":Ljava/lang/Runnable;
@@ -181,18 +181,18 @@
 
     .prologue
     .line 64
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy;->mListener:Lcom/android/ims/internal/IImsUtListener;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerImpl;->mListener:Lcom/android/ims/internal/IImsUtListener;
 
     if-eqz v1, :cond_0
 
     .line 65
-    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$3;
+    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerImpl$3;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$3;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;ILandroid/os/Bundle;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerImpl$3;-><init>(Lorg/codeaurora/ims/ImsUtListenerImpl;Lcom/android/ims/internal/IImsUt;ILandroid/os/Bundle;)V
 
     .line 75
     .local v0, "r":Ljava/lang/Runnable;
-    invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsUtListenerProxy;->startThread(Ljava/lang/Runnable;)V
+    invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsUtListenerImpl;->startThread(Ljava/lang/Runnable;)V
 
     .line 63
     .end local v0    # "r":Ljava/lang/Runnable;
@@ -208,18 +208,18 @@
 
     .prologue
     .line 82
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy;->mListener:Lcom/android/ims/internal/IImsUtListener;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerImpl;->mListener:Lcom/android/ims/internal/IImsUtListener;
 
     if-eqz v1, :cond_0
 
     .line 83
-    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$4;
+    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerImpl$4;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$4;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerImpl$4;-><init>(Lorg/codeaurora/ims/ImsUtListenerImpl;Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
 
     .line 93
     .local v0, "r":Ljava/lang/Runnable;
-    invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsUtListenerProxy;->startThread(Ljava/lang/Runnable;)V
+    invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsUtListenerImpl;->startThread(Ljava/lang/Runnable;)V
 
     .line 81
     .end local v0    # "r":Ljava/lang/Runnable;
@@ -235,18 +235,18 @@
 
     .prologue
     .line 43
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy;->mListener:Lcom/android/ims/internal/IImsUtListener;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerImpl;->mListener:Lcom/android/ims/internal/IImsUtListener;
 
     if-eqz v1, :cond_0
 
     .line 44
-    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;
+    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerImpl$2;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$2;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerImpl$2;-><init>(Lorg/codeaurora/ims/ImsUtListenerImpl;Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
 
     .line 54
     .local v0, "r":Ljava/lang/Runnable;
-    invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsUtListenerProxy;->startThread(Ljava/lang/Runnable;)V
+    invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsUtListenerImpl;->startThread(Ljava/lang/Runnable;)V
 
     .line 42
     .end local v0    # "r":Ljava/lang/Runnable;
@@ -261,18 +261,18 @@
 
     .prologue
     .line 25
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy;->mListener:Lcom/android/ims/internal/IImsUtListener;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerImpl;->mListener:Lcom/android/ims/internal/IImsUtListener;
 
     if-eqz v1, :cond_0
 
     .line 26
-    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$1;
+    new-instance v0, Lorg/codeaurora/ims/ImsUtListenerImpl$1;
 
-    invoke-direct {v0, p0, p1, p2}, Lorg/codeaurora/ims/ImsUtListenerProxy$1;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I)V
+    invoke-direct {v0, p0, p1, p2}, Lorg/codeaurora/ims/ImsUtListenerImpl$1;-><init>(Lorg/codeaurora/ims/ImsUtListenerImpl;Lcom/android/ims/internal/IImsUt;I)V
 
     .line 36
     .local v0, "r":Ljava/lang/Runnable;
-    invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsUtListenerProxy;->startThread(Ljava/lang/Runnable;)V
+    invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsUtListenerImpl;->startThread(Ljava/lang/Runnable;)V
 
     .line 24
     .end local v0    # "r":Ljava/lang/Runnable;
