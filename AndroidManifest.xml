@@ -31,6 +31,7 @@
     <application android:persistent="true">
         <service android:name="com.qualcomm.ims.csvt.CsvtService" android:permission="org.codeaurora.permission.ACCESS_CSVT_SERVICE" android:enabled="true" android:exported="true" android:process="com.android.phone">
             <intent-filter>
+                <action android:name="android.telephony.ims.ImsService" />
                 <action android:name="org.codeaurora.ims.csvt.ICsvtService" />
             </intent-filter>
         </service>
