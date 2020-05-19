@@ -29,11 +29,8 @@
 .method constructor <init>(Lorg/codeaurora/ims/ImsCallSessionListenerProxy;Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsSuppServiceNotification;)V
     .locals 0
     .param p1, "this$0"    # Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
-    .param p2, "val$session"    # Lcom/android/ims/internal/IImsCallSession;
-    .param p3, "val$suppServiceInfo"    # Landroid/telephony/ims/ImsSuppServiceNotification;
 
-    .prologue
-    .line 393
+    .line 436
     iput-object p1, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$18;->this$0:Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
 
     iput-object p2, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$18;->val$session:Lcom/android/ims/internal/IImsCallSession;
@@ -48,38 +45,39 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 3
 
-    .prologue
-    .line 397
+    .line 440
     :try_start_0
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$18;->this$0:Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$18;->this$0:Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
 
-    iget-object v1, v1, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->mListener:Lcom/android/ims/internal/IImsCallSessionListener;
+    iget-object v0, v0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->mListener:Lcom/android/ims/internal/IImsCallSessionListener;
 
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$18;->val$session:Lcom/android/ims/internal/IImsCallSession;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$18;->val$session:Lcom/android/ims/internal/IImsCallSession;
 
-    iget-object v3, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$18;->val$suppServiceInfo:Landroid/telephony/ims/ImsSuppServiceNotification;
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$18;->val$suppServiceInfo:Landroid/telephony/ims/ImsSuppServiceNotification;
 
-    invoke-interface {v1, v2, v3}, Lcom/android/ims/internal/IImsCallSessionListener;->callSessionSuppServiceReceived(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsSuppServiceNotification;)V
+    invoke-interface {v0, v1, v2}, Lcom/android/ims/internal/IImsCallSessionListener;->callSessionSuppServiceReceived(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsSuppServiceNotification;)V
     :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 395
-    :goto_0
-    return-void
+    .line 443
+    goto :goto_0
 
-    .line 398
-    :catch_0
+    .line 441
+    :catchall_0
     move-exception v0
 
-    .line 399
+    .line 442
     .local v0, "t":Ljava/lang/Throwable;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$18;->this$0:Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
 
-    const-string/jumbo v2, "callSessionSuppServiceReceived()"
+    const-string v2, "callSessionSuppServiceReceived()"
 
-    invoke-static {v1, v0, v2}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->-wrap1(Lorg/codeaurora/ims/ImsCallSessionListenerProxy;Ljava/lang/Throwable;Ljava/lang/String;)V
+    invoke-static {v1, v0, v2}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->access$000(Lorg/codeaurora/ims/ImsCallSessionListenerProxy;Ljava/lang/Throwable;Ljava/lang/String;)V
 
-    goto :goto_0
+    .line 444
+    .end local v0    # "t":Ljava/lang/Throwable;
+    :goto_0
+    return-void
 .end method

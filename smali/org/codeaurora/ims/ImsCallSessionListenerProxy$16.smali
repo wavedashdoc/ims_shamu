@@ -29,11 +29,8 @@
 .method constructor <init>(Lorg/codeaurora/ims/ImsCallSessionListenerProxy;Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsReasonInfo;)V
     .locals 0
     .param p1, "this$0"    # Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
-    .param p2, "val$session"    # Lcom/android/ims/internal/IImsCallSession;
-    .param p3, "val$reasonInfo"    # Landroid/telephony/ims/ImsReasonInfo;
 
-    .prologue
-    .line 352
+    .line 395
     iput-object p1, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$16;->this$0:Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
 
     iput-object p2, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$16;->val$session:Lcom/android/ims/internal/IImsCallSession;
@@ -48,45 +45,46 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 3
 
-    .prologue
-    .line 356
+    .line 399
     :try_start_0
-    const-string/jumbo v1, "ImsCallSessionListenerProxy"
+    const-string v0, "ImsCallSessionListenerProxy"
 
-    const-string/jumbo v2, "callSessionMergeFailed()"
+    const-string v1, "callSessionMergeFailed()"
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 357
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$16;->this$0:Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
+    .line 400
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$16;->this$0:Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
 
-    iget-object v1, v1, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->mListener:Lcom/android/ims/internal/IImsCallSessionListener;
+    iget-object v0, v0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->mListener:Lcom/android/ims/internal/IImsCallSessionListener;
 
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$16;->val$session:Lcom/android/ims/internal/IImsCallSession;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$16;->val$session:Lcom/android/ims/internal/IImsCallSession;
 
-    iget-object v3, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$16;->val$reasonInfo:Landroid/telephony/ims/ImsReasonInfo;
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$16;->val$reasonInfo:Landroid/telephony/ims/ImsReasonInfo;
 
-    invoke-interface {v1, v2, v3}, Lcom/android/ims/internal/IImsCallSessionListener;->callSessionMergeFailed(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsReasonInfo;)V
+    invoke-interface {v0, v1, v2}, Lcom/android/ims/internal/IImsCallSessionListener;->callSessionMergeFailed(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsReasonInfo;)V
     :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 354
-    :goto_0
-    return-void
+    .line 403
+    goto :goto_0
 
-    .line 358
-    :catch_0
+    .line 401
+    :catchall_0
     move-exception v0
 
-    .line 359
+    .line 402
     .local v0, "t":Ljava/lang/Throwable;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$16;->this$0:Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
 
-    const-string/jumbo v2, "oncallSessionMergeFailed()"
+    const-string v2, "oncallSessionMergeFailed()"
 
-    invoke-static {v1, v0, v2}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->-wrap1(Lorg/codeaurora/ims/ImsCallSessionListenerProxy;Ljava/lang/Throwable;Ljava/lang/String;)V
+    invoke-static {v1, v0, v2}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->access$000(Lorg/codeaurora/ims/ImsCallSessionListenerProxy;Ljava/lang/Throwable;Ljava/lang/String;)V
 
-    goto :goto_0
+    .line 404
+    .end local v0    # "t":Ljava/lang/Throwable;
+    :goto_0
+    return-void
 .end method
