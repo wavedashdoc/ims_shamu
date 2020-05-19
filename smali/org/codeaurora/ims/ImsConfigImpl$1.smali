@@ -1,11 +1,14 @@
 .class Lorg/codeaurora/ims/ImsConfigImpl$1;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "ImsConfigImpl.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/codeaurora/ims/ImsConfigImpl;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/codeaurora/ims/ImsConfigImpl;->setFeatureValue(IIILcom/android/ims/ImsConfigListener;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -23,88 +26,40 @@
     .locals 0
     .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .prologue
-    .line 851
+    .line 391
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$1;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+.method public run()V
+    .locals 2
 
-    .prologue
-    .line 854
-    if-eqz p2, :cond_1
+    .line 394
+    const-string v0, "ImsConfigImpl"
 
-    .line 855
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    const-string v1, "setFeatureValue, reset flag"
 
-    move-result-object v0
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 856
-    .local v0, "action":Ljava/lang/String;
-    const-string/jumbo v2, "android.intent.action.CONFIGURATION_CHANGED"
+    .line 395
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$1;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const/4 v1, 0x0
 
-    move-result v2
+    invoke-static {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$502(Lorg/codeaurora/ims/ImsConfigImpl;Z)Z
 
-    if-eqz v2, :cond_1
+    .line 396
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$1;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 857
-    const-string/jumbo v2, "ImsConfigImpl"
+    const/4 v1, -0x1
 
-    const-string/jumbo v3, "onConfigurationChange"
+    invoke-static {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$602(Lorg/codeaurora/ims/ImsConfigImpl;I)I
 
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 858
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v1
-
-    .line 859
-    .local v1, "config":Landroid/content/res/Configuration;
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$1;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
-
-    invoke-static {v2}, Lorg/codeaurora/ims/ImsConfigImpl;->-get1(Lorg/codeaurora/ims/ImsConfigImpl;)I
-
-    move-result v2
-
-    iget v3, v1, Landroid/content/res/Configuration;->mcc:I
-
-    if-ne v2, v3, :cond_0
-
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$1;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
-
-    invoke-static {v2}, Lorg/codeaurora/ims/ImsConfigImpl;->-get2(Lorg/codeaurora/ims/ImsConfigImpl;)I
-
-    move-result v2
-
-    iget v3, v1, Landroid/content/res/Configuration;->mnc:I
-
-    if-eq v2, v3, :cond_1
-
-    .line 860
-    :cond_0
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$1;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
-
-    invoke-static {v2, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->-wrap11(Lorg/codeaurora/ims/ImsConfigImpl;Landroid/content/res/Configuration;)V
-
-    .line 853
-    .end local v0    # "action":Ljava/lang/String;
-    .end local v1    # "config":Landroid/content/res/Configuration;
-    :cond_1
+    .line 397
     return-void
 .end method
