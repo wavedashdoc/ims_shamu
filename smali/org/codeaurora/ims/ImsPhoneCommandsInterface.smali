@@ -90,6 +90,9 @@
 .method public abstract exitEmergencyCallbackMode(Landroid/os/Message;)V
 .end method
 
+.method public abstract explicitCallTransfer(IILjava/lang/String;ILandroid/os/Message;)V
+.end method
+
 .method public abstract explicitCallTransfer(Landroid/os/Message;)V
 .end method
 
@@ -141,9 +144,6 @@
 .method public abstract queryServiceStatus(Landroid/os/Message;)V
 .end method
 
-.method public abstract queryVideoQuality(Landroid/os/Message;)V
-.end method
-
 .method public abstract registerForAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
@@ -174,6 +174,9 @@
 .method public abstract registerForOn(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
+.method public abstract registerForPhoneId(I)V
+.end method
+
 .method public abstract registerForRadioStateChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
@@ -184,6 +187,9 @@
 .end method
 
 .method public abstract registerForSrvStatusUpdate(Landroid/os/Handler;ILjava/lang/Object;)V
+.end method
+
+.method public abstract registerForViceRefreshInfo(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
 .method public abstract rejectCall(Landroid/os/Message;)V
@@ -232,9 +238,6 @@
 .end method
 
 .method public abstract setUiTTYMode(ILandroid/os/Message;)V
-.end method
-
-.method public abstract setVideoQuality(ILandroid/os/Message;)V
 .end method
 
 .method public abstract startDtmf(CLandroid/os/Message;)V
