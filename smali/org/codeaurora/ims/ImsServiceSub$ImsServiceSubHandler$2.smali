@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->createFeatureCapabilityCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;)V
+    value = Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->createSelfIdentityCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;[Landroid/net/Uri;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,18 +22,20 @@
 
 .field final synthetic val$listener:Lcom/android/ims/internal/IImsRegistrationListener;
 
+.field final synthetic val$self_identity:[Landroid/net/Uri;
+
 
 # direct methods
-.method constructor <init>(Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;Lcom/android/ims/internal/IImsRegistrationListener;)V
+.method constructor <init>(Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;Lcom/android/ims/internal/IImsRegistrationListener;[Landroid/net/Uri;)V
     .locals 0
     .param p1, "this$1"    # Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;
-    .param p2, "val$listener"    # Lcom/android/ims/internal/IImsRegistrationListener;
 
-    .prologue
-    .line 634
+    .line 1253
     iput-object p1, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$2;->this$1:Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;
 
     iput-object p2, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$2;->val$listener:Lcom/android/ims/internal/IImsRegistrationListener;
+
+    iput-object p3, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$2;->val$self_identity:[Landroid/net/Uri;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,70 +45,47 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .locals 3
 
-    .prologue
-    .line 638
+    .line 1257
     :try_start_0
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$2;->val$listener:Lcom/android/ims/internal/IImsRegistrationListener;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$2;->val$listener:Lcom/android/ims/internal/IImsRegistrationListener;
 
-    .line 639
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$2;->this$1:Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$2;->val$self_identity:[Landroid/net/Uri;
 
-    iget-object v2, v2, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->this$0:Lorg/codeaurora/ims/ImsServiceSub;
-
-    iget-object v2, v2, Lorg/codeaurora/ims/ImsServiceSub;->mEnabledFeatures:[I
-
-    iget-object v3, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$2;->this$1:Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;
-
-    iget-object v3, v3, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->this$0:Lorg/codeaurora/ims/ImsServiceSub;
-
-    iget-object v3, v3, Lorg/codeaurora/ims/ImsServiceSub;->mDisabledFeatures:[I
-
-    .line 638
-    const/4 v4, 0x1
-
-    invoke-interface {v1, v4, v2, v3}, Lcom/android/ims/internal/IImsRegistrationListener;->registrationFeatureCapabilityChanged(I[I[I)V
+    invoke-interface {v0, v1}, Lcom/android/ims/internal/IImsRegistrationListener;->registrationAssociatedUriChanged([Landroid/net/Uri;)V
     :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 636
-    :goto_0
-    return-void
+    .line 1260
+    goto :goto_0
 
-    .line 640
-    :catch_0
+    .line 1258
+    :catchall_0
     move-exception v0
 
-    .line 641
+    .line 1259
     .local v0, "t":Ljava/lang/Throwable;
-    const-string/jumbo v1, "ImsServiceSub"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v2, " createSelfIdentityCallBackThread()"
 
-    move-result-object v2
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v3, " "
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v2
+    const-string v2, "ImsServiceSub"
 
-    const-string/jumbo v3, "createFeatureCapabilityCallBackThread()"
+    invoke-static {v2, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
+    .line 1261
+    .end local v0    # "t":Ljava/lang/Throwable;
+    :goto_0
+    return-void
 .end method

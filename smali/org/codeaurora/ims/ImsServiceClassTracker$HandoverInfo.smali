@@ -31,159 +31,193 @@
 
 
 # direct methods
-.method static synthetic -get0(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)Ljava/lang/String;
+.method private constructor <init>()V
     .locals 1
 
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mErrorCode:Ljava/lang/String;
+    .line 112
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-object v0
+    .line 113
+    const/4 v0, 0x0
+
+    iput v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mType:I
+
+    .line 114
+    iput v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mSrcTech:I
+
+    .line 115
+    iput v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mTargetTech:I
+
+    .line 116
+    iput v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mExtraType:I
+
+    .line 117
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mExtraInfo:[B
+
+    .line 118
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mErrorCode:Ljava/lang/String;
+
+    .line 119
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mErrorMessage:Ljava/lang/String;
+
+    return-void
 .end method
 
-.method static synthetic -get1(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)Ljava/lang/String;
-    .locals 1
+.method synthetic constructor <init>(Lorg/codeaurora/ims/ImsServiceClassTracker$1;)V
+    .locals 0
+    .param p1, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$1;
 
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mErrorMessage:Ljava/lang/String;
+    .line 112
+    invoke-direct {p0}, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;-><init>()V
 
-    return-object v0
+    return-void
 .end method
 
-.method static synthetic -get2(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)[B
+.method static synthetic access$100(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)I
     .locals 1
+    .param p0, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;
 
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mExtraInfo:[B
-
-    return-object v0
-.end method
-
-.method static synthetic -get3(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)I
-    .locals 1
-
-    iget v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mExtraType:I
-
-    return v0
-.end method
-
-.method static synthetic -get4(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)I
-    .locals 1
-
-    iget v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mSrcTech:I
-
-    return v0
-.end method
-
-.method static synthetic -get5(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)I
-    .locals 1
-
-    iget v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mTargetTech:I
-
-    return v0
-.end method
-
-.method static synthetic -get6(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)I
-    .locals 1
-
+    .line 112
     iget v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mType:I
 
     return v0
 .end method
 
-.method static synthetic -set0(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;Ljava/lang/String;)Ljava/lang/String;
+.method static synthetic access$102(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;I)I
     .locals 0
+    .param p0, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;
+    .param p1, "x1"    # I
 
-    iput-object p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mErrorCode:Ljava/lang/String;
-
-    return-object p1
-.end method
-
-.method static synthetic -set1(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;Ljava/lang/String;)Ljava/lang/String;
-    .locals 0
-
-    iput-object p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mErrorMessage:Ljava/lang/String;
-
-    return-object p1
-.end method
-
-.method static synthetic -set2(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;[B)[B
-    .locals 0
-
-    iput-object p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mExtraInfo:[B
-
-    return-object p1
-.end method
-
-.method static synthetic -set3(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;I)I
-    .locals 0
-
-    iput p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mExtraType:I
-
-    return p1
-.end method
-
-.method static synthetic -set4(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;I)I
-    .locals 0
-
-    iput p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mSrcTech:I
-
-    return p1
-.end method
-
-.method static synthetic -set5(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;I)I
-    .locals 0
-
-    iput p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mTargetTech:I
-
-    return p1
-.end method
-
-.method static synthetic -set6(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;I)I
-    .locals 0
-
+    .line 112
     iput p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mType:I
 
     return p1
 .end method
 
-.method private constructor <init>()V
-    .locals 2
+.method static synthetic access$200(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)I
+    .locals 1
+    .param p0, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;
 
-    .prologue
-    const/4 v1, 0x0
+    .line 112
+    iget v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mSrcTech:I
 
-    const/4 v0, 0x0
-
-    .line 103
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 104
-    iput v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mType:I
-
-    .line 105
-    iput v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mSrcTech:I
-
-    .line 106
-    iput v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mTargetTech:I
-
-    .line 107
-    iput v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mExtraType:I
-
-    .line 108
-    iput-object v1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mExtraInfo:[B
-
-    .line 109
-    iput-object v1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mErrorCode:Ljava/lang/String;
-
-    .line 110
-    iput-object v1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mErrorMessage:Ljava/lang/String;
-
-    .line 103
-    return-void
+    return v0
 .end method
 
-.method synthetic constructor <init>(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)V
+.method static synthetic access$202(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;I)I
     .locals 0
+    .param p0, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;
+    .param p1, "x1"    # I
 
-    .prologue
-    invoke-direct {p0}, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;-><init>()V
+    .line 112
+    iput p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mSrcTech:I
 
-    return-void
+    return p1
+.end method
+
+.method static synthetic access$300(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)I
+    .locals 1
+    .param p0, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;
+
+    .line 112
+    iget v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mTargetTech:I
+
+    return v0
+.end method
+
+.method static synthetic access$302(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;I)I
+    .locals 0
+    .param p0, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;
+    .param p1, "x1"    # I
+
+    .line 112
+    iput p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mTargetTech:I
+
+    return p1
+.end method
+
+.method static synthetic access$400(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)I
+    .locals 1
+    .param p0, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;
+
+    .line 112
+    iget v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mExtraType:I
+
+    return v0
+.end method
+
+.method static synthetic access$402(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;I)I
+    .locals 0
+    .param p0, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;
+    .param p1, "x1"    # I
+
+    .line 112
+    iput p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mExtraType:I
+
+    return p1
+.end method
+
+.method static synthetic access$500(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)[B
+    .locals 1
+    .param p0, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;
+
+    .line 112
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mExtraInfo:[B
+
+    return-object v0
+.end method
+
+.method static synthetic access$502(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;[B)[B
+    .locals 0
+    .param p0, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;
+    .param p1, "x1"    # [B
+
+    .line 112
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mExtraInfo:[B
+
+    return-object p1
+.end method
+
+.method static synthetic access$600(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)Ljava/lang/String;
+    .locals 1
+    .param p0, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;
+
+    .line 112
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mErrorCode:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$602(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .param p0, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;
+    .param p1, "x1"    # Ljava/lang/String;
+
+    .line 112
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mErrorCode:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic access$700(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;)Ljava/lang/String;
+    .locals 1
+    .param p0, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;
+
+    .line 112
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mErrorMessage:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$702(Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .param p0, "x0"    # Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;
+    .param p1, "x1"    # Ljava/lang/String;
+
+    .line 112
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$HandoverInfo;->mErrorMessage:Ljava/lang/String;
+
+    return-object p1
 .end method

@@ -28,559 +28,601 @@
     .locals 1
     .param p1, "this$0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .prologue
-    .line 518
+    .line 565
     iput-object p1, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 519
+    .line 566
     const/16 v0, 0x2000
 
     new-array v0, v0, [B
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->buffer:[B
 
-    .line 518
+    .line 567
     return-void
 .end method
 
 
 # virtual methods
 .method public run()V
-    .locals 15
+    .locals 11
 
-    .prologue
-    .line 523
-    const/4 v8, 0x0
+    .line 570
+    const-string v0, "\' socket"
 
-    .line 524
-    .local v8, "retryCount":I
-    const/4 v5, 0x0
+    const-string v1, "ImsSenderRxr"
 
-    .line 526
-    .local v5, "killMe":Z
-    const-string/jumbo v3, "qmux_radio/rild_ims"
+    const/4 v2, 0x0
 
-    .line 529
-    .local v3, "ifSocket":Ljava/lang/String;
-    if-nez v5, :cond_5
+    .line 571
+    .local v2, "retryCount":I
+    const/4 v3, 0x0
 
-    .line 531
-    :goto_0
-    const/4 v9, 0x0
+    .line 573
+    .local v3, "killMe":Z
+    sget-object v4, Lorg/codeaurora/ims/ImsSenderRxr;->SOCKET_NAME_IF:[Ljava/lang/String;
 
-    .line 535
-    .local v9, "s":Landroid/net/LocalSocket;
-    :try_start_0
-    new-instance v10, Landroid/net/LocalSocket;
+    iget-object v5, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
-    invoke-direct {v10}, Landroid/net/LocalSocket;-><init>()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_6
+    invoke-static {v5}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;)Ljava/lang/Integer;
 
-    .line 536
-    .local v10, "s":Landroid/net/LocalSocket;
-    :try_start_1
-    sget-boolean v12, Lorg/codeaurora/ims/ImsSenderRxr;->sTestMode:Z
+    move-result-object v5
 
-    .end local v9    # "s":Landroid/net/LocalSocket;
-    if-eqz v12, :cond_1
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
 
-    .line 537
-    new-instance v6, Landroid/net/LocalSocketAddress;
+    move-result v5
 
-    const-string/jumbo v12, "imstestrunnersocket"
+    aget-object v4, v4, v5
 
-    invoke-direct {v6, v12}, Landroid/net/LocalSocketAddress;-><init>(Ljava/lang/String;)V
-
-    .line 542
-    .local v6, "l":Landroid/net/LocalSocketAddress;
-    :goto_1
-    invoke-virtual {v10, v6}, Landroid/net/LocalSocket;->connect(Landroid/net/LocalSocketAddress;)V
-
-    .line 543
-    const-string/jumbo v12, "ImsSenderRxr"
-
-    new-instance v13, Ljava/lang/StringBuilder;
-
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v14, "Connecting to socket "
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_8
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_4
+    .line 576
+    .local v4, "ifSocket":Ljava/lang/String;
+    if-nez v3, :cond_6
 
     .line 578
-    const/4 v8, 0x0
-
-    .line 580
-    :try_start_2
-    iget-object v12, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
-
-    iput-object v10, v12, Lorg/codeaurora/ims/ImsSenderRxr;->mSocket:Landroid/net/LocalSocket;
+    :goto_0
+    const/4 v5, 0x0
 
     .line 582
-    const-string/jumbo v12, "ImsSenderRxr"
+    .local v5, "s":Landroid/net/LocalSocket;
+    :try_start_0
+    sget-object v6, Lorg/codeaurora/ims/ImsSenderRxr;->SOCKET_NAME_IF:[Ljava/lang/String;
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    iget-object v7, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v7}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;)Ljava/lang/Integer;
 
-    const-string/jumbo v14, "Connected to \'"
+    move-result-object v7
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    iget-object v14, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
-
-    iget-object v14, v14, Lorg/codeaurora/ims/ImsSenderRxr;->mSocket:Landroid/net/LocalSocket;
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    const-string/jumbo v14, "\' socket"
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static {v12, v13}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_2
-    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_4
-
-    .line 584
-    const/4 v7, 0x0
-
-    .line 586
-    .local v7, "length":I
-    :try_start_3
-    iget-object v12, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
-
-    iget-object v12, v12, Lorg/codeaurora/ims/ImsSenderRxr;->mSocket:Landroid/net/LocalSocket;
-
-    invoke-virtual {v12}, Landroid/net/LocalSocket;->getInputStream()Ljava/io/InputStream;
-
-    move-result-object v4
-
-    .line 590
-    .local v4, "is":Ljava/io/InputStream;
-    :cond_0
-    :goto_2
-    iget-object v12, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->buffer:[B
-
-    invoke-static {v4, v12}, Lorg/codeaurora/ims/ImsSenderRxr;->-wrap0(Ljava/io/InputStream;[B)I
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
-    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_5
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
 
-    .line 592
-    if-gez v7, :cond_4
+    aget-object v6, v6, v7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 610
-    .end local v4    # "is":Ljava/io/InputStream;
-    :goto_3
-    :try_start_4
-    const-string/jumbo v12, "ImsSenderRxr"
+    move-object v4, v6
 
-    const-string/jumbo v13, "Disconnected from socket"
+    .line 585
+    :try_start_1
+    new-instance v6, Landroid/net/LocalSocket;
 
-    invoke-static {v12, v13}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_4
-    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_4
+    invoke-direct {v6}, Landroid/net/LocalSocket;-><init>()V
 
-    .line 613
-    :try_start_5
-    iget-object v12, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
+    move-object v5, v6
 
-    iget-object v12, v12, Lorg/codeaurora/ims/ImsSenderRxr;->mSocket:Landroid/net/LocalSocket;
+    .line 586
+    sget-boolean v6, Lorg/codeaurora/ims/ImsSenderRxr;->sTestMode:Z
 
-    invoke-virtual {v12}, Landroid/net/LocalSocket;->close()V
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_7
-    .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_4
+    if-eqz v6, :cond_0
 
-    .line 617
-    :goto_4
-    :try_start_6
-    iget-object v12, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
-
-    const/4 v13, 0x0
-
-    iput-object v13, v12, Lorg/codeaurora/ims/ImsSenderRxr;->mSocket:Landroid/net/LocalSocket;
-
-    .line 618
-    invoke-static {}, Lorg/codeaurora/ims/IFRequest;->resetSerial()V
-
-    .line 622
-    iget-object v12, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
-
-    const/4 v13, 0x1
-
-    const/4 v14, 0x0
-
-    invoke-static {v12, v13, v14}, Lorg/codeaurora/ims/ImsSenderRxr;->-wrap2(Lorg/codeaurora/ims/ImsSenderRxr;IZ)V
-    :try_end_6
-    .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_4
-
-    move-object v9, v10
-
-    .end local v10    # "s":Landroid/net/LocalSocket;
-    .local v9, "s":Landroid/net/LocalSocket;
-    goto/16 :goto_0
-
-    .line 539
-    .end local v6    # "l":Landroid/net/LocalSocketAddress;
-    .end local v7    # "length":I
-    .end local v9    # "s":Landroid/net/LocalSocket;
-    .restart local v10    # "s":Landroid/net/LocalSocket;
-    :cond_1
-    :try_start_7
+    .line 587
     new-instance v6, Landroid/net/LocalSocketAddress;
 
-    .line 540
-    sget-object v12, Landroid/net/LocalSocketAddress$Namespace;->RESERVED:Landroid/net/LocalSocketAddress$Namespace;
+    const-string v7, "imstestrunnersocket"
 
-    .line 539
-    invoke-direct {v6, v3, v12}, Landroid/net/LocalSocketAddress;-><init>(Ljava/lang/String;Landroid/net/LocalSocketAddress$Namespace;)V
-    :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_8
-    .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_7} :catch_4
+    invoke-direct {v6, v7}, Landroid/net/LocalSocketAddress;-><init>(Ljava/lang/String;)V
 
-    .restart local v6    # "l":Landroid/net/LocalSocketAddress;
-    goto/16 :goto_1
+    .local v6, "l":Landroid/net/LocalSocketAddress;
+    goto :goto_1
 
-    .line 545
+    .line 589
     .end local v6    # "l":Landroid/net/LocalSocketAddress;
-    .end local v10    # "s":Landroid/net/LocalSocket;
-    .local v9, "s":Landroid/net/LocalSocket;
-    :catch_0
-    move-exception v2
+    :cond_0
+    new-instance v6, Landroid/net/LocalSocketAddress;
 
-    .line 546
-    .end local v9    # "s":Landroid/net/LocalSocket;
-    .local v2, "ex":Ljava/io/IOException;
-    :goto_5
-    :try_start_8
-    const-string/jumbo v12, "ImsSenderRxr"
+    sget-object v7, Landroid/net/LocalSocketAddress$Namespace;->RESERVED:Landroid/net/LocalSocketAddress$Namespace;
 
-    .line 547
-    new-instance v13, Ljava/lang/StringBuilder;
+    invoke-direct {v6, v4, v7}, Landroid/net/LocalSocketAddress;-><init>(Ljava/lang/String;Landroid/net/LocalSocketAddress$Namespace;)V
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v14, "Exception in socket create\'"
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v2}, Ljava/io/IOException;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    .line 546
-    invoke-static {v12, v13}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 551
-    const/16 v12, 0x8
-
-    if-ne v8, v12, :cond_2
-
-    .line 552
-    const-string/jumbo v12, "ImsSenderRxr"
-
-    .line 553
-    new-instance v13, Ljava/lang/StringBuilder;
-
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v14, "Couldn\'t find socket after "
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    .line 554
-    const-string/jumbo v14, " times, continuing to retry silently"
-
-    .line 553
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    .line 552
-    invoke-static {v12, v13}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 555
-    iget-object v12, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
-
-    invoke-static {v12}, Lorg/codeaurora/ims/ImsSenderRxr;->-wrap3(Lorg/codeaurora/ims/ImsSenderRxr;)V
-    :try_end_8
-    .catch Ljava/lang/Throwable; {:try_start_8 .. :try_end_8} :catch_6
-
-    .line 557
-    :try_start_9
-    invoke-virtual {v9}, Landroid/net/LocalSocket;->close()V
-    :try_end_9
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_1
-    .catch Ljava/lang/Throwable; {:try_start_9 .. :try_end_9} :catch_6
-
-    .line 558
-    const/4 v5, 0x1
-
-    .line 559
-    return-void
-
-    .line 560
-    :catch_1
-    move-exception v0
-
-    .line 561
-    .local v0, "e":Ljava/io/IOException;
-    :try_start_a
-    const-string/jumbo v12, "ImsSenderRxr"
-
-    const-string/jumbo v13, "IOException"
-
-    invoke-static {v12, v13, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 562
-    return-void
-
-    .line 564
-    .end local v0    # "e":Ljava/io/IOException;
-    :cond_2
-    if-lez v8, :cond_3
-
-    const/16 v12, 0x8
-
-    if-ge v8, v12, :cond_3
-
-    .line 565
-    const-string/jumbo v12, "ImsSenderRxr"
-
-    .line 566
-    const-string/jumbo v13, "Couldn\'t find socket; retrying after timeout"
-
-    .line 565
-    invoke-static {v12, v13}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_a
-    .catch Ljava/lang/Throwable; {:try_start_a .. :try_end_a} :catch_6
-
-    .line 570
-    :cond_3
-    const-wide/16 v12, 0xfa0
-
-    :try_start_b
-    invoke-static {v12, v13}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_b
-    .catch Ljava/lang/InterruptedException; {:try_start_b .. :try_end_b} :catch_2
-    .catch Ljava/lang/Throwable; {:try_start_b .. :try_end_b} :catch_6
-
-    .line 574
-    :goto_6
-    add-int/lit8 v8, v8, 0x1
-
-    goto/16 :goto_0
-
-    .line 571
-    :catch_2
-    move-exception v1
-
-    .local v1, "er":Ljava/lang/InterruptedException;
-    goto :goto_6
-
-    .line 599
-    .end local v1    # "er":Ljava/lang/InterruptedException;
-    .end local v2    # "ex":Ljava/io/IOException;
-    .restart local v4    # "is":Ljava/io/InputStream;
+    .line 592
     .restart local v6    # "l":Landroid/net/LocalSocketAddress;
-    .restart local v7    # "length":I
-    .restart local v10    # "s":Landroid/net/LocalSocket;
-    :cond_4
-    if-lez v7, :cond_0
+    :goto_1
+    invoke-virtual {v5, v6}, Landroid/net/LocalSocket;->connect(Landroid/net/LocalSocketAddress;)V
 
-    :try_start_c
-    iget-object v12, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
+    .line 593
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    iget-object v13, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->buffer:[B
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v12, v13, v7}, Lorg/codeaurora/ims/ImsSenderRxr;->processResponse([BI)V
-    :try_end_c
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_3
-    .catch Ljava/lang/Throwable; {:try_start_c .. :try_end_c} :catch_5
+    const-string v8, "Connecting to socket "
 
-    goto/16 :goto_2
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 602
-    .end local v4    # "is":Ljava/io/InputStream;
-    :catch_3
-    move-exception v2
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 603
-    .restart local v2    # "ex":Ljava/io/IOException;
-    :try_start_d
-    const-string/jumbo v12, "ImsSenderRxr"
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string/jumbo v13, "socket closed"
+    move-result-object v7
 
-    invoke-static {v12, v13, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_d
-    .catch Ljava/lang/Throwable; {:try_start_d .. :try_end_d} :catch_4
-
-    goto/16 :goto_3
-
-    .line 625
-    .end local v2    # "ex":Ljava/io/IOException;
-    .end local v6    # "l":Landroid/net/LocalSocketAddress;
-    .end local v7    # "length":I
-    :catch_4
-    move-exception v11
-
-    .local v11, "tr":Ljava/lang/Throwable;
-    move-object v9, v10
+    invoke-static {v1, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 626
-    .end local v10    # "s":Landroid/net/LocalSocket;
-    :goto_7
-    const-string/jumbo v12, "ImsSenderRxr"
+    nop
 
-    const-string/jumbo v13, "Uncaught exception"
+    .line 628
+    const/4 v2, 0x0
 
-    invoke-static {v12, v13, v11}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    .line 630
+    :try_start_2
+    iget-object v7, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 522
-    .end local v11    # "tr":Ljava/lang/Throwable;
-    :cond_5
-    return-void
+    iput-object v5, v7, Lorg/codeaurora/ims/ImsSenderRxr;->mSocket:Landroid/net/LocalSocket;
+
+    .line 632
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "Connected to \'"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v8, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
+
+    iget-object v8, v8, Lorg/codeaurora/ims/ImsSenderRxr;->mSocket:Landroid/net/LocalSocket;
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v1, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 633
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "For instance ["
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v8, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
+
+    invoke-static {v8}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v8, "] connected to \'"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v1, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    .line 635
+    const/4 v7, 0x0
+
+    .line 637
+    .local v7, "length":I
+    :try_start_3
+    iget-object v8, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
+
+    iget-object v8, v8, Lorg/codeaurora/ims/ImsSenderRxr;->mSocket:Landroid/net/LocalSocket;
+
+    invoke-virtual {v8}, Landroid/net/LocalSocket;->getInputStream()Ljava/io/InputStream;
+
+    move-result-object v8
+
+    .line 641
+    .local v8, "is":Ljava/io/InputStream;
+    :cond_1
+    :goto_2
+    iget-object v9, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->buffer:[B
+
+    invoke-static {v8, v9}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Ljava/io/InputStream;[B)I
+
+    move-result v9
+
+    move v7, v9
+
+    .line 643
+    if-gez v7, :cond_2
+
+    .line 645
+    nop
+
+    .line 659
+    .end local v8    # "is":Ljava/io/InputStream;
+    goto :goto_3
+
+    .line 648
+    .restart local v8    # "is":Ljava/io/InputStream;
+    :cond_2
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "Read packet: "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v10, " bytes"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v1, v9}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 650
+    if-lez v7, :cond_1
+
+    iget-object v9, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
+
+    iget-object v10, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->buffer:[B
+
+    invoke-virtual {v9, v10, v7}, Lorg/codeaurora/ims/ImsSenderRxr;->processResponse([BI)V
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    goto :goto_2
+
+    .line 656
+    .end local v8    # "is":Ljava/io/InputStream;
+    :catchall_0
+    move-exception v8
+
+    .line 657
+    .local v8, "tr":Ljava/lang/Throwable;
+    :try_start_4
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "Uncaught exception read length="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v10, "Exception:"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 658
+    invoke-virtual {v8}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    .line 657
+    invoke-static {v1, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_3
+
+    .line 653
+    .end local v8    # "tr":Ljava/lang/Throwable;
+    :catch_0
+    move-exception v8
+
+    .line 654
+    .local v8, "ex":Ljava/io/IOException;
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "\'"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v10, "\' socket closed"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v1, v9, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 659
+    nop
+
+    .line 661
+    .end local v8    # "ex":Ljava/io/IOException;
+    :goto_3
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "Disconnected from "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v9, " socket"
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v1, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 663
+    iget-object v8, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
+
+    iget-object v8, v8, Lorg/codeaurora/ims/ImsSenderRxr;->mSocket:Landroid/net/LocalSocket;
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    if-eqz v8, :cond_3
+
+    .line 665
+    :try_start_5
+    iget-object v8, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
+
+    iget-object v8, v8, Lorg/codeaurora/ims/ImsSenderRxr;->mSocket:Landroid/net/LocalSocket;
+
+    invoke-virtual {v8}, Landroid/net/LocalSocket;->close()V
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+
+    .line 667
+    goto :goto_4
+
+    .line 666
+    :catch_1
+    move-exception v8
+
+    .line 668
+    :goto_4
+    :try_start_6
+    iget-object v8, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
+
+    const/4 v9, 0x0
+
+    iput-object v9, v8, Lorg/codeaurora/ims/ImsSenderRxr;->mSocket:Landroid/net/LocalSocket;
+
+    .line 670
+    :cond_3
+    invoke-static {}, Lorg/codeaurora/ims/IFRequest;->resetSerial()V
+
+    .line 674
+    iget-object v8, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x1
+
+    invoke-static {v8, v10, v9}, Lorg/codeaurora/ims/ImsSenderRxr;->access$500(Lorg/codeaurora/ims/ImsSenderRxr;IZ)V
+
+    .line 675
+    .end local v5    # "s":Landroid/net/LocalSocket;
+    .end local v6    # "l":Landroid/net/LocalSocketAddress;
+    .end local v7    # "length":I
+    goto/16 :goto_0
+
+    .line 595
+    .restart local v5    # "s":Landroid/net/LocalSocket;
+    :catch_2
+    move-exception v6
+
+    .line 596
+    .local v6, "ex":Ljava/io/IOException;
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "Exception in socket create\'"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 597
+    invoke-virtual {v6}, Ljava/io/IOException;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 596
+    invoke-static {v1, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+
+    .line 601
+    const-string v7, "Couldn\'t find "
+
+    const/16 v8, 0x8
+
+    if-ne v2, v8, :cond_4
+
+    .line 602
+    :try_start_7
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, "socket after "
+
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v7, " times, continuing to retry silently"
+
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 605
-    .restart local v6    # "l":Landroid/net/LocalSocketAddress;
-    .restart local v7    # "length":I
-    .restart local v10    # "s":Landroid/net/LocalSocket;
-    :catch_5
-    move-exception v11
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$IFMsg_Rxr;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 606
-    .restart local v11    # "tr":Ljava/lang/Throwable;
-    :try_start_e
-    const-string/jumbo v12, "ImsSenderRxr"
-
-    new-instance v13, Ljava/lang/StringBuilder;
-
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v14, "Uncaught exception read length="
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v13
+    invoke-static {v0}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;)V
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
     .line 607
-    const-string/jumbo v14, "Exception:"
+    :try_start_8
+    invoke-virtual {v5}, Landroid/net/LocalSocket;->close()V
+    :try_end_8
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_3
+    .catchall {:try_start_8 .. :try_end_8} :catchall_1
 
-    .line 606
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 608
+    const/4 v0, 0x1
 
-    move-result-object v13
+    .line 609
+    .end local v3    # "killMe":Z
+    .local v0, "killMe":Z
+    return-void
 
-    .line 607
-    invoke-virtual {v11}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+    .line 610
+    .end local v0    # "killMe":Z
+    .restart local v3    # "killMe":Z
+    :catch_3
+    move-exception v0
 
-    move-result-object v14
+    .line 611
+    .local v0, "e":Ljava/io/IOException;
+    :try_start_9
+    const-string v7, "IOException"
 
-    .line 606
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1, v7, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    move-result-object v13
-
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static {v12, v13}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_e
-    .catch Ljava/lang/Throwable; {:try_start_e .. :try_end_e} :catch_4
-
-    goto/16 :goto_3
-
-    .line 625
-    .end local v6    # "l":Landroid/net/LocalSocketAddress;
-    .end local v7    # "length":I
-    .end local v10    # "s":Landroid/net/LocalSocket;
-    .end local v11    # "tr":Ljava/lang/Throwable;
-    :catch_6
-    move-exception v11
-
-    .restart local v11    # "tr":Ljava/lang/Throwable;
-    goto :goto_7
+    .line 612
+    return-void
 
     .line 614
-    .end local v11    # "tr":Ljava/lang/Throwable;
-    .restart local v6    # "l":Landroid/net/LocalSocketAddress;
-    .restart local v7    # "length":I
-    .restart local v10    # "s":Landroid/net/LocalSocket;
-    :catch_7
-    move-exception v2
+    .end local v0    # "e":Ljava/io/IOException;
+    :cond_4
+    if-lez v2, :cond_5
 
-    .restart local v2    # "ex":Ljava/io/IOException;
-    goto/16 :goto_4
+    if-ge v2, v8, :cond_5
 
-    .line 545
-    .end local v2    # "ex":Ljava/io/IOException;
-    .end local v6    # "l":Landroid/net/LocalSocketAddress;
-    .end local v7    # "length":I
-    :catch_8
-    move-exception v2
+    .line 615
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    .restart local v2    # "ex":Ljava/io/IOException;
-    move-object v9, v10
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    .end local v10    # "s":Landroid/net/LocalSocket;
-    .local v9, "s":Landroid/net/LocalSocket;
-    goto/16 :goto_5
+    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, "socket; retrying after timeout"
+
+    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v1, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_1
+
+    .line 620
+    :cond_5
+    const-wide/16 v7, 0xfa0
+
+    :try_start_a
+    invoke-static {v7, v8}, Ljava/lang/Thread;->sleep(J)V
+    :try_end_a
+    .catch Ljava/lang/InterruptedException; {:try_start_a .. :try_end_a} :catch_4
+    .catchall {:try_start_a .. :try_end_a} :catchall_1
+
+    .line 622
+    goto :goto_5
+
+    .line 621
+    :catch_4
+    move-exception v7
+
+    .line 624
+    :goto_5
+    add-int/lit8 v2, v2, 0x1
+
+    .line 625
+    goto/16 :goto_0
+
+    .line 677
+    .end local v5    # "s":Landroid/net/LocalSocket;
+    .end local v6    # "ex":Ljava/io/IOException;
+    :catchall_1
+    move-exception v0
+
+    .line 678
+    .local v0, "tr":Ljava/lang/Throwable;
+    const-string v5, "Uncaught exception"
+
+    invoke-static {v1, v5, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_6
+
+    .line 679
+    .end local v0    # "tr":Ljava/lang/Throwable;
+    :cond_6
+    nop
+
+    .line 683
+    :goto_6
+    return-void
 .end method

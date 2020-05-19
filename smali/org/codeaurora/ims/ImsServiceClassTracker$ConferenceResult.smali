@@ -26,20 +26,18 @@
 
 # direct methods
 .method constructor <init>(Lorg/codeaurora/ims/ImsServiceClassTracker;)V
-    .locals 1
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsServiceClassTracker;
+    .locals 0
 
-    .prologue
-    .line 160
+    .line 179
     iput-object p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$ConferenceResult;->this$0:Lorg/codeaurora/ims/ImsServiceClassTracker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 165
-    const/4 v0, 0x1
+    .line 184
+    const/4 p1, 0x1
 
-    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$ConferenceResult;->shouldHaveTransientSession:Z
+    iput-boolean p1, p0, Lorg/codeaurora/ims/ImsServiceClassTracker$ConferenceResult;->shouldHaveTransientSession:Z
 
-    .line 160
+    .line 180
     return-void
 .end method
