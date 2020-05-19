@@ -6,49 +6,60 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/codeaurora/ims/ImsQmiIF$Answer;,
-        Lorg/codeaurora/ims/ImsQmiIF$CallDetails;,
-        Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;,
-        Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList;,
-        Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;,
-        Lorg/codeaurora/ims/ImsQmiIF$CallList;,
-        Lorg/codeaurora/ims/ImsQmiIF$CallModify;,
-        Lorg/codeaurora/ims/ImsQmiIF$CallWaitingInfo;,
-        Lorg/codeaurora/ims/ImsQmiIF$CbNumList;,
-        Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;,
-        Lorg/codeaurora/ims/ImsQmiIF$ClipProvisionStatus;,
-        Lorg/codeaurora/ims/ImsQmiIF$Clir;,
-        Lorg/codeaurora/ims/ImsQmiIF$Colr;,
-        Lorg/codeaurora/ims/ImsQmiIF$ConfInfo;,
-        Lorg/codeaurora/ims/ImsQmiIF$DeflectCall;,
-        Lorg/codeaurora/ims/ImsQmiIF$Dial;,
-        Lorg/codeaurora/ims/ImsQmiIF$Dtmf;,
-        Lorg/codeaurora/ims/ImsQmiIF$Extra;,
-        Lorg/codeaurora/ims/ImsQmiIF$Handover;,
-        Lorg/codeaurora/ims/ImsQmiIF$Hangup;,
+        Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;,
+        Lorg/codeaurora/ims/ImsQmiIF$VopsInfo;,
+        Lorg/codeaurora/ims/ImsQmiIF$SsacInfo;,
+        Lorg/codeaurora/ims/ImsQmiIF$VoWiFiCallQuality;,
+        Lorg/codeaurora/ims/ImsQmiIF$ExplicitCallTransfer;,
+        Lorg/codeaurora/ims/ImsQmiIF$AddressInfo;,
+        Lorg/codeaurora/ims/ImsQmiIF$GeoLocationInfo;,
+        Lorg/codeaurora/ims/ImsQmiIF$MultiEndpointInfo;,
+        Lorg/codeaurora/ims/ImsQmiIF$ConfigMsg;,
+        Lorg/codeaurora/ims/ImsQmiIF$WifiCallingInfo;,
+        Lorg/codeaurora/ims/ImsQmiIF$RtpStatisticsData;,
+        Lorg/codeaurora/ims/ImsQmiIF$Resume;,
         Lorg/codeaurora/ims/ImsQmiIF$Hold;,
-        Lorg/codeaurora/ims/ImsQmiIF$IFConnected;,
-        Lorg/codeaurora/ims/ImsQmiIF$Info;,
-        Lorg/codeaurora/ims/ImsQmiIF$LastFailCause;,
-        Lorg/codeaurora/ims/ImsQmiIF$MsgTag;,
-        Lorg/codeaurora/ims/ImsQmiIF$Mute;,
         Lorg/codeaurora/ims/ImsQmiIF$Mwi;,
         Lorg/codeaurora/ims/ImsQmiIF$MwiMessageDetails;,
         Lorg/codeaurora/ims/ImsQmiIF$MwiMessageSummary;,
-        Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;,
-        Lorg/codeaurora/ims/ImsQmiIF$Registration;,
-        Lorg/codeaurora/ims/ImsQmiIF$Resume;,
-        Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;,
-        Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;,
-        Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;,
-        Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;,
-        Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;,
-        Lorg/codeaurora/ims/ImsQmiIF$SuppSvcRequest;,
+        Lorg/codeaurora/ims/ImsQmiIF$VideoCallQuality;,
         Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;,
+        Lorg/codeaurora/ims/ImsQmiIF$SuppSvcRequest;,
         Lorg/codeaurora/ims/ImsQmiIF$SuppSvcStatus;,
-        Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;,
+        Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;,
+        Lorg/codeaurora/ims/ImsQmiIF$ConfInfo;,
+        Lorg/codeaurora/ims/ImsQmiIF$CallFwdTimerInfo;,
+        Lorg/codeaurora/ims/ImsQmiIF$CallForwardInfoList;,
+        Lorg/codeaurora/ims/ImsQmiIF$CallWaitingInfo;,
+        Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;,
+        Lorg/codeaurora/ims/ImsQmiIF$CbNumList;,
+        Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;,
+        Lorg/codeaurora/ims/ImsQmiIF$ClipProvisionStatus;,
+        Lorg/codeaurora/ims/ImsQmiIF$RadioStateChanged;,
         Lorg/codeaurora/ims/ImsQmiIF$TtyNotify;,
-        Lorg/codeaurora/ims/ImsQmiIF$VideoCallQuality;
+        Lorg/codeaurora/ims/ImsQmiIF$Handover;,
+        Lorg/codeaurora/ims/ImsQmiIF$Extra;,
+        Lorg/codeaurora/ims/ImsQmiIF$LastFailCause;,
+        Lorg/codeaurora/ims/ImsQmiIF$IFConnected;,
+        Lorg/codeaurora/ims/ImsQmiIF$RingBackTone;,
+        Lorg/codeaurora/ims/ImsQmiIF$Registration;,
+        Lorg/codeaurora/ims/ImsQmiIF$Dtmf;,
+        Lorg/codeaurora/ims/ImsQmiIF$Mute;,
+        Lorg/codeaurora/ims/ImsQmiIF$SwitchWaitingOrHoldingAndActive;,
+        Lorg/codeaurora/ims/ImsQmiIF$Answer;,
+        Lorg/codeaurora/ims/ImsQmiIF$Clir;,
+        Lorg/codeaurora/ims/ImsQmiIF$DeflectCall;,
+        Lorg/codeaurora/ims/ImsQmiIF$Hangup;,
+        Lorg/codeaurora/ims/ImsQmiIF$Dial;,
+        Lorg/codeaurora/ims/ImsQmiIF$Colr;,
+        Lorg/codeaurora/ims/ImsQmiIF$CallList;,
+        Lorg/codeaurora/ims/ImsQmiIF$CallModify;,
+        Lorg/codeaurora/ims/ImsQmiIF$CallDetails;,
+        Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;,
+        Lorg/codeaurora/ims/ImsQmiIF$Info;,
+        Lorg/codeaurora/ims/ImsQmiIF$StatusForAccessTech;,
+        Lorg/codeaurora/ims/ImsQmiIF$CallFailCauseResponse;,
+        Lorg/codeaurora/ims/ImsQmiIF$MsgTag;
     }
 .end annotation
 
@@ -56,7 +67,11 @@
 # static fields
 .field public static final ACTIVATE:I = 0x1
 
+.field public static final ASSURED_TRANSFER:I = 0x1
+
 .field public static final BACKGROUND:I = 0x2
+
+.field public static final BLIND_TRANSFER:I = 0x0
 
 .field public static final CALL_ACTIVE:I = 0x0
 
@@ -76,6 +91,8 @@
 
 .field public static final CALL_END:I = 0x6
 
+.field public static final CALL_FAIL_ACCESS_CLASS_BLOCKED:I = 0x104
+
 .field public static final CALL_FAIL_ANSWERED_ELSEWHERE:I = 0x3f6
 
 .field public static final CALL_FAIL_BLACKLISTED_CALL_ID:I = 0x1f8
@@ -84,11 +101,29 @@
 
 .field public static final CALL_FAIL_CALL_BARRED:I = 0xf0
 
+.field public static final CALL_FAIL_CAUSE_CALL_PULLED:I = 0x3f8
+
 .field public static final CALL_FAIL_CONGESTION:I = 0x22
+
+.field public static final CALL_FAIL_CS_RETRY_REQUIRED:I = 0x1f9
+
+.field public static final CALL_FAIL_EMERGENCY_PERM_FAILURE:I = 0x146
+
+.field public static final CALL_FAIL_EMERGENCY_TEMP_FAILURE:I = 0x145
 
 .field public static final CALL_FAIL_ERROR_UNSPECIFIED:I = 0xffff
 
+.field public static final CALL_FAIL_FDN_BLOCKED:I = 0xf1
+
 .field public static final CALL_FAIL_FEATURE_UNAVAILABLE:I = 0x3f3
+
+.field public static final CALL_FAIL_HOLD_REINVITE_COLLISION:I = 0xbbf
+
+.field public static final CALL_FAIL_HOLD_RESUME_CANCELED:I = 0xbbe
+
+.field public static final CALL_FAIL_HOLD_RESUME_FAILED:I = 0xbbd
+
+.field public static final CALL_FAIL_HO_NOT_FEASIBLE:I = 0x17e
 
 .field public static final CALL_FAIL_INCOMPATIBILITY_DESTINATION:I = 0x58
 
@@ -104,9 +139,71 @@
 
 .field public static final CALL_FAIL_MISC:I = 0x3f5
 
+.field public static final CALL_FAIL_NETWORK_DETACH:I = 0x105
+
+.field public static final CALL_FAIL_NETWORK_REJECT:I = 0xfc
+
+.field public static final CALL_FAIL_NETWORK_RESP_TIMEOUT:I = 0xfb
+
 .field public static final CALL_FAIL_NETWORK_UNAVAILABLE:I = 0x3f2
 
 .field public static final CALL_FAIL_NORMAL:I = 0x10
+
+.field public static final CALL_FAIL_NO_VALID_SIM:I = 0xf9
+
+.field public static final CALL_FAIL_OEM_CAUSE_1:I = 0xf001
+
+.field public static final CALL_FAIL_OEM_CAUSE_10:I = 0xf00a
+
+.field public static final CALL_FAIL_OEM_CAUSE_11:I = 0xf00b
+
+.field public static final CALL_FAIL_OEM_CAUSE_12:I = 0xf00c
+
+.field public static final CALL_FAIL_OEM_CAUSE_13:I = 0xf00d
+
+.field public static final CALL_FAIL_OEM_CAUSE_14:I = 0xf00e
+
+.field public static final CALL_FAIL_OEM_CAUSE_15:I = 0xf00f
+
+.field public static final CALL_FAIL_OEM_CAUSE_2:I = 0xf002
+
+.field public static final CALL_FAIL_OEM_CAUSE_3:I = 0xf003
+
+.field public static final CALL_FAIL_OEM_CAUSE_4:I = 0xf004
+
+.field public static final CALL_FAIL_OEM_CAUSE_5:I = 0xf005
+
+.field public static final CALL_FAIL_OEM_CAUSE_6:I = 0xf006
+
+.field public static final CALL_FAIL_OEM_CAUSE_7:I = 0xf007
+
+.field public static final CALL_FAIL_OEM_CAUSE_8:I = 0xf008
+
+.field public static final CALL_FAIL_OEM_CAUSE_9:I = 0xf009
+
+.field public static final CALL_FAIL_OUT_OF_SERVICE:I = 0xf8
+
+.field public static final CALL_FAIL_PULL_OUT_OF_SYNC:I = 0x3f7
+
+.field public static final CALL_FAIL_RADIO_ACCESS_FAILURE:I = 0xfd
+
+.field public static final CALL_FAIL_RADIO_INTERNAL_ERROR:I = 0xfa
+
+.field public static final CALL_FAIL_RADIO_LINK_FAILURE:I = 0xfe
+
+.field public static final CALL_FAIL_RADIO_LINK_LOST:I = 0xff
+
+.field public static final CALL_FAIL_RADIO_OFF:I = 0xf7
+
+.field public static final CALL_FAIL_RADIO_RELEASE_ABNORMAL:I = 0x103
+
+.field public static final CALL_FAIL_RADIO_RELEASE_NORMAL:I = 0x102
+
+.field public static final CALL_FAIL_RADIO_SETUP_FAILURE:I = 0x101
+
+.field public static final CALL_FAIL_RADIO_UPLINK_FAILURE:I = 0x100
+
+.field public static final CALL_FAIL_SIP_ALTERNATE_EMERGENCY_CALL:I = 0x7e7
 
 .field public static final CALL_FAIL_SIP_BAD_ADDRESS:I = 0x7d8
 
@@ -118,7 +215,7 @@
 
 .field public static final CALL_FAIL_SIP_FORBIDDEN:I = 0x7d3
 
-.field public static final CALL_FAIL_SIP_GLOBAL_ERROR:I = 0x7e1
+.field public static final CALL_FAIL_SIP_GLOBAL_ERROR:I = 0x7e6
 
 .field public static final CALL_FAIL_SIP_NOT_ACCEPTABLE:I = 0x7db
 
@@ -134,15 +231,25 @@
 
 .field public static final CALL_FAIL_SIP_REQUEST_TIMEOUT:I = 0x7d6
 
+.field public static final CALL_FAIL_SIP_SERVER_BAD_GATEWAY:I = 0x7df
+
 .field public static final CALL_FAIL_SIP_SERVER_INTERNAL_ERROR:I = 0x7dd
 
-.field public static final CALL_FAIL_SIP_SERVER_TIMEOUT:I = 0x7df
+.field public static final CALL_FAIL_SIP_SERVER_MESSAGE_TOOLARGE:I = 0x7e3
 
-.field public static final CALL_FAIL_SIP_SERVICE_UNAVAILABLE:I = 0x7de
+.field public static final CALL_FAIL_SIP_SERVER_NOT_IMPLEMENTED:I = 0x7de
+
+.field public static final CALL_FAIL_SIP_SERVER_PRECONDITION_FAILURE:I = 0x7e4
+
+.field public static final CALL_FAIL_SIP_SERVER_TIMEOUT:I = 0x7e1
+
+.field public static final CALL_FAIL_SIP_SERVER_VERSION_UNSUPPORTED:I = 0x7e2
+
+.field public static final CALL_FAIL_SIP_SERVICE_UNAVAILABLE:I = 0x7e0
 
 .field public static final CALL_FAIL_SIP_TEMPORARILY_UNAVAILABLE:I = 0x7d7
 
-.field public static final CALL_FAIL_SIP_USER_REJECTED:I = 0x7e0
+.field public static final CALL_FAIL_SIP_USER_REJECTED:I = 0x7e5
 
 .field public static final CALL_FAIL_UNOBTAINABLE_NUMBER:I = 0x1
 
@@ -192,9 +299,191 @@
 
 .field public static final CANCEL:I = 0x3
 
+.field public static final CAUSE_CODE_SESSION_MODIFY_DOWNGRADE_GENERIC_ERROR:I = 0xb
+
+.field public static final CAUSE_CODE_SESSION_MODIFY_DOWNGRADE_LIPSYNC:I = 0xa
+
+.field public static final CAUSE_CODE_SESSION_MODIFY_DOWNGRADE_LOCAL_REQ:I = 0x3
+
+.field public static final CAUSE_CODE_SESSION_MODIFY_DOWNGRADE_LOW_THRPUT:I = 0x8
+
+.field public static final CAUSE_CODE_SESSION_MODIFY_DOWNGRADE_PACKET_LOSS:I = 0x7
+
+.field public static final CAUSE_CODE_SESSION_MODIFY_DOWNGRADE_QOS:I = 0x6
+
+.field public static final CAUSE_CODE_SESSION_MODIFY_DOWNGRADE_REMOTE_REQ:I = 0x4
+
+.field public static final CAUSE_CODE_SESSION_MODIFY_DOWNGRADE_RTP_TIMEOUT:I = 0x5
+
+.field public static final CAUSE_CODE_SESSION_MODIFY_DOWNGRADE_THERM_MITIGATION:I = 0x9
+
+.field public static final CAUSE_CODE_SESSION_MODIFY_UPGRADE_LOCAL_REQ:I = 0x1
+
+.field public static final CAUSE_CODE_SESSION_MODIFY_UPGRADE_REMOTE_REQ:I = 0x2
+
+.field public static final CAUSE_CODE_UNSPECIFIED:I = 0x0
+
+.field public static final CELLULAR_ONLY:I = 0x4
+
+.field public static final CELLULAR_PREFERRED:I = 0x3
+
 .field public static final COMPLETE_FAIL:I = 0x2
 
 .field public static final COMPLETE_SUCCESS:I = 0x1
+
+.field public static final CONFIG_FILE_NOT_AVAILABLE:I = 0x2
+
+.field public static final CONFIG_IMS_NOT_READY:I = 0x1
+
+.field public static final CONFIG_ITEM_AMR_BANDWIDTH_EFFICIENT_PT:I = 0x35
+
+.field public static final CONFIG_ITEM_AMR_DEFAULT_MODE:I = 0x38
+
+.field public static final CONFIG_ITEM_AMR_OCTET_ALIGNED_PT:I = 0x34
+
+.field public static final CONFIG_ITEM_AMR_WB_BANDWIDTH_EFFICIENT_PT:I = 0x33
+
+.field public static final CONFIG_ITEM_AMR_WB_OCTET_ALIGNED_PT:I = 0x32
+
+.field public static final CONFIG_ITEM_AVAILABILITY_CACHE_EXPIRATION:I = 0x13
+
+.field public static final CONFIG_ITEM_CANCELLATION_TIMER:I = 0x5
+
+.field public static final CONFIG_ITEM_CAPABILITIES_CACHE_EXPIRATION:I = 0x12
+
+.field public static final CONFIG_ITEM_CAPABILITIES_POLL_INTERVAL:I = 0x14
+
+.field public static final CONFIG_ITEM_CAPABILITY_DISCOVERY_ENABLED:I = 0x1e
+
+.field public static final CONFIG_ITEM_CAPAB_POLL_LIST_SUB_EXP:I = 0x17
+
+.field public static final CONFIG_ITEM_DOMAIN_NAME:I = 0xd
+
+.field public static final CONFIG_ITEM_DTMF_NB_PT:I = 0x37
+
+.field public static final CONFIG_ITEM_DTMF_WB_PT:I = 0x36
+
+.field public static final CONFIG_ITEM_EAB_SETTING_ENABLED:I = 0x19
+
+.field public static final CONFIG_ITEM_EMERGENCY_CALL_TIMER:I = 0x1f
+
+.field public static final CONFIG_ITEM_GZIP_FLAG:I = 0x18
+
+.field public static final CONFIG_ITEM_KEEP_ALIVE_ENABLED:I = 0x23
+
+.field public static final CONFIG_ITEM_LBO_PCSCF_ADDRESS:I = 0x22
+
+.field public static final CONFIG_ITEM_LVC_SETTING_ENABLED:I = 0xc
+
+.field public static final CONFIG_ITEM_MAX_NUM_ENTRIES_IN_RCL:I = 0x16
+
+.field public static final CONFIG_ITEM_MIN_SESSION_EXPIRY:I = 0x4
+
+.field public static final CONFIG_ITEM_MOBILE_DATA_ENABLED:I = 0x1a
+
+.field public static final CONFIG_ITEM_NONE:I = 0x0
+
+.field public static final CONFIG_ITEM_PUBLISH_TIMER:I = 0x10
+
+.field public static final CONFIG_ITEM_PUBLISH_TIMER_EXTENDED:I = 0x11
+
+.field public static final CONFIG_ITEM_REGISTRATION_RETRY_BASE_TIME_SEC:I = 0x24
+
+.field public static final CONFIG_ITEM_REGISTRATION_RETRY_MAX_TIME_SEC:I = 0x25
+
+.field public static final CONFIG_ITEM_SILENT_REDIAL_ENABLE:I = 0x7
+
+.field public static final CONFIG_ITEM_SIP_ACK_RECEIPT_WAIT_TIME_MSEC:I = 0x2e
+
+.field public static final CONFIG_ITEM_SIP_ACK_RETX_WAIT_TIME_MSEC:I = 0x2f
+
+.field public static final CONFIG_ITEM_SIP_INVITE_REQ_RETX_INTERVAL_MSEC:I = 0x28
+
+.field public static final CONFIG_ITEM_SIP_INVITE_RSP_RETX_INTERVAL_MSEC:I = 0x2d
+
+.field public static final CONFIG_ITEM_SIP_INVITE_RSP_RETX_WAIT_TIME_MSEC:I = 0x2a
+
+.field public static final CONFIG_ITEM_SIP_INVITE_RSP_WAIT_TIME_MSEC:I = 0x29
+
+.field public static final CONFIG_ITEM_SIP_NON_INVITE_REQ_RETX_INTERVAL_MSEC:I = 0x2b
+
+.field public static final CONFIG_ITEM_SIP_NON_INVITE_REQ_RETX_WAIT_TIME_MSEC:I = 0x30
+
+.field public static final CONFIG_ITEM_SIP_NON_INVITE_RSP_RETX_WAIT_TIME_MSEC:I = 0x31
+
+.field public static final CONFIG_ITEM_SIP_NON_INVITE_TXN_TIMEOUT_TIMER_MSEC:I = 0x2c
+
+.field public static final CONFIG_ITEM_SIP_SESSION_TIMER:I = 0x3
+
+.field public static final CONFIG_ITEM_SIP_T1_TIMER:I = 0x8
+
+.field public static final CONFIG_ITEM_SIP_T2_TIMER:I = 0x9
+
+.field public static final CONFIG_ITEM_SIP_TF_TIMER:I = 0xa
+
+.field public static final CONFIG_ITEM_SMS_FORMAT:I = 0xe
+
+.field public static final CONFIG_ITEM_SMS_OVER_IP:I = 0xf
+
+.field public static final CONFIG_ITEM_SMS_PSI:I = 0x39
+
+.field public static final CONFIG_ITEM_SOURCE_THROTTLE_PUBLISH:I = 0x15
+
+.field public static final CONFIG_ITEM_SPEECH_END_PORT:I = 0x27
+
+.field public static final CONFIG_ITEM_SPEECH_START_PORT:I = 0x26
+
+.field public static final CONFIG_ITEM_SSAC_HYSTERESIS_TIMER:I = 0x20
+
+.field public static final CONFIG_ITEM_THRESHOLD_1x:I = 0x3e
+
+.field public static final CONFIG_ITEM_THRESHOLD_LTE1:I = 0x3b
+
+.field public static final CONFIG_ITEM_THRESHOLD_LTE2:I = 0x3c
+
+.field public static final CONFIG_ITEM_THRESHOLD_LTE3:I = 0x3d
+
+.field public static final CONFIG_ITEM_THRESHOLD_WIFI_A:I = 0x3f
+
+.field public static final CONFIG_ITEM_THRESHOLD_WIFI_B:I = 0x40
+
+.field public static final CONFIG_ITEM_T_DELAY:I = 0x6
+
+.field public static final CONFIG_ITEM_T_EPDG_1x:I = 0x43
+
+.field public static final CONFIG_ITEM_T_EPDG_LTE:I = 0x41
+
+.field public static final CONFIG_ITEM_T_EPDG_WIFI:I = 0x42
+
+.field public static final CONFIG_ITEM_VCE_SETTING_ENABLED:I = 0x45
+
+.field public static final CONFIG_ITEM_VIDEO_QUALITY:I = 0x3a
+
+.field public static final CONFIG_ITEM_VLT_SETTING_ENABLED:I = 0xb
+
+.field public static final CONFIG_ITEM_VOCODER_AMRMODESET:I = 0x1
+
+.field public static final CONFIG_ITEM_VOCODER_AMRWBMODESET:I = 0x2
+
+.field public static final CONFIG_ITEM_VOICE_OVER_WIFI_ENABLED:I = 0x1b
+
+.field public static final CONFIG_ITEM_VOICE_OVER_WIFI_MODE:I = 0x1d
+
+.field public static final CONFIG_ITEM_VOICE_OVER_WIFI_ROAMING:I = 0x1c
+
+.field public static final CONFIG_ITEM_VOLTE_USER_OPT_IN_STATUS:I = 0x21
+
+.field public static final CONFIG_ITEM_VWF_SETTING_ENABLED:I = 0x44
+
+.field public static final CONFIG_NO_ERR:I = 0x0
+
+.field public static final CONFIG_OTHER_INTERNAL_ERR:I = 0x5
+
+.field public static final CONFIG_READ_FAILED:I = 0x3
+
+.field public static final CONFIG_WRITE_FAILED:I = 0x4
+
+.field public static final CONSULTATIVE_TRANSFER:I = 0x2
 
 .field public static final DEACTIVATE:I = 0x2
 
@@ -208,6 +497,10 @@
 
 .field public static final E_GENERIC_FAILURE:I = 0x2
 
+.field public static final E_HOLD_RESUME_CANCELED:I = 0x20
+
+.field public static final E_HOLD_RESUME_FAILED:I = 0x1f
+
 .field public static final E_IMS_DEREGISTERED:I = 0x1d
 
 .field public static final E_INVALID_PARAMETER:I = 0x1b
@@ -215,6 +508,8 @@
 .field public static final E_NETWORK_NOT_SUPPORTED:I = 0x1e
 
 .field public static final E_RADIO_NOT_AVAILABLE:I = 0x1
+
+.field public static final E_REINVITE_COLLISION:I = 0x21
 
 .field public static final E_REJECTED_BY_REMOTE:I = 0x1c
 
@@ -374,6 +669,22 @@
 
 .field public static final REQUEST_GET_CURRENT_CALLS:I = 0x6
 
+.field public static final REQUEST_GET_IMS_CONFIG:I = 0x2d
+
+.field public static final REQUEST_GET_MULTIENDPOINT_INFO:I = 0x32
+
+.field public static final REQUEST_GET_RTP_ERROR_STATISTICS:I = 0x29
+
+.field public static final REQUEST_GET_RTP_STATISTICS:I = 0x28
+
+.field public static final REQUEST_GET_SSAC_INFO:I = 0x31
+
+.field public static final REQUEST_GET_VOPS_INFO:I = 0x30
+
+.field public static final REQUEST_GET_VOWIFI_CALL_QUALITY:I = 0x2f
+
+.field public static final REQUEST_GET_WIFI_CALLING_STATUS:I = 0x2a
+
 .field public static final REQUEST_HANGUP:I = 0x4
 
 .field public static final REQUEST_HANGUP_FOREGROUND_RESUME_BACKGROUND:I = 0x8
@@ -404,6 +715,8 @@
 
 .field public static final REQUEST_RESUME:I = 0x26
 
+.field public static final REQUEST_SEND_GEOLOCATION_INFO:I = 0x2e
+
 .field public static final REQUEST_SEND_UI_TTY_MODE:I = 0x27
 
 .field public static final REQUEST_SET_CALL_FORWARD_STATUS:I = 0x17
@@ -414,11 +727,15 @@
 
 .field public static final REQUEST_SET_COLR:I = 0x22
 
+.field public static final REQUEST_SET_IMS_CONFIG:I = 0x2c
+
 .field public static final REQUEST_SET_SERVICE_STATUS:I = 0x1e
 
 .field public static final REQUEST_SET_SUPP_SVC_NOTIFICATION:I = 0x1b
 
 .field public static final REQUEST_SET_VT_CALL_QUALITY:I = 0x24
+
+.field public static final REQUEST_SET_WIFI_CALLING_STATUS:I = 0x2b
 
 .field public static final REQUEST_SUPP_SVC_STATUS:I = 0x1f
 
@@ -470,6 +787,10 @@
 
 .field public static final UNSOL_REFRESH_CONF_INFO:I = 0xd1
 
+.field public static final UNSOL_REFRESH_MULTIENDPOINT_INFO:I = 0xd7
+
+.field public static final UNSOL_REQUEST_GEOLOCATION:I = 0xd8
+
 .field public static final UNSOL_RESPONSE:I = 0x3
 
 .field public static final UNSOL_RESPONSE_CALL_STATE_CHANGED:I = 0xc9
@@ -484,20 +805,45 @@
 
 .field public static final UNSOL_SRV_STATUS_UPDATE:I = 0xd2
 
+.field public static final UNSOL_SSAC_CHANGED:I = 0xdb
+
 .field public static final UNSOL_SUPP_SVC_NOTIFICATION:I = 0xd3
 
 .field public static final UNSOL_TTY_NOTIFICATION:I = 0xd4
 
+.field public static final UNSOL_VOPS_CHANGED:I = 0xda
+
+.field public static final UNSOL_VOWIFI_CALL_QUALITY:I = 0xd9
+
 .field public static final VOIP:I = 0x2
 
+.field public static final VOWIFI_QUALITY_BAD:I = 0x4
+
+.field public static final VOWIFI_QUALITY_EXCELLENT:I = 0x1
+
+.field public static final VOWIFI_QUALITY_FAIR:I = 0x2
+
+.field public static final VOWIFI_QUALITY_NONE:I = 0x0
+
 .field public static final VT:I = 0x3
+
+.field public static final WIFI_NOT_SUPPORTED:I = 0x0
+
+.field public static final WIFI_ONLY:I = 0x2
+
+.field public static final WIFI_PREFERRED:I = 0x1
+
+.field public static final WIFI_PREF_NONE:I = 0x0
+
+.field public static final WIFI_STATUS_OFF:I = 0x2
+
+.field public static final WIFI_STATUS_ON:I = 0x1
 
 
 # direct methods
 .method private constructor <init>()V
     .locals 0
 
-    .prologue
     .line 6
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
