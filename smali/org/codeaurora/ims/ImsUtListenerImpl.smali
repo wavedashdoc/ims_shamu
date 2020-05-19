@@ -100,7 +100,7 @@
 
     .prologue
     .line 103
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerImpl;->mListener:Lcom/android/ims/internal/IImsUtListener;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerImpl;->mListener:Landroid/telephony/ims/ImsUtListener;
 
     if-eqz v1, :cond_0
 
@@ -181,7 +181,7 @@
 
     .prologue
     .line 64
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerImpl;->mListener:Lcom/android/ims/internal/IImsUtListener;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerImpl;->mListener:Landroid/telephony/ims/ImsUtListener;
 
     if-eqz v1, :cond_0
 
