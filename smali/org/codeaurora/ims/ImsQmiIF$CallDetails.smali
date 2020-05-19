@@ -21,6 +21,8 @@
 
 .field public static final CALLTYPE_FIELD_NUMBER:I = 0x1
 
+.field public static final CAUSECODE_FIELD_NUMBER:I = 0x9
+
 .field public static final EXTRASLENGTH_FIELD_NUMBER:I = 0x3
 
 .field public static final EXTRAS_FIELD_NUMBER:I = 0x4
@@ -41,13 +43,14 @@
 
 .field private callType_:I
 
+.field private causeCode_:I
+
 .field private extrasLength_:I
 
 .field private extras_:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/List",
-            "<",
+            "Ljava/util/List<",
             "Ljava/lang/String;",
             ">;"
         }
@@ -59,6 +62,8 @@
 .field private hasCallSubstate:Z
 
 .field private hasCallType:Z
+
+.field private hasCauseCode:Z
 
 .field private hasExtrasLength:Z
 
@@ -77,51 +82,55 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 4
+    .locals 2
 
-    .prologue
-    const/4 v3, 0x0
-
-    const/4 v2, -0x1
-
-    const/4 v1, 0x0
-
-    .line 1215
+    .line 1431
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1220
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callType_:I
+    .line 1436
+    const/4 v0, 0x0
 
-    .line 1237
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callDomain_:I
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callType_:I
 
-    .line 1254
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extrasLength_:I
+    .line 1453
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callDomain_:I
 
-    .line 1271
+    .line 1470
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extrasLength_:I
+
+    .line 1486
+    nop
+
+    .line 1487
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 1270
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extras_:Ljava/util/List;
+    iput-object v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extras_:Ljava/util/List;
 
-    .line 1304
-    iput-object v3, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->localAbility_:Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
+    .line 1520
+    const/4 v1, 0x0
 
-    .line 1324
-    iput-object v3, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->peerAbility_:Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
+    iput-object v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->localAbility_:Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
-    .line 1344
-    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callSubstate_:I
+    .line 1540
+    iput-object v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->peerAbility_:Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
-    .line 1361
-    iput v2, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->mediaId_:I
+    .line 1560
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callSubstate_:I
 
-    .line 1421
-    iput v2, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->cachedSize:I
+    .line 1577
+    const/4 v1, -0x1
 
-    .line 1215
+    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->mediaId_:I
+
+    .line 1594
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->causeCode_:I
+
+    .line 1658
+    iput v1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->cachedSize:I
+
+    .line 1431
     return-void
 .end method
 
@@ -134,8 +143,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 1538
+    .line 1783
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;-><init>()V
@@ -156,8 +164,7 @@
         }
     .end annotation
 
-    .prologue
-    .line 1532
+    .line 1777
     new-instance v0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;-><init>()V
@@ -177,227 +184,234 @@
     .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 1287
-    if-nez p1, :cond_0
+    .line 1503
+    if-eqz p1, :cond_1
 
-    .line 1288
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw v0
-
-    .line 1290
-    :cond_0
+    .line 1506
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extras_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    .line 1291
+    .line 1507
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extras_:Ljava/util/List;
 
-    .line 1293
-    :cond_1
+    .line 1509
+    :cond_0
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extras_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1294
+    .line 1510
     return-object p0
+
+    .line 1504
+    :cond_1
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
 .end method
 
 .method public final clear()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
     .locals 1
 
-    .prologue
-    .line 1376
+    .line 1609
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->clearCallType()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    .line 1377
+    .line 1610
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->clearCallDomain()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    .line 1378
+    .line 1611
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->clearExtrasLength()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    .line 1379
+    .line 1612
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->clearExtras()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    .line 1380
+    .line 1613
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->clearLocalAbility()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    .line 1381
+    .line 1614
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->clearPeerAbility()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    .line 1382
+    .line 1615
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->clearCallSubstate()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    .line 1383
+    .line 1616
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->clearMediaId()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    .line 1384
+    .line 1617
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->clearCauseCode()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
+
+    .line 1618
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->cachedSize:I
 
-    .line 1385
+    .line 1619
     return-object p0
 .end method
 
 .method public clearCallDomain()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
     .locals 1
 
-    .prologue
+    .line 1462
     const/4 v0, 0x0
 
-    .line 1246
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallDomain:Z
 
-    .line 1247
+    .line 1463
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callDomain_:I
 
-    .line 1248
+    .line 1464
     return-object p0
 .end method
 
 .method public clearCallSubstate()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
     .locals 1
 
-    .prologue
+    .line 1569
     const/4 v0, 0x0
 
-    .line 1353
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallSubstate:Z
 
-    .line 1354
+    .line 1570
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callSubstate_:I
 
-    .line 1355
+    .line 1571
     return-object p0
 .end method
 
 .method public clearCallType()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
     .locals 1
 
-    .prologue
+    .line 1445
     const/4 v0, 0x0
 
-    .line 1229
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallType:Z
 
-    .line 1230
+    .line 1446
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callType_:I
 
-    .line 1231
+    .line 1447
+    return-object p0
+.end method
+
+.method public clearCauseCode()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
+    .locals 1
+
+    .line 1603
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCauseCode:Z
+
+    .line 1604
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->causeCode_:I
+
+    .line 1605
     return-object p0
 .end method
 
 .method public clearExtras()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
     .locals 1
 
-    .prologue
-    .line 1297
+    .line 1513
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extras_:Ljava/util/List;
 
-    .line 1298
+    .line 1514
     return-object p0
 .end method
 
 .method public clearExtrasLength()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
     .locals 1
 
-    .prologue
+    .line 1479
     const/4 v0, 0x0
 
-    .line 1263
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasExtrasLength:Z
 
-    .line 1264
+    .line 1480
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extrasLength_:I
 
-    .line 1265
+    .line 1481
     return-object p0
 .end method
 
 .method public clearLocalAbility()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
     .locals 1
 
-    .prologue
-    .line 1316
+    .line 1532
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasLocalAbility:Z
 
-    .line 1317
+    .line 1533
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->localAbility_:Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
-    .line 1318
+    .line 1534
     return-object p0
 .end method
 
 .method public clearMediaId()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
     .locals 1
 
-    .prologue
-    .line 1370
+    .line 1586
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasMediaId:Z
 
-    .line 1371
+    .line 1587
     const/4 v0, -0x1
 
     iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->mediaId_:I
 
-    .line 1372
+    .line 1588
     return-object p0
 .end method
 
 .method public clearPeerAbility()Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
     .locals 1
 
-    .prologue
-    .line 1336
+    .line 1552
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasPeerAbility:Z
 
-    .line 1337
+    .line 1553
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->peerAbility_:Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
-    .line 1338
+    .line 1554
     return-object p0
 .end method
 
 .method public getCachedSize()I
     .locals 1
 
-    .prologue
-    .line 1424
+    .line 1661
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->cachedSize:I
 
     if-gez v0, :cond_0
 
-    .line 1426
+    .line 1663
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getSerializedSize()I
 
-    .line 1428
+    .line 1665
     :cond_0
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->cachedSize:I
 
@@ -407,8 +421,7 @@
 .method public getCallDomain()I
     .locals 1
 
-    .prologue
-    .line 1239
+    .line 1455
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callDomain_:I
 
     return v0
@@ -417,8 +430,7 @@
 .method public getCallSubstate()I
     .locals 1
 
-    .prologue
-    .line 1346
+    .line 1562
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callSubstate_:I
 
     return v0
@@ -427,9 +439,17 @@
 .method public getCallType()I
     .locals 1
 
-    .prologue
-    .line 1222
+    .line 1438
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callType_:I
+
+    return v0
+.end method
+
+.method public getCauseCode()I
+    .locals 1
+
+    .line 1596
+    iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->causeCode_:I
 
     return v0
 .end method
@@ -438,8 +458,7 @@
     .locals 1
     .param p1, "index"    # I
 
-    .prologue
-    .line 1277
+    .line 1493
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extras_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -454,8 +473,7 @@
 .method public getExtrasCount()I
     .locals 1
 
-    .prologue
-    .line 1275
+    .line 1491
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extras_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -468,8 +486,7 @@
 .method public getExtrasLength()I
     .locals 1
 
-    .prologue
-    .line 1255
+    .line 1471
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extrasLength_:I
 
     return v0
@@ -480,15 +497,13 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ljava/util/List",
-            "<",
+            "Ljava/util/List<",
             "Ljava/lang/String;",
             ">;"
         }
     .end annotation
 
-    .prologue
-    .line 1273
+    .line 1489
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extras_:Ljava/util/List;
 
     return-object v0
@@ -497,8 +512,7 @@
 .method public getLocalAbility()Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
     .locals 1
 
-    .prologue
-    .line 1306
+    .line 1522
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->localAbility_:Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
     return-object v0
@@ -507,8 +521,7 @@
 .method public getMediaId()I
     .locals 1
 
-    .prologue
-    .line 1362
+    .line 1578
     iget v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->mediaId_:I
 
     return v0
@@ -517,8 +530,7 @@
 .method public getPeerAbility()Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
     .locals 1
 
-    .prologue
-    .line 1326
+    .line 1542
     iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->peerAbility_:Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
     return-object v0
@@ -527,232 +539,258 @@
 .method public getSerializedSize()I
     .locals 6
 
-    .prologue
-    const/4 v5, 0x1
+    .line 1670
+    const/4 v0, 0x0
 
-    .line 1433
-    const/4 v3, 0x0
-
-    .line 1434
-    .local v3, "size":I
+    .line 1671
+    .local v0, "size":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallType()Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_0
+    const/4 v2, 0x1
 
-    .line 1436
+    if-eqz v1, :cond_0
+
+    .line 1672
+    nop
+
+    .line 1673
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getCallType()I
 
-    move-result v4
+    move-result v1
 
-    .line 1435
-    invoke-static {v5, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
-    move-result v4
+    move-result v1
 
-    add-int/lit8 v3, v4, 0x0
+    add-int/2addr v0, v1
 
-    .line 1438
+    .line 1675
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallDomain()Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_1
+    if-eqz v1, :cond_1
 
-    .line 1440
+    .line 1676
+    const/4 v1, 0x2
+
+    .line 1677
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getCallDomain()I
 
-    move-result v4
+    move-result v3
 
-    const/4 v5, 0x2
+    invoke-static {v1, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
-    .line 1439
-    invoke-static {v5, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    move-result v1
 
-    move-result v4
+    add-int/2addr v0, v1
 
-    add-int/2addr v3, v4
-
-    .line 1442
+    .line 1679
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasExtrasLength()Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_2
+    if-eqz v1, :cond_2
 
-    .line 1444
+    .line 1680
+    const/4 v1, 0x3
+
+    .line 1681
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getExtrasLength()I
 
-    move-result v4
+    move-result v3
 
-    const/4 v5, 0x3
+    invoke-static {v1, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
 
-    .line 1443
-    invoke-static {v5, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeFixed32Size(II)I
+    move-result v1
 
-    move-result v4
+    add-int/2addr v0, v1
 
-    add-int/2addr v3, v4
-
-    .line 1447
+    .line 1684
     :cond_2
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    .line 1448
-    .local v0, "dataSize":I
+    .line 1685
+    .local v1, "dataSize":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getExtrasList()Ljava/util/List;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v3
 
-    .local v2, "element$iterator":Ljava/util/Iterator;
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
     if-eqz v4, :cond_3
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v4
 
-    check-cast v1, Ljava/lang/String;
+    check-cast v4, Ljava/lang/String;
 
-    .line 1449
-    .local v1, "element":Ljava/lang/String;
-    invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
+    .line 1686
+    .local v4, "element":Ljava/lang/String;
+    nop
 
-    move-result v4
+    .line 1687
+    invoke-static {v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
-    add-int/2addr v0, v4
+    move-result v5
 
+    add-int/2addr v1, v5
+
+    .line 1688
+    .end local v4    # "element":Ljava/lang/String;
     goto :goto_0
 
-    .line 1452
-    .end local v1    # "element":Ljava/lang/String;
+    .line 1689
     :cond_3
-    add-int/2addr v3, v0
+    add-int/2addr v0, v1
 
-    .line 1453
+    .line 1690
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getExtrasList()Ljava/util/List;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-interface {v4}, Ljava/util/List;->size()I
+    invoke-interface {v3}, Ljava/util/List;->size()I
 
-    move-result v4
+    move-result v3
 
-    mul-int/lit8 v4, v4, 0x1
+    mul-int/2addr v3, v2
 
-    add-int/2addr v3, v4
+    add-int/2addr v0, v3
 
-    .line 1455
+    .line 1692
+    .end local v1    # "dataSize":I
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasLocalAbility()Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_4
+    if-eqz v1, :cond_4
 
-    .line 1457
+    .line 1693
+    const/4 v1, 0x5
+
+    .line 1694
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getLocalAbility()Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
-    move-result-object v4
+    move-result-object v2
 
-    const/4 v5, 0x5
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
 
-    .line 1456
-    invoke-static {v5, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+    move-result v1
 
-    move-result v4
+    add-int/2addr v0, v1
 
-    add-int/2addr v3, v4
-
-    .line 1459
+    .line 1696
     :cond_4
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasPeerAbility()Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_5
+    if-eqz v1, :cond_5
 
-    .line 1461
+    .line 1697
+    const/4 v1, 0x6
+
+    .line 1698
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getPeerAbility()Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
-    move-result-object v4
+    move-result-object v2
 
-    const/4 v5, 0x6
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
 
-    .line 1460
-    invoke-static {v5, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+    move-result v1
 
-    move-result v4
+    add-int/2addr v0, v1
 
-    add-int/2addr v3, v4
-
-    .line 1463
+    .line 1700
     :cond_5
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallSubstate()Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_6
+    if-eqz v1, :cond_6
 
-    .line 1465
+    .line 1701
+    const/4 v1, 0x7
+
+    .line 1702
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getCallSubstate()I
 
-    move-result v4
+    move-result v2
 
-    const/4 v5, 0x7
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
-    .line 1464
-    invoke-static {v5, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    move-result v1
 
-    move-result v4
+    add-int/2addr v0, v1
 
-    add-int/2addr v3, v4
-
-    .line 1467
+    .line 1704
     :cond_6
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasMediaId()Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_7
+    if-eqz v1, :cond_7
 
-    .line 1469
+    .line 1705
+    const/16 v1, 0x8
+
+    .line 1706
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getMediaId()I
 
-    move-result v4
+    move-result v2
 
-    const/16 v5, 0x8
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeSFixed32Size(II)I
 
-    .line 1468
-    invoke-static {v5, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeSFixed32Size(II)I
+    move-result v1
 
-    move-result v4
+    add-int/2addr v0, v1
 
-    add-int/2addr v3, v4
-
-    .line 1471
+    .line 1708
     :cond_7
-    iput v3, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->cachedSize:I
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCauseCode()Z
 
-    .line 1472
-    return v3
+    move-result v1
+
+    if-eqz v1, :cond_8
+
+    .line 1709
+    const/16 v1, 0x9
+
+    .line 1710
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getCauseCode()I
+
+    move-result v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 1712
+    :cond_8
+    iput v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->cachedSize:I
+
+    .line 1713
+    return v0
 .end method
 
 .method public hasCallDomain()Z
     .locals 1
 
-    .prologue
-    .line 1238
+    .line 1454
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallDomain:Z
 
     return v0
@@ -761,8 +799,7 @@
 .method public hasCallSubstate()Z
     .locals 1
 
-    .prologue
-    .line 1345
+    .line 1561
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallSubstate:Z
 
     return v0
@@ -771,9 +808,17 @@
 .method public hasCallType()Z
     .locals 1
 
-    .prologue
-    .line 1221
+    .line 1437
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallType:Z
+
+    return v0
+.end method
+
+.method public hasCauseCode()Z
+    .locals 1
+
+    .line 1595
+    iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCauseCode:Z
 
     return v0
 .end method
@@ -781,8 +826,7 @@
 .method public hasExtrasLength()Z
     .locals 1
 
-    .prologue
-    .line 1256
+    .line 1472
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasExtrasLength:Z
 
     return v0
@@ -791,8 +835,7 @@
 .method public hasLocalAbility()Z
     .locals 1
 
-    .prologue
-    .line 1305
+    .line 1521
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasLocalAbility:Z
 
     return v0
@@ -801,8 +844,7 @@
 .method public hasMediaId()Z
     .locals 1
 
-    .prologue
-    .line 1363
+    .line 1579
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasMediaId:Z
 
     return v0
@@ -811,8 +853,7 @@
 .method public hasPeerAbility()Z
     .locals 1
 
-    .prologue
-    .line 1325
+    .line 1541
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasPeerAbility:Z
 
     return v0
@@ -821,33 +862,30 @@
 .method public final isInitialized()Z
     .locals 1
 
-    .prologue
-    .line 1389
+    .line 1623
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public bridge synthetic mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/protobuf/micro/MessageMicro;
-    .locals 1
-    .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .prologue
-    .line 1476
+    .line 1428
     invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
-    .locals 3
+    .locals 2
     .param p1, "input"    # Lcom/google/protobuf/micro/CodedInputStreamMicro;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -855,155 +893,197 @@
         }
     .end annotation
 
-    .prologue
-    .line 1480
-    :cond_0
+    .line 1721
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1481
+    .line 1722
     .local v0, "tag":I
-    sparse-switch v0, :sswitch_data_0
+    if-eqz v0, :cond_a
 
-    .line 1485
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_8
+
+    const/16 v1, 0x10
+
+    if-eq v0, v1, :cond_7
+
+    const/16 v1, 0x1d
+
+    if-eq v0, v1, :cond_6
+
+    const/16 v1, 0x22
+
+    if-eq v0, v1, :cond_5
+
+    const/16 v1, 0x2a
+
+    if-eq v0, v1, :cond_4
+
+    const/16 v1, 0x32
+
+    if-eq v0, v1, :cond_3
+
+    const/16 v1, 0x38
+
+    if-eq v0, v1, :cond_2
+
+    const/16 v1, 0x45
+
+    if-eq v0, v1, :cond_1
+
+    const/16 v1, 0x48
+
+    if-eq v0, v1, :cond_0
+
+    .line 1726
     invoke-virtual {p0, p1, v0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_0
+    if-nez v1, :cond_9
 
-    .line 1486
+    .line 1727
     return-object p0
 
-    .line 1483
-    :sswitch_0
-    return-object p0
-
-    .line 1491
-    :sswitch_1
+    .line 1768
+    :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setCallType(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setCauseCode(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 1495
-    :sswitch_2
+    .line 1764
+    :cond_1
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readSFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setMediaId(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
+
+    .line 1765
+    goto :goto_1
+
+    .line 1760
+    :cond_2
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setCallDomain(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setCallSubstate(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    goto :goto_0
+    .line 1761
+    goto :goto_1
 
-    .line 1499
-    :sswitch_3
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setExtrasLength(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
-
-    goto :goto_0
-
-    .line 1503
-    :sswitch_4
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->addExtras(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
-
-    goto :goto_0
-
-    .line 1507
-    :sswitch_5
+    .line 1754
+    :cond_3
     new-instance v1, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
     invoke-direct {v1}, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;-><init>()V
 
-    .line 1508
+    .line 1755
     .local v1, "value":Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1509
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setLocalAbility(Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
+    .line 1756
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setPeerAbility(Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    goto :goto_0
+    .line 1757
+    goto :goto_1
 
-    .line 1513
+    .line 1748
     .end local v1    # "value":Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
-    :sswitch_6
+    :cond_4
     new-instance v1, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
     invoke-direct {v1}, Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;-><init>()V
 
-    .line 1514
+    .line 1749
     .restart local v1    # "value":Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1515
-    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setPeerAbility(Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
+    .line 1750
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setLocalAbility(Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    goto :goto_0
+    .line 1751
+    goto :goto_1
 
-    .line 1519
+    .line 1744
     .end local v1    # "value":Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
-    :sswitch_7
+    :cond_5
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->addExtras(Ljava/lang/String;)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
+
+    .line 1745
+    goto :goto_1
+
+    .line 1740
+    :cond_6
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setExtrasLength(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
+
+    .line 1741
+    goto :goto_1
+
+    .line 1736
+    :cond_7
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setCallSubstate(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setCallDomain(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    goto :goto_0
+    .line 1737
+    goto :goto_1
 
-    .line 1523
-    :sswitch_8
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readSFixed32()I
+    .line 1732
+    :cond_8
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {p0, v2}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setMediaId(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->setCallType(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
 
-    goto :goto_0
-
-    .line 1481
+    .line 1733
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x10 -> :sswitch_2
-        0x1d -> :sswitch_3
-        0x22 -> :sswitch_4
-        0x2a -> :sswitch_5
-        0x32 -> :sswitch_6
-        0x38 -> :sswitch_7
-        0x45 -> :sswitch_8
-    .end sparse-switch
+    .line 1772
+    .end local v0    # "tag":I
+    :cond_9
+    :goto_1
+    goto/16 :goto_0
+
+    .line 1724
+    .restart local v0    # "tag":I
+    :cond_a
+    return-object p0
 .end method
 
 .method public setCallDomain(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 1241
+    .line 1457
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallDomain:Z
 
-    .line 1242
+    .line 1458
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callDomain_:I
 
-    .line 1243
+    .line 1459
     return-object p0
 .end method
 
@@ -1011,16 +1091,15 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 1348
+    .line 1564
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallSubstate:Z
 
-    .line 1349
+    .line 1565
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callSubstate_:I
 
-    .line 1350
+    .line 1566
     return-object p0
 .end method
 
@@ -1028,16 +1107,31 @@
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 1224
+    .line 1440
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallType:Z
 
-    .line 1225
+    .line 1441
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->callType_:I
 
-    .line 1226
+    .line 1442
+    return-object p0
+.end method
+
+.method public setCauseCode(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
+    .locals 1
+    .param p1, "value"    # I
+
+    .line 1598
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCauseCode:Z
+
+    .line 1599
+    iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->causeCode_:I
+
+    .line 1600
     return-object p0
 .end method
 
@@ -1046,41 +1140,39 @@
     .param p1, "index"    # I
     .param p2, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 1280
-    if-nez p2, :cond_0
+    .line 1496
+    if-eqz p2, :cond_0
 
-    .line 1281
+    .line 1499
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extras_:Ljava/util/List;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    .line 1500
+    return-object p0
+
+    .line 1497
+    :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
-
-    .line 1283
-    :cond_0
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extras_:Ljava/util/List;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
-
-    .line 1284
-    return-object p0
 .end method
 
 .method public setExtrasLength(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 1258
+    .line 1474
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasExtrasLength:Z
 
-    .line 1259
+    .line 1475
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->extrasLength_:I
 
-    .line 1260
+    .line 1476
     return-object p0
 .end method
 
@@ -1088,44 +1180,42 @@
     .locals 1
     .param p1, "value"    # Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
-    .prologue
-    .line 1308
-    if-nez p1, :cond_0
+    .line 1524
+    if-eqz p1, :cond_0
 
-    .line 1309
+    .line 1527
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasLocalAbility:Z
+
+    .line 1528
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->localAbility_:Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
+
+    .line 1529
+    return-object p0
+
+    .line 1525
+    :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
-
-    .line 1311
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasLocalAbility:Z
-
-    .line 1312
-    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->localAbility_:Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
-
-    .line 1313
-    return-object p0
 .end method
 
 .method public setMediaId(I)Lorg/codeaurora/ims/ImsQmiIF$CallDetails;
     .locals 1
     .param p1, "value"    # I
 
-    .prologue
-    .line 1365
+    .line 1581
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasMediaId:Z
 
-    .line 1366
+    .line 1582
     iput p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->mediaId_:I
 
-    .line 1367
+    .line 1583
     return-object p0
 .end method
 
@@ -1133,32 +1223,31 @@
     .locals 1
     .param p1, "value"    # Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
-    .prologue
-    .line 1328
-    if-nez p1, :cond_0
+    .line 1544
+    if-eqz p1, :cond_0
 
-    .line 1329
+    .line 1547
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasPeerAbility:Z
+
+    .line 1548
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->peerAbility_:Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
+
+    .line 1549
+    return-object p0
+
+    .line 1545
+    :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
-
-    .line 1331
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasPeerAbility:Z
-
-    .line 1332
-    iput-object p1, p0, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->peerAbility_:Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
-
-    .line 1333
-    return-object p0
 .end method
 
 .method public writeTo(Lcom/google/protobuf/micro/CodedOutputStreamMicro;)V
-    .locals 4
+    .locals 3
     .param p1, "output"    # Lcom/google/protobuf/micro/CodedOutputStreamMicro;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -1166,159 +1255,175 @@
         }
     .end annotation
 
-    .prologue
-    .line 1395
+    .line 1629
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallType()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
-    .line 1396
+    .line 1630
+    const/4 v0, 0x1
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getCallType()I
 
-    move-result v2
+    move-result v1
 
-    const/4 v3, 0x1
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v3, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 1398
+    .line 1632
     :cond_0
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallDomain()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
-    .line 1399
+    .line 1633
+    const/4 v0, 0x2
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getCallDomain()I
 
-    move-result v2
+    move-result v1
 
-    const/4 v3, 0x2
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v3, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 1401
+    .line 1635
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasExtrasLength()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_2
 
-    .line 1402
+    .line 1636
+    const/4 v0, 0x3
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getExtrasLength()I
 
-    move-result v2
+    move-result v1
 
-    const/4 v3, 0x3
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
 
-    invoke-virtual {p1, v3, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed32(II)V
-
-    .line 1404
+    .line 1638
     :cond_2
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getExtrasList()Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, "element$iterator":Ljava/util/Iterator;
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 1405
-    .local v0, "element":Ljava/lang/String;
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    .line 1639
+    .local v1, "element":Ljava/lang/String;
     const/4 v2, 0x4
 
-    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+    invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
+    .line 1640
+    .end local v1    # "element":Ljava/lang/String;
     goto :goto_0
 
-    .line 1407
-    .end local v0    # "element":Ljava/lang/String;
+    .line 1641
     :cond_3
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasLocalAbility()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_4
+    if-eqz v0, :cond_4
 
-    .line 1408
+    .line 1642
+    const/4 v0, 0x5
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getLocalAbility()Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
-    move-result-object v2
+    move-result-object v1
 
-    const/4 v3, 0x5
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    invoke-virtual {p1, v3, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
-
-    .line 1410
+    .line 1644
     :cond_4
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasPeerAbility()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_5
+    if-eqz v0, :cond_5
 
-    .line 1411
+    .line 1645
+    const/4 v0, 0x6
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getPeerAbility()Lorg/codeaurora/ims/ImsQmiIF$SrvStatusList;
 
-    move-result-object v2
+    move-result-object v1
 
-    const/4 v3, 0x6
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    invoke-virtual {p1, v3, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
-
-    .line 1413
+    .line 1647
     :cond_5
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCallSubstate()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_6
+    if-eqz v0, :cond_6
 
-    .line 1414
+    .line 1648
+    const/4 v0, 0x7
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getCallSubstate()I
 
-    move-result v2
+    move-result v1
 
-    const/4 v3, 0x7
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    invoke-virtual {p1, v3, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
-
-    .line 1416
+    .line 1650
     :cond_6
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasMediaId()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_7
+    if-eqz v0, :cond_7
 
-    .line 1417
+    .line 1651
+    const/16 v0, 0x8
+
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getMediaId()I
 
-    move-result v2
+    move-result v1
 
-    const/16 v3, 0x8
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeSFixed32(II)V
 
-    invoke-virtual {p1, v3, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeSFixed32(II)V
-
-    .line 1394
+    .line 1653
     :cond_7
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->hasCauseCode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    .line 1654
+    const/16 v0, 0x9
+
+    invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$CallDetails;->getCauseCode()I
+
+    move-result v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
+
+    .line 1656
+    :cond_8
     return-void
 .end method
