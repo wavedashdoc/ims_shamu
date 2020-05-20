@@ -22,46 +22,41 @@
 
 # direct methods
 .method constructor <init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
-    .locals 1
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
+    .locals 0
 
-    .prologue
-    const/4 v0, 0x0
-
-    .line 1677
+    .line 106
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$PadingValue;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1671
-    iput v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$PadingValue;->padSize:I
+    .line 107
+    const/4 p1, 0x0
 
-    .line 1678
-    iput v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$PadingValue;->padSize:I
+    iput p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$PadingValue;->padSize:I
 
-    .line 1677
+    .line 108
+    iput p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$PadingValue;->padSize:I
+
+    .line 109
     return-void
 .end method
 
 .method constructor <init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
-    .locals 1
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
-    .param p2, "size"    # I
+    .locals 0
 
-    .prologue
-    .line 1673
+    .line 101
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$PadingValue;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1671
-    const/4 v0, 0x0
+    .line 102
+    const/4 p1, 0x0
 
-    iput v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$PadingValue;->padSize:I
+    iput p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$PadingValue;->padSize:I
 
-    .line 1674
+    .line 103
     iput p2, p0, Lorg/codeaurora/ims/ImsConfigImpl$PadingValue;->padSize:I
 
-    .line 1673
+    .line 104
     return-void
 .end method
