@@ -70,17 +70,28 @@
     return-void
 .end method
 
-.method private createRegCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;ILandroid/telephony/ims/ImsReasonInfo;)V
-    .locals 3
+.method private createRegCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;ILandroid/telephony/ims/ImsReasonInfo;I)V
+    .locals 6
     .param p1, "listener"    # Lcom/android/ims/internal/IImsRegistrationListener;
     .param p2, "registrationState"    # I
     .param p3, "imsReasonInfo"    # Landroid/telephony/ims/ImsReasonInfo;
+    .param p4, "imsRadioTech"    # I
 
     .prologue
     .line 605
     new-instance v0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;
 
-    invoke-direct {v0, p0, p2, p1, p3}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;-><init>(Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;ILcom/android/ims/internal/IImsRegistrationListener;Landroid/telephony/ims/ImsReasonInfo;)V
+    move-object v1, p0
+
+    move v2, p2
+
+    move-object v3, p1
+
+    move-object v4, p3
+
+    move v5, p4
+
+    invoke-direct/range {v0 .. v5}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;-><init>(Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;ILcom/android/ims/internal/IImsRegistrationListener;Landroid/telephony/ims/ImsReasonInfo;I)V
 
     .line 625
     .local v0, "r":Ljava/lang/Runnable;
@@ -98,8 +109,74 @@
     return-void
 .end method
 
+.method private getRilRadioTech(Lorg/codeaurora/ims/ImsQmiIF$Registration;)I
+    .locals 2
+    .param p1, "registration"    # Lorg/codeaurora/ims/ImsQmiIF$Registration;
+
+    .prologue
+    .line 845
+    invoke-virtual {p1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasRadioTech()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    .line 846
+    const/4 v1, 0x0
+
+    return v1
+
+    .line 850
+    :cond_0
+    invoke-virtual {p1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->getRadioTech()I
+
+    move-result v1
+
+    packed-switch v1, :pswitch_data_0
+
+    .line 859
+    :pswitch_0
+    const/4 v0, 0x0
+
+    .line 862
+    .local v0, "imsRat":I
+    :goto_0
+    return v0
+
+    .line 852
+    .end local v0    # "imsRat":I
+    :pswitch_1
+    const/16 v0, 0xe
+
+    .line 853
+    .restart local v0    # "imsRat":I
+    goto :goto_0
+
+    .line 856
+    .end local v0    # "imsRat":I
+    :pswitch_2
+    const/16 v0, 0x12
+
+    .line 857
+    .restart local v0    # "imsRat":I
+    goto :goto_0
+
+    .line 850
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0xe
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_2
+        :pswitch_2
+    .end packed-switch
+.end method
+
 .method private handleImsStateChanged(Landroid/os/AsyncResult;)V
-    .locals 9
+    .locals 10
     .param p1, "ar"    # Landroid/os/AsyncResult;
 
     .prologue
@@ -168,6 +245,30 @@
     .line 848
     .local v5, "regState":I
     :goto_2
+    const/16 v9, 0xe
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "getRilRadioTech= "
+
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v7, "ImsServiceSub"
+
+    invoke-static {v7, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
     new-instance v2, Landroid/telephony/ims/ImsReasonInfo;
 
     .line 849
@@ -204,7 +305,7 @@
 
     .line 852
     .local v3, "regListener":Lcom/android/ims/internal/IImsRegistrationListener;
-    invoke-direct {p0, v3, v5, v2}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->createRegCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;ILandroid/telephony/ims/ImsReasonInfo;)V
+    invoke-direct {p0, v3, v5, v2, v9}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->createRegCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;ILandroid/telephony/ims/ImsReasonInfo;I)V
 
     goto :goto_3
 

@@ -1,6 +1,8 @@
 Manifest-Version: 1.0
-Created-By: 1.8.0_45-internal (Oracle Corporation)
 
 Name: AndroidManifest.xml
-SHA1-Digest: TjgSagkW9uDmnkf96ZEiK359zH8=
+SHA1-Digest: 9DEWT1x9t+bbUaNdAMOwirtZ33s=
+
+Name: classes.dex
+SHA1-Digest: xLQuk2Gruch4cO7gAnqTNZvrPS8=
 
